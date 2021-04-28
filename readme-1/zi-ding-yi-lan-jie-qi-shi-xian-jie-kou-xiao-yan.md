@@ -1,15 +1,13 @@
-### 自定义拦截器实现接口校验
+# 自定义拦截器实现接口校验
 
-#### **自定义拦截器实现比较简单。分为两步：**
+## **自定义拦截器实现比较简单。分为两步：**
 
-- 1.通过implements HandlerInterceptor来实现自定义拦截器。
-- 2.通过 implements WebMvcConfigurer来注册自定义拦截器即可。
+* 1.通过implements HandlerInterceptor来实现自定义拦截器。
+* 2.通过 implements WebMvcConfigurer来注册自定义拦截器即可。
 
+## 1. pom.xml
 
-
-#### 1. pom.xml
-
-```
+```text
 <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -24,11 +22,11 @@
 </dependencies>
 ```
 
-#### 2.自定义拦截器 SessionInterceptor.java
+## 2.自定义拦截器 SessionInterceptor.java
 
 新建文件SessionInterceptor.java，每一个拦截器有需要实现的 HandlerInterceptor 接口，这个接口有三个方法，每个方法会在请求调用的不同时期完成，因为我们需要在接口调用之前拦截请求判断是否登陆，所以这里需要使用 preHandle 方法，在里面写验证逻辑，最后返回 true 或者 false，确定请求是否合法。记住加 @Component 注解，另外需要在下一步的 WebConfigurer类中注入自定义拦截器。
 
-```
+```text
 package com.example.chengying.service;
 
 
@@ -81,6 +79,5 @@ public class InterceptorVerification {
         log.info("=============进入拦截器,渲染ModelAndView后调用。=================================");
     }
 }
-
 ```
 
