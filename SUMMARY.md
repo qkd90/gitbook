@@ -6,4 +6,6 @@
   * [统一异常处理与统一结果返回](统一异常处理与统一结果返回.md)
   * [自定义拦截器实现接口校验](自定义拦截器实现接口校验.md)
 * [附录](README.md)
-  * [fiddler使用手册](fiddler使用手册.md) 	
+  * [fiddler使用手册](fiddler使用手册.md) 
+  * [部署Prometheus+Alertmanager+Granfan监控平台.md](部署Prometheus+Alertmanager+Granfan监控平台.md) 
+  * [数据库监控.md](数据库监控.md)
