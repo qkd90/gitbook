@@ -89,7 +89,14 @@ cd /usr/lib/systemd/system/
 systemctl daemon-reload
 systemctl start prometheus.service
 systemctl status prometheus.service
+systemctl enable prometheus.service
 ```
+
+administrator
+
+NHyy2020..
+
+Tsnhyy2020..
 
 - 注意开启防火墙端口：
 

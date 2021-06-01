@@ -103,7 +103,7 @@ firewall-cmd  --list-ports
 
 firewall-cmd --zone=external --add-forward-port=port=9001:proto=tcp:toport=9100:toaddr=192.168.1.30 --permanent
 
-
+是
 ```
 
 - 浏览器访问：
