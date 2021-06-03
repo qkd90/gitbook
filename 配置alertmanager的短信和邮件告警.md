@@ -1,4 +1,4 @@
-### 配置alertmanager的短信和邮件告警
+### 配置alertmanager的短信,邮件,微信告警
 
 #### 1.修改配置文件 alertmanager.yml
 

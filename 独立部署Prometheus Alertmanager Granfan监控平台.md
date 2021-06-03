@@ -670,6 +670,8 @@ send_resolved: <boolean> | default = false   # 故障恢复之后，是否发送
 
 解压安装文件到 /usr/local/rq
 
+
+
 在启动之前，请确保正确设置了环境变量DATA_SOURCE_NAME。DATA_SOURCE_NAME应该采用Oracle EZCONNECT格式：
 
 https://docs.oracle.com/en/database/oracle/oracle-database/19/netag/configuring-naming-methods.html#GUID-B0437826-43C1-49EC-A94D-B650B6A4A6EE
@@ -678,12 +680,14 @@ https://docs.oracle.com/en/database/oracle/oracle-database/19/netag/configuring-
 新建一个oracle账户
 create user monitor identified by monitor;
 赋予账户权限
- grant connect, resource to monitor;
+grant connect, resource to monitor;
 
 直接运行命令：
 export DATA_SOURCE_NAME="monitor/monitor@//192.168.0.185:1521/orcl"
 
 同时需要在oracle目录配置 .bash_profile,使用我配置好的文件
+然后运行
+source .bash_profile
 
 添加
 然后使用脚本运行：
@@ -691,6 +695,8 @@ sh oracle_exporter.sh
 
 碰到 pinging oracle: empty dsn
 export DATA_SOURCE_NAME="C##test/123456@//192.168.18.203:1521/ORCLCDB"
+
+碰到 error while loading shared libraries: libclntsh.so.18.1: cannot open shared object file: No such file or directory
 
 
 ```
@@ -704,5 +710,4 @@ sqlplus / as sysdba
 conn test/123456
 ```
 
-
-
+![下载 (1)](C:\Users\rq\Desktop\下载 (1).jpg)
