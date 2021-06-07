@@ -1,0 +1,108 @@
+{
+    "size": {
+        "name": "t-radio",
+        "value": "mini",
+        "attr": {
+            "label": {
+                "value": "尺寸",
+                "name": "t-input",
+                "attr": {
+                    "label": {
+                        "value": "标题"
+                    },
+                    "size": {
+                        "value": "mini"
+                    }
+                }
+            },
+            "size": {
+                "value": "mini",
+                "name": "t-radio",
+                "attr": {
+                    "label": {
+                        "value": "尺寸"
+                    },
+                    "size": {
+                        "value": "mini"
+                    },
+                    "options": [
+                        {
+                            "label": "大",
+                            "value": "medium"
+                        },
+                        {
+                            "label": "中",
+                            "value": "small"
+                        },
+                        {
+                            "label": "小",
+                            "value": "mini"
+                        }
+                    ]
+                }
+            },
+            "options": [
+                {
+                    "label": "大",
+                    "value": "medium"
+                },
+                {
+                    "label": "中",
+                    "value": "small"
+                },
+                {
+                    "label": "小",
+                    "value": "mini"
+                }
+            ]
+        },
+        "fieldName": "size",
+        "style": {}
+    },
+    "label": {
+        "name": "t-input",
+        "value": "输入框",
+        "attr": {
+            "label": {
+                "value": "标题",
+                "name": "t-input",
+                "attr": {
+                    "label": {
+                        "value": "标题"
+                    },
+                    "size": {
+                        "value": "mini"
+                    }
+                }
+            },
+            "size": {
+                "value": "mini",
+                "name": "t-radio",
+                "attr": {
+                    "label": {
+                        "value": "尺寸"
+                    },
+                    "size": {
+                        "value": "mini"
+                    },
+                    "options": [
+                        {
+                            "label": "大",
+                            "value": "medium"
+                        },
+                        {
+                            "label": "中",
+                            "value": "small"
+                        },
+                        {
+                            "label": "小",
+                            "value": "mini"
+                        }
+                    ]
+                }
+            }
+        },
+        "fieldName": "label",
+        "style": {}
+    }
+}
