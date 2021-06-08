@@ -75,7 +75,7 @@ cluster.initial_master_nodes: [ "node-name" ]
 
 由于Elasticsearch不能使用root用户打开，所以需要专门创建一个用户来启动Elasticsearch
 
-```css
+```shell
 $ adduser elastic
 #设置密码
 $ passwd elastic

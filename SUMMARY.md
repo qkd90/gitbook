@@ -18,6 +18,22 @@
 - [Gitbook目录如何自动生成](1-git/gitbook目录如何自动生成.md)
 - [Git相关](1-git/git相关.md)
 
+## 承影
+
+- [Data]()
+    - [Config]()
+        - [SQLAddress]()
+        - [ServiceAddress]()
+    - [Graph]()
+    - [SQL]()
+        - [OutRegistrationRepository]()
+    - [Service]()
+        - [DoctorStoodService]()
+        - [DoctorsPoolServices]()
+        - [SerialNoService]()
+    - [Page]()
+    - [Property]()
+
 ## Java提高
 
 - [HTTP 协议的 8 种请求类型介绍](2-Java提高/HTTP 协议的 8 种请求类型介绍.md)
@@ -25,11 +41,18 @@
 
 ## Springboot
 
-- [Spring Boot常用注解  声明Bean的注解](2-springboot/Spring Boot常用注解- 声明Bean的注解.md)
-- [Springboot使用MongoTemplate进行增删改查](2-springboot/springboot使用MongoTemplate进行增删改查.md)
-- [有了基本数据类型，为什么还需要包装类型](2-springboot/有了基本数据类型，为什么还需要包装类型.md)
-- [统一异常处理与统一结果返回](2-springboot/统一异常处理与统一结果返回.md)
-- [自定义拦截器实现接口校验](2-springboot/自定义拦截器实现接口校验.md)
+- [Spring Boot常用注解  声明Bean的注解](3-springboot/Spring Boot常用注解- 声明Bean的注解.md)
+- [Springboot使用MongoTemplate进行增删改查](3-springboot/springboot使用MongoTemplate进行增删改查.md)
+- [有了基本数据类型，为什么还需要包装类型](3-springboot/有了基本数据类型，为什么还需要包装类型.md)
+- [统一异常处理与统一结果返回](3-springboot/统一异常处理与统一结果返回.md)
+- [自定义拦截器实现接口校验](3-springboot/自定义拦截器实现接口校验.md)
+
+## 数据存储相关
+
+- [MongoDB操作](4-数据存储相关/MongoDB操作.md)
+- [Es的使用](4-数据存储相关/es的使用.md)
+- [Kafka操作](4-数据存储相关/kafka操作.md)
+- [Mysql设计规范](4-数据存储相关/mysql设计规范.md)
 
 ## 监控相关
 
@@ -46,29 +69,4 @@
 
 - [Fiddler使用手册](9-测试相关/fiddler使用手册.md)
 - [Fiddler使用说明](9-测试相关/fiddler使用说明.md)
-
-## Kafka
-
-- [Kafka操作](kafka/kafka操作.md)
-
-## Sql
-
-- [MongoDB操作](sql/MongoDB操作.md)
-- [Es的使用](sql/es的使用.md)
-- [Mysql设计规范](sql/mysql设计规范.md)
-
-## 承影
-
-- [Data]()
-    - [Config]()
-        - [SQLAddress]()
-        - [ServiceAddress]()
-    - [Graph]()
-    - [SQL]()
-        - [OutRegistrationRepository]()
-    - [Service]()
-        - [DoctorStoodService]()
-        - [DoctorsPoolServices]()
-        - [SerialNoService]()
-    - [Page]()
-    - [Property]()
+- [Postman](9-测试相关/postman.md)
