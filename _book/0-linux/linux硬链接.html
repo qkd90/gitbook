@@ -1,0 +1,559 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Linux硬链接 · 大数据之路</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="打入数据失败排查.html" />
+    
+    
+    <link rel="prev" href="linux操作系统.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Linux</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Linux-root下的文件-anaconda-ks.cfg.html">
+            
+                <a href="Linux-root下的文件-anaconda-ks.cfg.html">
+            
+                    
+                    Linux Root下的文件 Anaconda Ks.Cfg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Systemd 入门教程：命令篇.html">
+            
+                <a href="Systemd 入门教程：命令篇.html">
+            
+                    
+                    Systemd 入门教程：命令篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="es.html">
+            
+                <a href="es.html">
+            
+                    
+                    Es
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="linux操作系统.html">
+            
+                <a href="linux操作系统.html">
+            
+                    
+                    Linux操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="linux硬链接.html">
+            
+                <a href="linux硬链接.html">
+            
+                    
+                    Linux硬链接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="打入数据失败排查.html">
+            
+                <a href="打入数据失败排查.html">
+            
+                    
+                    打入数据失败排查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="操作.html">
+            
+                <a href="操作.html">
+            
+                    
+                    操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="系统查看.html">
+            
+                <a href="系统查看.html">
+            
+                    
+                    系统查看
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="网络配置命令详解.html">
+            
+                <a href="网络配置命令详解.html">
+            
+                    
+                    网络配置命令详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java提高</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Springboot</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../2-springboot/有了基本数据类型，为什么还需要包装类型.html">
+            
+                <a href="../2-springboot/有了基本数据类型，为什么还需要包装类型.html">
+            
+                    
+                    有了基本数据类型，为什么还需要包装类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../2-springboot/统一异常处理与统一结果返回.html">
+            
+                <a href="../2-springboot/统一异常处理与统一结果返回.html">
+            
+                    
+                    统一异常处理与统一结果返回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../2-springboot/自定义拦截器实现接口校验.html">
+            
+                <a href="../2-springboot/自定义拦截器实现接口校验.html">
+            
+                    
+                    自定义拦截器实现接口校验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">监控相关</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Git</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../git/gitbook目录如何自动生成.md">
+            
+                <span>
+            
+                    
+                    Gitbook目录如何自动生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Kafka</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../kafka/kafka操作.html">
+            
+                <a href="../kafka/kafka操作.html">
+            
+                    
+                    Kafka操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Sql</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../sql/MongoDB操作.html">
+            
+                <a href="../sql/MongoDB操作.html">
+            
+                    
+                    MongoDB操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../sql/es的使用.html">
+            
+                <a href="../sql/es的使用.html">
+            
+                    
+                    Es的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../sql/mysql设计规范.html">
+            
+                <a href="../sql/mysql设计规范.html">
+            
+                    
+                    Mysql设计规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Linux硬链接</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h4 id="linux-&#x786C;&#x94FE;&#x63A5;">linux &#x786C;&#x94FE;&#x63A5;</h4>
+<p>Linux ln&#xFF08;&#x82F1;&#x6587;&#x5168;&#x62FC;&#xFF1A;link files&#xFF09;&#x547D;&#x4EE4;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x547D;&#x4EE4;&#xFF0C;&#x5B83;&#x7684;&#x529F;&#x80FD;&#x662F;&#x4E3A;&#x67D0;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5728;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x540C;&#x6B65;&#x7684;&#x94FE;&#x63A5;&#x3002;</p>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x7528;&#x5230;&#x76F8;&#x540C;&#x7684;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x5728;&#x6BCF;&#x4E00;&#x4E2A;&#x9700;&#x8981;&#x7684;&#x76EE;&#x5F55;&#x4E0B;&#x90FD;&#x653E;&#x4E00;&#x4E2A;&#x5FC5;&#x987B;&#x76F8;&#x540C;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x5728;&#x67D0;&#x4E2A;&#x56FA;&#x5B9A;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x653E;&#x4E0A;&#x8BE5;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x5728; &#x5176;&#x5B83;&#x7684;&#x76EE;&#x5F55;&#x4E0B;&#x7528;ln&#x547D;&#x4EE4;&#x94FE;&#x63A5;&#xFF08;link&#xFF09;&#x5B83;&#x5C31;&#x53EF;&#x4EE5;&#xFF0C;&#x4E0D;&#x5FC5;&#x91CD;&#x590D;&#x7684;&#x5360;&#x7528;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x3002;</p>
+<h5 id="&#x8BED;&#x6CD5;">&#x8BED;&#x6CD5;</h5>
+<pre><code> ln \[&#x53C2;&#x6570;\]\[&#x6E90;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;\]\[&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;\]
+</code></pre><p>&#x5176;&#x4E2D;&#x53C2;&#x6570;&#x7684;&#x683C;&#x5F0F;&#x4E3A;</p>
+<p>[-bdfinsvF] [-S backup-suffix] [-V {numbered,existing,simple}]</p>
+<p>[--help] [--version] [--]</p>
+<p><strong>&#x547D;&#x4EE4;&#x529F;&#x80FD;</strong> :<br>Linux&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x6709;&#x6240;&#x8C13;&#x7684;&#x94FE;&#x63A5;(link)&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x89C6;&#x4E3A;&#x6863;&#x6848;&#x7684;&#x522B;&#x540D;&#xFF0C;&#x800C;&#x94FE;&#x63A5;&#x53C8;&#x53EF;&#x5206;&#x4E3A;&#x4E24;&#x79CD; : &#x786C;&#x94FE;&#x63A5;(hard link)&#x4E0E;&#x8F6F;&#x94FE;&#x63A5;(symbolic link)&#xFF0C;&#x786C;&#x94FE;&#x63A5;&#x7684;&#x610F;&#x601D;&#x662F;&#x4E00;&#x4E2A;&#x6863;&#x6848;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x540D;&#x79F0;&#xFF0C;&#x800C;&#x8F6F;&#x94FE;&#x63A5;&#x7684;&#x65B9;&#x5F0F;&#x5219;&#x662F;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x6863;&#x6848;&#xFF0C;&#x8BE5;&#x6863;&#x6848;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x6307;&#x5411;&#x53E6;&#x4E00;&#x4E2A;&#x6863;&#x6848;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x786C;&#x94FE;&#x63A5;&#x662F;&#x5B58;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x800C;&#x8F6F;&#x94FE;&#x63A5;&#x5374;&#x53EF;&#x4EE5;&#x8DE8;&#x8D8A;&#x4E0D;&#x540C;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p>&#x4E0D;&#x8BBA;&#x662F;&#x786C;&#x94FE;&#x63A5;&#x6216;&#x8F6F;&#x94FE;&#x63A5;&#x90FD;&#x4E0D;&#x4F1A;&#x5C06;&#x539F;&#x672C;&#x7684;&#x6863;&#x6848;&#x590D;&#x5236;&#x4E00;&#x4EFD;&#xFF0C;&#x53EA;&#x4F1A;&#x5360;&#x7528;&#x975E;&#x5E38;&#x5C11;&#x91CF;&#x7684;&#x78C1;&#x789F;&#x7A7A;&#x95F4;&#x3002;</p>
+<p><strong>&#x8F6F;&#x94FE;&#x63A5;</strong>&#xFF1A;</p>
+<ul>
+<li>1.&#x8F6F;&#x94FE;&#x63A5;&#xFF0C;&#x4EE5;&#x8DEF;&#x5F84;&#x7684;&#x5F62;&#x5F0F;&#x5B58;&#x5728;&#x3002;&#x7C7B;&#x4F3C;&#x4E8E;Windows&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;</li>
+<li>2.&#x8F6F;&#x94FE;&#x63A5;&#x53EF;&#x4EE5; &#x8DE8;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF; &#xFF0C;&#x786C;&#x94FE;&#x63A5;&#x4E0D;&#x53EF;&#x4EE5;</li>
+<li>3.&#x8F6F;&#x94FE;&#x63A5;&#x53EF;&#x4EE5;&#x5BF9;&#x4E00;&#x4E2A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x8FDB;&#x884C;&#x94FE;&#x63A5;</li>
+<li>4.&#x8F6F;&#x94FE;&#x63A5;&#x53EF;&#x4EE5;&#x5BF9;&#x76EE;&#x5F55;&#x8FDB;&#x884C;&#x94FE;&#x63A5;</li>
+</ul>
+<p><strong>&#x786C;&#x94FE;&#x63A5;</strong>&#xFF1A;</p>
+<ul>
+<li>1.&#x786C;&#x94FE;&#x63A5;&#xFF0C;&#x4EE5;&#x6587;&#x4EF6;&#x526F;&#x672C;&#x7684;&#x5F62;&#x5F0F;&#x5B58;&#x5728;&#x3002;&#x4F46;&#x4E0D;&#x5360;&#x7528;&#x5B9E;&#x9645;&#x7A7A;&#x95F4;&#x3002;</li>
+<li>2.&#x4E0D;&#x5141;&#x8BB8;&#x7ED9;&#x76EE;&#x5F55;&#x521B;&#x5EFA;&#x786C;&#x94FE;&#x63A5;</li>
+<li>3.&#x786C;&#x94FE;&#x63A5;&#x53EA;&#x6709;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#x624D;&#x80FD;&#x521B;&#x5EFA;</li>
+</ul>
+<h4 id="&#x547D;&#x4EE4;&#x53C2;&#x6570;">&#x547D;&#x4EE4;&#x53C2;&#x6570;</h4>
+<p><strong>&#x5FC5;&#x8981;&#x53C2;&#x6570;</strong>&#xFF1A;</p>
+<ul>
+<li>-b &#x5220;&#x9664;&#xFF0C;&#x8986;&#x76D6;&#x4EE5;&#x524D;&#x5EFA;&#x7ACB;&#x7684;&#x94FE;&#x63A5;</li>
+<li>-d &#x5141;&#x8BB8;&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x5236;&#x4F5C;&#x76EE;&#x5F55;&#x7684;&#x786C;&#x94FE;&#x63A5;</li>
+<li>-f &#x5F3A;&#x5236;&#x6267;&#x884C;</li>
+<li>-i &#x4EA4;&#x4E92;&#x6A21;&#x5F0F;&#xFF0C;&#x6587;&#x4EF6;&#x5B58;&#x5728;&#x5219;&#x63D0;&#x793A;&#x7528;&#x6237;&#x662F;&#x5426;&#x8986;&#x76D6;</li>
+<li>-n &#x628A;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x89C6;&#x4E3A;&#x4E00;&#x822C;&#x76EE;&#x5F55;</li>
+<li>-s &#x8F6F;&#x94FE;&#x63A5;(&#x7B26;&#x53F7;&#x94FE;&#x63A5;)</li>
+<li>-v &#x663E;&#x793A;&#x8BE6;&#x7EC6;&#x7684;&#x5904;&#x7406;&#x8FC7;&#x7A0B;</li>
+</ul>
+<p><strong>&#x9009;&#x62E9;&#x53C2;&#x6570;</strong>&#xFF1A;</p>
+<ul>
+<li>-S &quot;-S&lt;&#x5B57;&#x5C3E;&#x5907;&#x4EFD;&#x5B57;&#x7B26;&#x4E32;&gt; &quot;&#x6216; &quot;--suffix=&lt;&#x5B57;&#x5C3E;&#x5907;&#x4EFD;&#x5B57;&#x7B26;&#x4E32;&gt;&quot;</li>
+<li>-V &quot;-V&lt;&#x5907;&#x4EFD;&#x65B9;&#x5F0F;&gt;&quot;&#x6216;&quot;--version-control=&lt;&#x5907;&#x4EFD;&#x65B9;&#x5F0F;&gt;&quot;</li>
+<li>--help &#x663E;&#x793A;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</li>
+<li>--version &#x663E;&#x793A;&#x7248;&#x672C;&#x4FE1;&#x606F;</li>
+</ul>
+<h3 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h3>
+<p>&#x7ED9;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x8F6F;&#x94FE;&#x63A5;&#xFF0C;&#x4E3A;log2013.log&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x8F6F;&#x94FE;&#x63A5;link2013&#xFF0C;&#x5982;&#x679C;log2013.log&#x4E22;&#x5931;&#xFF0C;link2013&#x5C06;&#x5931;&#x6548;&#xFF1A;</p>
+<pre><code>ln \-s log2013.log link2013
+</code></pre><p>&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre><code>[root@localhost test\]# ll \-rw\-r\--r\--  1 root bin 61  11\-13  06:03 log2013.log \[root@localhost test\]# ln \-s log2013.log link2013 \[root@localhost test\]# ll
+lrwxrwxrwx 1 root root 11  12\-07  16:01 link2013 \-&gt; log2013.log \-rw\-r\--r\--  1 root bin 61  11\-13  06:03 log2013.log
+</code></pre><p>&#x7ED9;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x786C;&#x94FE;&#x63A5;&#xFF0C;&#x4E3A;log2013.log&#x521B;&#x5EFA;&#x786C;&#x94FE;&#x63A5;ln2013&#xFF0C;log2013.log&#x4E0E;ln2013&#x7684;&#x5404;&#x9879;&#x5C5E;&#x6027;&#x76F8;&#x540C;</p>
+<pre><code>ln log2013.log ln2013
+</code></pre><p>&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-shell">ll
+lrwxrwxrwx 1 root root 11  12\-07  16:01 link2013 \-&gt; log2013.log \-rw\-r\--r\--  1 root bin 61  11\-13  06:03 log2013.log \
+
+ln log2013.log ln2013 
+ll
+lrwxrwxrwx 1 root root 11  12\-07  16:01 link2013 \-&gt; log2013.log \-rw\-r\--r\--  2 root bin 61  11\-13  06:03 ln2013 \-rw\-r\--r\--  2 root bin 61  11\-13  06:03 log2013.log
+</code></pre>
+<p>&#x521B;&#x5EFA;futurex&#x7684;python&#x786C;&#x94FE;&#x63A5;&#xFF1A;</p>
+<pre><code class="lang-shell">cd /bin
+ln mss_python  python
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="linux操作系统.html" class="navigation navigation-prev " aria-label="Previous page: Linux操作系统">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="打入数据失败排查.html" class="navigation navigation-next " aria-label="Next page: 打入数据失败排查">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Linux硬链接","level":"1.6","depth":1,"next":{"title":"打入数据失败排查","level":"1.7","depth":1,"path":"0-linux/打入数据失败排查.md","ref":"0-linux/打入数据失败排查.md","articles":[]},"previous":{"title":"Linux操作系统","level":"1.5","depth":1,"path":"0-linux/linux操作系统.md","ref":"0-linux/linux操作系统.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据之路","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"0-linux/linux硬链接.md","mtime":"2021-05-19T06:30:08.907Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-08T06:42:52.383Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

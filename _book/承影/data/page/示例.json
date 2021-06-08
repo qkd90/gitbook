@@ -1,0 +1,316 @@
+{
+    "name": "t-layout",
+    "label": "布局",
+    "text": "双击编辑文本",
+    "icon": "wenben",
+    "draggable": true,
+    "attr": {
+        "cloumnProportion": [
+            8,
+            8,
+            8
+        ],
+        "cloumnMargin": "",
+        "rowMargin": ""
+    },
+    "events": {},
+    "style": {},
+    "id": "F381BC79-BD7A-40E7-9A72-A2557FAF58EA",
+    "children": [
+        {
+            "label": "布局-0",
+            "column": 8,
+            "children": [
+                {
+                    "name": "t-button",
+                    "label": "按钮",
+                    "text": "双击编辑文本",
+                    "icon": "wenben",
+                    "draggable": false,
+                    "active": false,
+                    "value": "",
+                    "attr": {
+                        "label": {
+                            "name": "t-input",
+                            "value": "按钮",
+                            "attr": {
+                                "label": {
+                                    "value": "标题"
+                                },
+                                "size": {
+                                    "value": "mini"
+                                }
+                            }
+                        },
+                        "fieldId": {
+                            "name": "t-input",
+                            "value": "",
+                            "attr": {
+                                "label": {
+                                    "value": "唯一标识"
+                                },
+                                "size": {
+                                    "value": "mini"
+                                }
+                            }
+                        },
+                        "size": {
+                            "name": "t-radio",
+                            "value": "mini",
+                            "attr": {
+                                "label": {
+                                    "value": "尺寸"
+                                },
+                                "size": {
+                                    "value": "mini"
+                                },
+                                "options": [
+                                    {
+                                        "label": "大",
+                                        "value": "medium"
+                                    },
+                                    {
+                                        "label": "中",
+                                        "value": "small"
+                                    },
+                                    {
+                                        "label": "小",
+                                        "value": "mini"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "events": {},
+                    "style": {},
+                    "id": "0EF6F7E7-597F-441E-B254-E2460E14FEF8"
+                }
+            ],
+            "parentId": "F381BC79-BD7A-40E7-9A72-A2557FAF58EA",
+            "id": "F381BC79-BD7A-40E7-9A72-A2557FAF58EA-0"
+        },
+        {
+            "label": "布局-1",
+            "column": 8,
+            "children": [
+                {
+                    "name": "t-button",
+                    "label": "按钮",
+                    "text": "双击编辑文本",
+                    "icon": "wenben",
+                    "draggable": false,
+                    "active": false,
+                    "value": "",
+                    "attr": {
+                        "label": {
+                            "name": "t-input",
+                            "value": "按钮",
+                            "attr": {
+                                "label": {
+                                    "value": "标题"
+                                },
+                                "size": {
+                                    "value": "mini"
+                                }
+                            }
+                        },
+                        "fieldId": {
+                            "name": "t-input",
+                            "value": "",
+                            "attr": {
+                                "label": {
+                                    "value": "唯一标识"
+                                },
+                                "size": {
+                                    "value": "mini"
+                                }
+                            }
+                        },
+                        "size": {
+                            "name": "t-radio",
+                            "value": "mini",
+                            "attr": {
+                                "label": {
+                                    "value": "尺寸"
+                                },
+                                "size": {
+                                    "value": "mini"
+                                },
+                                "options": [
+                                    {
+                                        "label": "大",
+                                        "value": "medium"
+                                    },
+                                    {
+                                        "label": "中",
+                                        "value": "small"
+                                    },
+                                    {
+                                        "label": "小",
+                                        "value": "mini"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "events": {},
+                    "style": {},
+                    "id": "4E3BC3B3-82E5-4375-8F4D-BD267B46187C"
+                }
+            ],
+            "parentId": "F381BC79-BD7A-40E7-9A72-A2557FAF58EA",
+            "id": "F381BC79-BD7A-40E7-9A72-A2557FAF58EA-1"
+        },
+        {
+            "label": "布局-2",
+            "column": 8,
+            "children": [
+                {
+                    "name": "t-input",
+                    "label": "输入框",
+                    "text": "双击编辑文本",
+                    "icon": "wenben",
+                    "value": "",
+                    "attr": {
+                        "size": {
+                            "name": "t-radio",
+                            "value": "mini",
+                            "attr": {
+                                "label": {
+                                    "value": "尺寸"
+                                },
+                                "size": {
+                                    "value": "mini"
+                                },
+                                "options": [
+                                    {
+                                        "label": "大",
+                                        "value": "medium"
+                                    },
+                                    {
+                                        "label": "中",
+                                        "value": "small"
+                                    },
+                                    {
+                                        "label": "小",
+                                        "value": "mini"
+                                    }
+                                ]
+                            }
+                        },
+                        "label": {
+                            "name": "t-input",
+                            "value": "输入框",
+                            "attr": {
+                                "label": {
+                                    "value": "标题"
+                                },
+                                "size": {
+                                    "value": "mini"
+                                }
+                            }
+                        }
+                    },
+                    "events": {},
+                    "style": {
+                        "width": {
+                            "name": "t-input",
+                            "value": "100%",
+                            "attr": {
+                                "label": {
+                                    "value": "宽"
+                                },
+                                "size": {
+                                    "value": "mini"
+                                }
+                            }
+                        },
+                        "height": {
+                            "name": "t-input",
+                            "value": "100%",
+                            "attr": {
+                                "label": {
+                                    "value": "高"
+                                },
+                                "size": {
+                                    "value": "mini"
+                                }
+                            }
+                        },
+                        "margin": {
+                            "name": "t-select",
+                            "value": "2px",
+                            "attr": {
+                                "label": {
+                                    "value": "Margin"
+                                },
+                                "size": {
+                                    "value": "mini"
+                                },
+                                "options": [
+                                    {
+                                        "label": "超大(24px)",
+                                        "value": "24px"
+                                    },
+                                    {
+                                        "label": "大(20px)",
+                                        "value": "20px"
+                                    },
+                                    {
+                                        "label": "小(12px)",
+                                        "value": "12px"
+                                    },
+                                    {
+                                        "label": "无(0)",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "label": "默认",
+                                        "value": "2px"
+                                    }
+                                ]
+                            }
+                        },
+                        "padding": {
+                            "name": "t-select",
+                            "value": "2px",
+                            "attr": {
+                                "label": {
+                                    "value": "Padding"
+                                },
+                                "size": {
+                                    "value": "mini"
+                                },
+                                "options": [
+                                    {
+                                        "label": "超大(24px)",
+                                        "value": "24px"
+                                    },
+                                    {
+                                        "label": "大(20px)",
+                                        "value": "20px"
+                                    },
+                                    {
+                                        "label": "小(12px)",
+                                        "value": "12px"
+                                    },
+                                    {
+                                        "label": "无(0)",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "label": "默认",
+                                        "value": "2px"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "id": "EBB89C8C-1B27-4C6F-807D-638227A31C16"
+                }
+            ],
+            "parentId": "F381BC79-BD7A-40E7-9A72-A2557FAF58EA",
+            "id": "F381BC79-BD7A-40E7-9A72-A2557FAF58EA-2"
+        }
+    ]
+}

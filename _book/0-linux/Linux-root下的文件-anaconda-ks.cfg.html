@@ -1,0 +1,552 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Linux Root下的文件 Anaconda Ks.Cfg · 大数据之路</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Systemd 入门教程：命令篇.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Linux</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="Linux-root下的文件-anaconda-ks.cfg.html">
+            
+                <a href="Linux-root下的文件-anaconda-ks.cfg.html">
+            
+                    
+                    Linux Root下的文件 Anaconda Ks.Cfg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Systemd 入门教程：命令篇.html">
+            
+                <a href="Systemd 入门教程：命令篇.html">
+            
+                    
+                    Systemd 入门教程：命令篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="es.html">
+            
+                <a href="es.html">
+            
+                    
+                    Es
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="linux操作系统.html">
+            
+                <a href="linux操作系统.html">
+            
+                    
+                    Linux操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="linux硬链接.html">
+            
+                <a href="linux硬链接.html">
+            
+                    
+                    Linux硬链接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="打入数据失败排查.html">
+            
+                <a href="打入数据失败排查.html">
+            
+                    
+                    打入数据失败排查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="操作.html">
+            
+                <a href="操作.html">
+            
+                    
+                    操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="系统查看.html">
+            
+                <a href="系统查看.html">
+            
+                    
+                    系统查看
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="网络配置命令详解.html">
+            
+                <a href="网络配置命令详解.html">
+            
+                    
+                    网络配置命令详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java提高</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Springboot</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../2-springboot/有了基本数据类型，为什么还需要包装类型.html">
+            
+                <a href="../2-springboot/有了基本数据类型，为什么还需要包装类型.html">
+            
+                    
+                    有了基本数据类型，为什么还需要包装类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../2-springboot/统一异常处理与统一结果返回.html">
+            
+                <a href="../2-springboot/统一异常处理与统一结果返回.html">
+            
+                    
+                    统一异常处理与统一结果返回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../2-springboot/自定义拦截器实现接口校验.html">
+            
+                <a href="../2-springboot/自定义拦截器实现接口校验.html">
+            
+                    
+                    自定义拦截器实现接口校验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">监控相关</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Git</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../git/gitbook目录如何自动生成.md">
+            
+                <span>
+            
+                    
+                    Gitbook目录如何自动生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Kafka</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../kafka/kafka操作.html">
+            
+                <a href="../kafka/kafka操作.html">
+            
+                    
+                    Kafka操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Sql</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../sql/MongoDB操作.html">
+            
+                <a href="../sql/MongoDB操作.html">
+            
+                    
+                    MongoDB操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../sql/es的使用.html">
+            
+                <a href="../sql/es的使用.html">
+            
+                    
+                    Es的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../sql/mysql设计规范.html">
+            
+                <a href="../sql/mysql设计规范.html">
+            
+                    
+                    Mysql设计规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Linux Root下的文件 Anaconda Ks.Cfg</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h4 id="linuxroot&#x4E0B;&#x7684;&#x6587;&#x4EF6;-anaconda-kscfg">Linux:root&#x4E0B;&#x7684;&#x6587;&#x4EF6;-anaconda-ks.cfg</h4>
+<p>&#x4E00;&#x8FDB;&#x5165; CentOS7&#xFF0C;&#x8F93;&#x5165; ls&#xFF0C;&#x5374;&#x53D1;&#x73B0;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6587;&#x4EF6; anaconda-ks.cfg&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x662F;&#x5728; Linux:root &#x4E0B;&#x7684;&#x3002;</p>
+<p>&#x636E;&#x8BF4;&#xFF0C;&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;&#x7684;&#x65F6;&#x5019;&#x751F;&#x6210;&#x7684;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x6210;&#x81EA;&#x52A8;&#x5B89;&#x88C5;&#x7684;&#x811A;&#x672C;&#xFF0C;&#x7528;&#x4E8E;&#x81EA;&#x52A8;&#x5B89;&#x88C5;&#x540C;&#x6837;&#x914D;&#x7F6E;&#x7684;&#x7CFB;&#x7EDF;&#x3002;</p>
+<pre><code> auth --enableshadow --passalgo=sha512
+
+cdrom
+
+graphical
+
+firstboot --enable
+ignoredisk --only-use=sda
+
+keyboard --vckeymap=cn --xlayouts=&apos;cn&apos;
+
+lang zh_CN.UTF-8
+
+network  --bootproto=dhcp --device=ens33 --onboot=off --ipv6=auto --no-activate
+network  --hostname=localhost.localdomain
+
+
+rootpw --iscrypted $6$rVL0xfcD/P.iK5lH$YItt8GnW6Zaa15QxD3hDcZmBv3SA7HOemRlF0TdwmW2yDNP7xMLlWpYOELYBjbOFDJU9UrvEv1/5JeyoTf6ya0
+
+services --enabled=&quot;chronyd&quot;
+
+timezone Asia/Shanghai --isUtc
+user --name=yvan --password=$6$5psWNNldUM4.7BW0$4Re9lI/XLRTugvyPIoJwM3U6TIVjqfaAnzk/64yos13t75ZBG9KSEnvl/P4X/NgJMeBiyIez90g7bwOEWQu3B. --iscrypted --gecos=&quot;yvan&quot;
+
+bootloader --append=&quot; crashkernel=128M&quot; --location=mbr --boot-drive=sda
+autopart --type=lvm
+
+clearpart --all --initlabel --drives=sda
+
+%packages
+@^minimal
+@core
+chrony
+kexec-tools
+
+%end
+
+%addon com_redhat_kdump --enable --reserve-mb=&apos;128M&apos;
+
+%end
+
+%anaconda
+pwpolicy root --minlen=6 --minquality=1 --notstrict --nochanges --notempty
+pwpolicy user --minlen=6 --minquality=1 --notstrict --nochanges --emptyok
+pwpolicy luks --minlen=6 --minquality=1 --notstrict --nochanges --notempty
+%end 
+</code></pre><p>&#x6CE8;&#x610F;&#x770B;&#xFF1A;</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3037211-21b6eebf13390745.png" alt=""></p>
+<p>&#x6709;&#x4E2A;&#x5751;</p>
+<p>&#x8FD9;&#x91CC;&#x662F; off&#xFF0C;&#x8868;&#x793A;&#x5B89;&#x88C5; CentOS7 mini &#x65F6;&#xFF0C;&#x672A;&#x6FC0;&#x6D3B;&#x7F51;&#x7EDC;&#x3002;&#x8FD9;&#x4E5F;&#x8868;&#x793A;&#x4E00;&#x5F00;&#x59CB;&#x662F;&#x6CA1;&#x6709;&#x7F51;&#x7684;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Systemd 入门教程：命令篇.html" class="navigation navigation-next " aria-label="Next page: Systemd 入门教程：命令篇">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Linux Root下的文件 Anaconda Ks.Cfg","level":"1.2","depth":1,"next":{"title":"Systemd 入门教程：命令篇","level":"1.3","depth":1,"path":"0-linux/Systemd 入门教程：命令篇.md","ref":"0-linux/Systemd 入门教程：命令篇.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据之路","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"0-linux/Linux-root下的文件-anaconda-ks.cfg.md","mtime":"2021-05-19T06:30:08.905Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-08T06:42:52.383Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

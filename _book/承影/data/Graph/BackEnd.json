@@ -1,0 +1,597 @@
+{
+	"data": {
+		"subtype": "Data",
+		"type": "BackEnd",
+		"id": "abc211111",
+		"name": "复合项目1",
+		"graph": {
+			"componentData": {
+				"0aac86e3-9c10-4a40-b0b0-b5c587f0264f": {
+					"formData": {
+						"componentName": "入口",
+						"description": ""
+					},
+					"results": {
+						
+					},
+					"id": "0aac86e3-9c10-4a40-b0b0-b5c587f0264f",
+					"otherFormData": {
+						"componentName": "入口",
+						"description": ""
+					},
+					"type": "Entry",
+					"properties": {
+						"type": "Map",
+						"value": {
+							
+						}
+					}
+				},
+				"b47f27e1-5704-44ff-9bb1-4b483a3bbfb7": {
+					"otherFormData": {
+						"componentName": "报错",
+						"transaction": "",
+						"description": "",
+						"errorMsg": ""
+					},
+					"formData": {
+						"componentName": "报错",
+						"transaction": "",
+						"description": "",
+						"errorMsg": ""
+					},
+					"type": "Error",
+					"id": "b47f27e1-5704-44ff-9bb1-4b483a3bbfb7",
+					"properties": {
+						"type": "Map",
+						"value": {
+							
+						}
+					}
+				},
+				"9b12404f-26e4-48bd-9045-fed5370fb622": {
+					"type": "Exit",
+					"id": "9b12404f-26e4-48bd-9045-fed5370fb622"
+				}
+			},
+			"graph": {
+				"cells": [
+					{
+						"target": {
+							"cell": "b47f27e1-5704-44ff-9bb1-4b483a3bbfb7",
+							"port": "out1"
+						},
+						"zIndex": 0,
+						"source": {
+							"cell": "0aac86e3-9c10-4a40-b0b0-b5c587f0264f",
+							"port": "port3"
+						},
+						"shape": "edge",
+						"attrs": {
+							"line": {
+								"stroke": "#999",
+								"strokeWidth": 1,
+								"targetMarker": {
+									"name": "classic",
+									"size": 8
+								}
+							}
+						},
+						"router": {
+							"name": "manhattan"
+						},
+						"defaultLabel": {
+							"markup": {
+								"children": [
+									{
+										"style": {
+											"width": "100%",
+											"background": "transparent",
+											"height": "100%"
+										},
+										"selector": "foBody",
+										"attrs": {
+											"xmlns": "http://www.w3.org/1999/xhtml"
+										},
+										"tagName": "body",
+										"ns": "http://www.w3.org/1999/xhtml",
+										"children": [
+											{
+												"style": {
+													"width": "100%",
+													"height": "100%"
+												},
+												"tagName": "div",
+												"selector": "foContent"
+											}
+										]
+									}
+								],
+								"tagName": "foreignObject",
+								"selector": "fo"
+							},
+							"attrs": {
+								"fo": {
+									"y": -20,
+									"width": 80,
+									"height": 40,
+									"x": -40
+								}
+							}
+						},
+						"id": "6c461e36-5910-4a56-84dc-f723b21f2e34"
+					},
+					{
+						"target": {
+							"cell": "9b12404f-26e4-48bd-9045-fed5370fb622",
+							"port": "port2"
+						},
+						"zIndex": 0,
+						"source": {
+							"cell": "b47f27e1-5704-44ff-9bb1-4b483a3bbfb7",
+							"port": "out2"
+						},
+						"shape": "edge",
+						"attrs": {
+							"line": {
+								"stroke": "#999",
+								"strokeWidth": 1,
+								"targetMarker": {
+									"name": "classic",
+									"size": 8
+								}
+							}
+						},
+						"router": {
+							"name": "manhattan"
+						},
+						"defaultLabel": {
+							"markup": {
+								"children": [
+									{
+										"style": {
+											"width": "100%",
+											"background": "transparent",
+											"height": "100%"
+										},
+										"selector": "foBody",
+										"attrs": {
+											"xmlns": "http://www.w3.org/1999/xhtml"
+										},
+										"tagName": "body",
+										"ns": "http://www.w3.org/1999/xhtml",
+										"children": [
+											{
+												"style": {
+													"width": "100%",
+													"height": "100%"
+												},
+												"tagName": "div",
+												"selector": "foContent"
+											}
+										]
+									}
+								],
+								"tagName": "foreignObject",
+								"selector": "fo"
+							},
+							"attrs": {
+								"fo": {
+									"y": -20,
+									"width": 80,
+									"height": 40,
+									"x": -40
+								}
+							}
+						},
+						"id": "3106ddb1-aed3-40cd-9723-264d4a5c0206"
+					},
+					{
+						"nodeType": "Entry",
+						"ports": {
+							"items": [
+								{
+									"group": "top",
+									"id": "port1"
+								},
+								{
+									"group": "left",
+									"id": "port2"
+								},
+								{
+									"group": "right",
+									"id": "port3"
+								},
+								{
+									"group": "bottom",
+									"id": "port4"
+								}
+							],
+							"groups": {
+								"top": {
+									"position": {
+										"args": {
+											
+										},
+										"name": "top"
+									},
+									"attrs": {
+										"circle": {
+											"style": {
+												"visibility": "hidden"
+											},
+											"strokeWidth": 1,
+											"magnet": true,
+											"stroke": "#31d0c6",
+											"r": 4,
+											"fill": "#fff"
+										}
+									}
+								},
+								"right": {
+									"position": {
+										"args": {
+											
+										},
+										"name": "right"
+									},
+									"attrs": {
+										"circle": {
+											"style": {
+												"visibility": "hidden"
+											},
+											"strokeWidth": 1,
+											"magnet": true,
+											"stroke": "#31d0c6",
+											"r": 4,
+											"fill": "#fff"
+										}
+									}
+								},
+								"left": {
+									"position": {
+										"args": {
+											
+										},
+										"name": "left"
+									},
+									"attrs": {
+										"circle": {
+											"style": {
+												"visibility": "hidden"
+											},
+											"strokeWidth": 1,
+											"magnet": true,
+											"stroke": "#31d0c6",
+											"r": 4,
+											"fill": "#fff"
+										}
+									}
+								},
+								"bottom": {
+									"position": {
+										"args": {
+											
+										},
+										"name": "bottom"
+									},
+									"attrs": {
+										"circle": {
+											"style": {
+												"visibility": "hidden"
+											},
+											"strokeWidth": 1,
+											"magnet": true,
+											"stroke": "#31d0c6",
+											"r": 4,
+											"fill": "#fff"
+										}
+									}
+								}
+							}
+						},
+						"zIndex": 1,
+						"shape": "flow-Entry",
+						"attrs": {
+							"text": {
+								"text": "入口"
+							},
+							"label": {
+								"text": "入口"
+							}
+						},
+						"position": {
+							"y": 225,
+							"x": 90
+						},
+						"id": "0aac86e3-9c10-4a40-b0b0-b5c587f0264f",
+						"size": {
+							"width": 52,
+							"height": 52
+						}
+					},
+					{
+						"nodeType": "Error",
+						"ports": {
+							"items": [
+								{
+									"group": "top",
+									"id": "in1"
+								},
+								{
+									"group": "bottom",
+									"id": "in2"
+								},
+								{
+									"group": "left",
+									"id": "out1"
+								},
+								{
+									"group": "right",
+									"id": "out2"
+								}
+							],
+							"groups": {
+								"top": {
+									"zIndex": 1,
+									"position": {
+										"name": "top"
+									},
+									"attrs": {
+										"circle": {
+											"style": {
+												"visibility": "hidden"
+											},
+											"strokeWidth": 1,
+											"magnet": true,
+											"stroke": "#31d0c6",
+											"r": 4,
+											"fill": "#fff"
+										}
+									}
+								},
+								"right": {
+									"zIndex": 1,
+									"position": {
+										"name": "right"
+									},
+									"attrs": {
+										"circle": {
+											"style": {
+												"visibility": "hidden"
+											},
+											"strokeWidth": 1,
+											"magnet": true,
+											"stroke": "#31d0c6",
+											"r": 4,
+											"fill": "#fff"
+										}
+									}
+								},
+								"bottom": {
+									"zIndex": 1,
+									"position": {
+										"name": "bottom"
+									},
+									"attrs": {
+										"circle": {
+											"style": {
+												"visibility": "hidden"
+											},
+											"strokeWidth": 1,
+											"magnet": true,
+											"stroke": "#31d0c6",
+											"r": 4,
+											"fill": "#fff"
+										}
+									}
+								},
+								"left": {
+									"zIndex": 1,
+									"position": {
+										"name": "left"
+									},
+									"attrs": {
+										"circle": {
+											"style": {
+												"visibility": "hidden"
+											},
+											"strokeWidth": 1,
+											"magnet": true,
+											"stroke": "#31d0c6",
+											"r": 4,
+											"fill": "#fff"
+										}
+									}
+								}
+							}
+						},
+						"zIndex": 2,
+						"shape": "flow-Error",
+						"attrs": {
+							"text": {
+								"text": "报错"
+							},
+							"label": {
+								"text": "报错"
+							}
+						},
+						"position": {
+							"y": 236,
+							"x": 210
+						},
+						"id": "b47f27e1-5704-44ff-9bb1-4b483a3bbfb7",
+						"size": {
+							"width": 70,
+							"height": 30
+						}
+					},
+					{
+						"nodeType": "Exit",
+						"ports": {
+							"items": [
+								{
+									"group": "top",
+									"id": "port1"
+								},
+								{
+									"group": "left",
+									"id": "port2"
+								},
+								{
+									"group": "right",
+									"id": "port3"
+								},
+								{
+									"group": "bottom",
+									"id": "port4"
+								}
+							],
+							"groups": {
+								"top": {
+									"position": {
+										"args": {
+											
+										},
+										"name": "top"
+									},
+									"attrs": {
+										"circle": {
+											"style": {
+												"visibility": "hidden"
+											},
+											"strokeWidth": 1,
+											"magnet": true,
+											"stroke": "#31d0c6",
+											"r": 4,
+											"fill": "#fff"
+										}
+									}
+								},
+								"right": {
+									"position": {
+										"args": {
+											
+										},
+										"name": "right"
+									},
+									"attrs": {
+										"circle": {
+											"style": {
+												"visibility": "hidden"
+											},
+											"strokeWidth": 1,
+											"magnet": true,
+											"stroke": "#31d0c6",
+											"r": 4,
+											"fill": "#fff"
+										}
+									}
+								},
+								"left": {
+									"position": {
+										"args": {
+											
+										},
+										"name": "left"
+									},
+									"attrs": {
+										"circle": {
+											"style": {
+												"visibility": "hidden"
+											},
+											"strokeWidth": 1,
+											"magnet": true,
+											"stroke": "#31d0c6",
+											"r": 4,
+											"fill": "#fff"
+										}
+									}
+								},
+								"bottom": {
+									"position": {
+										"args": {
+											
+										},
+										"name": "bottom"
+									},
+									"attrs": {
+										"circle": {
+											"style": {
+												"visibility": "hidden"
+											},
+											"strokeWidth": 1,
+											"magnet": true,
+											"stroke": "#31d0c6",
+											"r": 4,
+											"fill": "#fff"
+										}
+									}
+								}
+							}
+						},
+						"zIndex": 3,
+						"shape": "flow-Exit",
+						"attrs": {
+							"text": {
+								"text": "出口"
+							},
+							"label": {
+								"text": "出口"
+							}
+						},
+						"position": {
+							"y": 225,
+							"x": 360
+						},
+						"id": "9b12404f-26e4-48bd-9045-fed5370fb622",
+						"size": {
+							"width": 52,
+							"height": 52
+						}
+					}
+				]
+			},
+			"exp_dataTree": {
+				"0aac86e3-9c10-4a40-b0b0-b5c587f0264f": [
+					{
+						"index": 0,
+						"target": "",
+						"level": 0,
+						"parentLevel": -1,
+						"keyType": "Map",
+						"keyCast": "",
+						"parentIndex": -1,
+						"keyName": "value",
+						"keyValue": "",
+						"operLock": false,
+						"keyNameLock": false,
+						"selector": "",
+						"type": "Map",
+						"children": [
+							{
+								"index": 0,
+								"target": "",
+								"level": 1,
+								"parentLevel": 0,
+								"keyType": "Nothing",
+								"keyCast": "",
+								"parentIndex": 0,
+								"keyName": "",
+								"keyValue": "",
+								"operLock": false,
+								"keyNameLock": false,
+								"selector": "",
+								"type": "Map",
+								"children": []
+							}
+						]
+					}
+				]
+			},
+			"conditionEdge": {
+				
+			}
+		}
+	}
+}

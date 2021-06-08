@@ -1,0 +1,139 @@
+{
+  "Service": {
+    "id": "SerialNoService",
+    "description": "取号服务"
+  },
+  "Interface":{
+    "id": "GetCurrentNo",
+    "description": "获取新的门诊号"
+  },
+  "Arguments": {
+    "type": "Map",
+    "value": {
+      "IncreaseBit": {
+        "type": "Integer",
+        "value": 1
+      },
+      "KeyCode": {
+        "type": "String",
+        "value": "CLCNO"
+      },
+      "NumberType": {
+        "type": "String",
+        "value": "0002"
+      },
+      "DeptCode": {"type":"Nothing"},
+      "HospCode": {"type":"Nothing"},
+      "OperCode": {"type":"Nothing"},
+      "OrgCode": {"type":"Nothing"},
+      "ReOne": {
+        "type": "String",
+        "value": ""
+      },
+      "ReTwo": {
+        "type": "String",
+        "value": ""
+      }
+    }
+  },
+  "Results": {
+    "type": "Map",
+    "value": {
+      "Success": {
+        "type":"Nothing"
+      },
+      "data": {
+        "type": "Map",
+        "value": {
+          "IsCompress": {
+            "type": "Nothing"
+          },
+          "Value": {
+            "type": "Map",
+            "value": {
+              "Code": {
+                "type": "Nothing"
+              },
+              "Message": {
+                "type": "Nothing"
+              },
+              "No": {
+                "type": "Nothing"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "Mappings": [
+    {
+      "depends": {
+        "src": {
+          "id": "",
+          "type": "Entry",
+          "description": "挂号记录来源节点ID（从入口取值）",
+          "properties": {
+              "arguments": {
+              "type": "Map",
+              "value": {"type":"Nothing"}
+            }
+          }
+        }
+      },
+      "template": {
+        "type": "Map",
+        "value": {
+          "IncreaseBit": {
+            "type": "Integer",
+            "value": 1
+          },
+          "KeyCode": {
+            "type": "String",
+            "value": "CLCNO"
+          },
+          "NumberType": {
+            "type": "String",
+            "value": "0002"
+          },
+          "DeptCode": {
+            "type": "Result",
+            "value": {
+              "serviceNodeId": "$src",
+              "serviceKeyName": "Reg_Record/DEPT_ID"
+            }
+          },
+          "HospCode": {
+            "type": "Result",
+            "value": {
+              "serviceNodeId": "$src",
+              "serviceKeyName": "Reg_Record/HOSP_CODE"
+            }
+          },
+          "OperCode": {
+            "type": "Result",
+            "value": {
+              "serviceNodeId": "$src",
+              "serviceKeyName": "Reg_Record/CREATE_USER"
+            }
+          },
+          "OrgCode": {
+            "type": "Result",
+            "value": {
+              "serviceNodeId": "$src",
+              "serviceKeyName": "Reg_Record/ORG_CODE"
+            }
+          },
+          "ReOne": {
+            "type": "String",
+            "value": ""
+          },
+          "ReTwo": {
+            "type": "String",
+            "value": ""
+          }
+        }
+      }
+    }
+  ]
+}
