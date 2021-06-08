@@ -61,7 +61,7 @@ You must address the points described in the following lines before starting Ela
 
 
 ```css
-#对外
+#对外开放地址
 network.host: 0.0.0.0 
 # 对外开放访问端口
 http.port: 9200
@@ -75,7 +75,7 @@ cluster.initial_master_nodes: [ "node-name" ]
 
 由于Elasticsearch不能使用root用户打开，所以需要专门创建一个用户来启动Elasticsearch
 
-```ruby
+```shell
 $ adduser elastic
 #设置密码
 $ passwd elastic
