@@ -1,0 +1,1057 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>网络配置命令详解 · 大数据之路</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../1-git/gitbook目录如何自动生成.html" />
+    
+    
+    <link rel="prev" href="系统查看.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Linux</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Linux-root下的文件-anaconda-ks.cfg.html">
+            
+                <a href="Linux-root下的文件-anaconda-ks.cfg.html">
+            
+                    
+                    Linux Root下的文件 Anaconda Ks.Cfg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Systemd 入门教程：命令篇.html">
+            
+                <a href="Systemd 入门教程：命令篇.html">
+            
+                    
+                    Systemd 入门教程：命令篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="centos7 设置MongoDB开机自启动.html">
+            
+                <a href="centos7 设置MongoDB开机自启动.html">
+            
+                    
+                    Centos7 设置MongoDB开机自启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="es.html">
+            
+                <a href="es.html">
+            
+                    
+                    Es
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="linux操作系统.html">
+            
+                <a href="linux操作系统.html">
+            
+                    
+                    Linux操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="linux硬链接.html">
+            
+                <a href="linux硬链接.html">
+            
+                    
+                    Linux硬链接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="pyc和bak文件.html">
+            
+                <a href="pyc和bak文件.html">
+            
+                    
+                    Pyc和Bak文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="打入数据失败排查.html">
+            
+                <a href="打入数据失败排查.html">
+            
+                    
+                    打入数据失败排查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="操作.html">
+            
+                <a href="操作.html">
+            
+                    
+                    操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="系统查看.html">
+            
+                <a href="系统查看.html">
+            
+                    
+                    系统查看
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.12" data-path="网络配置命令详解.html">
+            
+                <a href="网络配置命令详解.html">
+            
+                    
+                    网络配置命令详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Git</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../1-git/gitbook目录如何自动生成.html">
+            
+                <a href="../1-git/gitbook目录如何自动生成.html">
+            
+                    
+                    Gitbook目录如何自动生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../1-git/git相关.html">
+            
+                <a href="../1-git/git相关.html">
+            
+                    
+                    Git相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">承影</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    Data
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" >
+            
+                <span>
+            
+                    
+                    Config
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.1" >
+            
+                <span>
+            
+                    
+                    SQLAddress
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.2" >
+            
+                <span>
+            
+                    
+                    ServiceAddress
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" >
+            
+                <span>
+            
+                    
+                    Graph
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" >
+            
+                <span>
+            
+                    
+                    SQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.3.1" >
+            
+                <span>
+            
+                    
+                    OutRegistrationRepository
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" >
+            
+                <span>
+            
+                    
+                    Service
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.4.1" >
+            
+                <span>
+            
+                    
+                    DoctorStoodService
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.2" >
+            
+                <span>
+            
+                    
+                    DoctorsPoolServices
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3" >
+            
+                <span>
+            
+                    
+                    SerialNoService
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" >
+            
+                <span>
+            
+                    
+                    Page
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" >
+            
+                <span>
+            
+                    
+                    Property
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java提高</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../2-Java提高/HTTP 协议的 8 种请求类型介绍.html">
+            
+                <a href="../2-Java提高/HTTP 协议的 8 种请求类型介绍.html">
+            
+                    
+                    HTTP 协议的 8 种请求类型介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../2-Java提高/什么是CRUD( What is CRUD">
+            
+                <span>
+            
+                    
+                    什么是CRUD( What Is CRUD)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Springboot</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../3-springboot/Spring Boot常用注解- 声明Bean的注解.html">
+            
+                <a href="../3-springboot/Spring Boot常用注解- 声明Bean的注解.html">
+            
+                    
+                    Spring Boot常用注解  声明Bean的注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../3-springboot/springboot使用MongoTemplate进行增删改查.html">
+            
+                <a href="../3-springboot/springboot使用MongoTemplate进行增删改查.html">
+            
+                    
+                    Springboot使用MongoTemplate进行增删改查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../3-springboot/有了基本数据类型，为什么还需要包装类型.html">
+            
+                <a href="../3-springboot/有了基本数据类型，为什么还需要包装类型.html">
+            
+                    
+                    有了基本数据类型，为什么还需要包装类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../3-springboot/统一异常处理与统一结果返回.html">
+            
+                <a href="../3-springboot/统一异常处理与统一结果返回.html">
+            
+                    
+                    统一异常处理与统一结果返回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../3-springboot/自定义拦截器实现接口校验.html">
+            
+                <a href="../3-springboot/自定义拦截器实现接口校验.html">
+            
+                    
+                    自定义拦截器实现接口校验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据存储相关</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../4-数据存储相关/MongoDB操作.html">
+            
+                <a href="../4-数据存储相关/MongoDB操作.html">
+            
+                    
+                    MongoDB操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../4-数据存储相关/es的使用.html">
+            
+                <a href="../4-数据存储相关/es的使用.html">
+            
+                    
+                    Es的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../4-数据存储相关/kafka操作.html">
+            
+                <a href="../4-数据存储相关/kafka操作.html">
+            
+                    
+                    Kafka操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../4-数据存储相关/mysql设计规范.html">
+            
+                <a href="../4-数据存储相关/mysql设计规范.html">
+            
+                    
+                    Mysql设计规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">监控相关</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../8-监控相关/prometheus配套的各个数据库监控部署.html">
+            
+                <a href="../8-监控相关/prometheus配套的各个数据库监控部署.html">
+            
+                    
+                    Prometheus配套的各个数据库监控部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../8-监控相关/windows服务监控.html">
+            
+                <a href="../8-监控相关/windows服务监控.html">
+            
+                    
+                    Windows服务监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../8-监控相关/安装node_exporter.html">
+            
+                <a href="../8-监控相关/安装node_exporter.html">
+            
+                    
+                    安装Node Exporter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../8-监控相关/搭建EFK+logstash日志分析系统.html">
+            
+                <a href="../8-监控相关/搭建EFK+logstash日志分析系统.html">
+            
+                    
+                    搭建EFK+Logstash日志分析系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../8-监控相关/数据库监控.html">
+            
+                <a href="../8-监控相关/数据库监控.html">
+            
+                    
+                    数据库监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../8-监控相关/独立部署Prometheus Alertmanager Granfan监控平台.html">
+            
+                <a href="../8-监控相关/独立部署Prometheus Alertmanager Granfan监控平台.html">
+            
+                    
+                    独立部署Prometheus Alertmanager Granfan监控平台
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../8-监控相关/部署Prometheus+Alertmanager+Granfan监控平台.html">
+            
+                <a href="../8-监控相关/部署Prometheus+Alertmanager+Granfan监控平台.html">
+            
+                    
+                    部署Prometheus+Alertmanager+Granfan监控平台
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="../8-监控相关/配置alertmanager的短信和邮件告警.html">
+            
+                <a href="../8-监控相关/配置alertmanager的短信和邮件告警.html">
+            
+                    
+                    配置Alertmanager的短信和邮件告警
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">测试相关</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../9-测试相关/fiddler使用手册.html">
+            
+                <a href="../9-测试相关/fiddler使用手册.html">
+            
+                    
+                    Fiddler使用手册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../9-测试相关/fiddler使用说明.html">
+            
+                <a href="../9-测试相关/fiddler使用说明.html">
+            
+                    
+                    Fiddler使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../9-测试相关/postman.html">
+            
+                <a href="../9-测试相关/postman.html">
+            
+                    
+                    Postman
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >网络配置命令详解</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <ul>
+<li>ip</li>
+</ul>
+<pre><code class="lang-shell">ip(&#x9009;&#x9879;)(&#x53C2;&#x6570;)
+Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }
+       ip [ -force ] -batch filename
+</code></pre>
+<pre><code class="lang-shell">OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |
+        -h[uman-readable] | -iec |
+        -f[amily] { inet | inet6 | ipx | dnet | bridge | link } |
+        -4 | -6 | -I | -D | -B | -0 |
+        -l[oops] { maximum-addr-flush-attempts } |
+        -o[neline] | -t[imestamp] | -ts[hort] | -b[atch] [filename] |
+        -rc[vbuf] [size] | -n[etns] name | -a[ll] }
+
+&#x7F51;&#x7EDC;&#x5BF9;&#x8C61;&#xFF1A;&#x6307;&#x5B9A;&#x8981;&#x7BA1;&#x7406;&#x7684;&#x7F51;&#x7EDC;&#x5BF9;&#x8C61;&#xFF1B;
+&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#xFF1A;&#x5BF9;&#x6307;&#x5B9A;&#x7684;&#x7F51;&#x7EDC;&#x5BF9;&#x8C61;&#x5B8C;&#x6210;&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#xFF1B;
+help&#xFF1A;&#x663E;&#x793A;&#x7F51;&#x7EDC;&#x5BF9;&#x8C61;&#x652F;&#x6301;&#x7684;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;&#x7684;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#x3002;
+</code></pre>
+<pre><code class="lang-shell">OBJECT := { link | address | addrlabel | route | rule | neigh | ntable |
+       tunnel | tuntap | maddress | mroute | mrule | monitor | xfrm |
+       netns | l2tp | macsec | tcp_metrics | token }
+
+-V&#xFF1A;&#x663E;&#x793A;&#x6307;&#x4EE4;&#x7248;&#x672C;&#x4FE1;&#x606F;&#xFF1B;
+-s&#xFF1A;&#x8F93;&#x51FA;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x4FE1;&#x606F;&#xFF1B;
+-f&#xFF1A;&#x5F3A;&#x5236;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x534F;&#x8BAE;&#x65CF;&#xFF1B;
+-4&#xFF1A;&#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x7684;&#x7F51;&#x7EDC;&#x5C42;&#x534F;&#x8BAE;&#x662F;IPv4&#x534F;&#x8BAE;&#xFF1B;
+-6&#xFF1A;&#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x7684;&#x7F51;&#x7EDC;&#x5C42;&#x534F;&#x8BAE;&#x662F;IPv6&#x534F;&#x8BAE;&#xFF1B;
+-0&#xFF1A;&#x8F93;&#x51FA;&#x4FE1;&#x606F;&#x6BCF;&#x6761;&#x8BB0;&#x5F55;&#x8F93;&#x51FA;&#x4E00;&#x884C;&#xFF0C;&#x5373;&#x4F7F;&#x5185;&#x5BB9;&#x8F83;&#x591A;&#x4E5F;&#x4E0D;&#x6362;&#x884C;&#x663E;&#x793A;&#xFF1B;
+-r&#xFF1A;&#x663E;&#x793A;&#x4E3B;&#x673A;&#x65F6;&#xFF0C;&#x4E0D;&#x4F7F;&#x7528;IP&#x5730;&#x5740;&#xFF0C;&#x800C;&#x4F7F;&#x7528;&#x4E3B;&#x673A;&#x7684;&#x57DF;&#x540D;&#x3002;
+</code></pre>
+<pre><code class="lang-shell">ip link show                     # &#x663E;&#x793A;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x4FE1;&#x606F;
+ip link set eth0 up             # &#x5F00;&#x542F;&#x7F51;&#x5361;
+ip link set eth0 down            # &#x5173;&#x95ED;&#x7F51;&#x5361;
+ip link set eth0 promisc on      # &#x5F00;&#x542F;&#x7F51;&#x5361;&#x7684;&#x6DF7;&#x5408;&#x6A21;&#x5F0F;
+ip link set eth0 promisc offi    # &#x5173;&#x95ED;&#x7F51;&#x5361;&#x7684;&#x6DF7;&#x4E2A;&#x6A21;&#x5F0F;
+ip link set eth0 txqueuelen 1200 # &#x8BBE;&#x7F6E;&#x7F51;&#x5361;&#x961F;&#x5217;&#x957F;&#x5EA6;
+ip link set eth0 mtu 1400           # &#x8BBE;&#x7F6E;&#x7F51;&#x5361;&#x6700;&#x5927;&#x4F20;&#x8F93;&#x5355;&#x5143;
+ip addr show                       # &#x663E;&#x793A;&#x7F51;&#x5361;IP&#x4FE1;&#x606F;
+ip addr add 192.168.0.1/24 dev eth0 # &#x8BBE;&#x7F6E;eth0&#x7F51;&#x5361;IP&#x5730;&#x5740;192.168.0.1
+ip addr del 192.168.0.1/24 dev eth0 # &#x5220;&#x9664;eth0&#x7F51;&#x5361;IP&#x5730;&#x5740;
+
+ip route show                             # &#x663E;&#x793A;&#x7CFB;&#x7EDF;&#x8DEF;&#x7531;
+ip route add default via 192.168.1.254   # &#x8BBE;&#x7F6E;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x8DEF;&#x7531;
+ip route list                             # &#x67E5;&#x770B;&#x8DEF;&#x7531;&#x4FE1;&#x606F;
+ip route add 192.168.4.0/24  via  192.168.0.254 dev eth0 # &#x8BBE;&#x7F6E;192.168.4.0&#x7F51;&#x6BB5;&#x7684;&#x7F51;&#x5173;&#x4E3A;192.168.0.254,&#x6570;&#x636E;&#x8D70;eth0&#x63A5;&#x53E3;
+ip route add default via  192.168.0.254  dev eth0        # &#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x7F51;&#x5173;&#x4E3A;192.168.0.254
+ip route del 192.168.4.0/24   # &#x5220;&#x9664;192.168.4.0&#x7F51;&#x6BB5;&#x7684;&#x7F51;&#x5173;
+ip route del default          # &#x5220;&#x9664;&#x9ED8;&#x8BA4;&#x8DEF;&#x7531;
+ip route delete 192.168.1.0/24 dev eth0 # &#x5220;&#x9664;&#x8DEF;&#x7531;
+</code></pre>
+<ul>
+<li><p>route</p>
+<pre><code class="lang-shell">&#x6DFB;&#x52A0;&#x5220;&#x9664;&#x9ED8;&#x8BA4;&#x8DEF;&#x7531;&#xFF1A;
+1.route del default gw 82.17.68.254
+2.route add default gw 82.17.68.54
+</code></pre>
+</li>
+</ul>
+<pre><code class="lang-shell">route add &#x2013;net 180.200.0.0 netmask 255.255.0.0 gw 10.200.6.201 dev eth0 metric 1
+
+route add&#xFF1A;&#x8868;&#x793A;&#x589E;&#x52A0;&#x8DEF;&#x7531;&#xFF0C;&#x82E5;&#x8981;&#x5220;&#x9664;&#x8DEF;&#x7531;&#xFF0C;&#x5219;&#x4E3A;route del
+-host/-net&#xFF1A;&#x8868;&#x793A;&#x8DEF;&#x7531;&#x76EE;&#x6807;&#x662F;&#x4E3B;&#x673A;&#x8FD8;&#x662F;&#x7F51;&#x6BB5;
+netmask&#xFF1A;&#x8868;&#x793A;&#x8DEF;&#x7531;&#x76EE;&#x6807;&#x4E3A;&#x7F51;&#x6BB5;&#x65F6;&#x624D;&#x4F1A;&#x4F7F;&#x7528;&#x5230;&#xFF0C;&#x8868;&#x793A;&#x8DEF;&#x7531;&#x76EE;&#x6807;&#x7F51;&#x6BB5;&#x7684;&#x5B50;&#x7F51;&#x63A9;&#x7801;
+gw&#xFF1A;&#x540E;&#x9762;&#x8DDF;&#x4E0B;&#x4E00;&#x8DF3;&#x7F51;&#x5173;&#xFF1B;
+dev&#xFF1A;&#x540E;&#x9762;&#x8DDF;&#x5177;&#x4F53;&#x8BBE;&#x5907;&#x540D;&#xFF0C;&#x8868;&#x793A;&#x8DEF;&#x7531;&#x662F;&#x4ECE;&#x8BE5;&#x8BBE;&#x5907;&#x51FA;&#x53BB;
+metric&#xFF1A;&#x5EA6;&#x91CF;&#x503C;&#xFF08;&#x8303;&#x56F4;&#x662F; 1 ~ 9999&#xFF09;&#xFF0C;&#x5B83;&#x7528;&#x6765;&#x5728;&#x8DEF;&#x7531;&#x8868;&#x91CC;&#x7684;&#x591A;&#x4E2A;&#x8DEF;&#x7531;&#x4E2D;&#x9009;&#x62E9;&#x4E0E;&#x8F6C;&#x53D1;&#x5305;&#x4E2D;&#x7684;&#x76EE;&#x6807;&#x5730;&#x5740;&#x6700;&#x4E3A;&#x5339;&#x914D;&#x7684;&#x8DEF;&#x7531;&#x3002;&#x6240;&#x9009;&#x7684;&#x8DEF;&#x7531;&#x5177;&#x6709;&#x6700;&#x5C11;&#x7684;&#x8DC3;&#x70B9;&#x6570;&#x3002;&#x8DC3;&#x70B9;&#x6570;&#x80FD;&#x591F;&#x53CD;&#x6620;&#x8DC3;&#x70B9;&#x7684;&#x6570;&#x91CF;&#x3001;&#x8DEF;&#x5F84;&#x7684;&#x901F;&#x5EA6;&#x3001;&#x8DEF;&#x5F84;&#x53EF;&#x9760;&#x6027;&#x3001;&#x8DEF;&#x5F84;&#x541E;&#x5410;&#x91CF;&#x4EE5;&#x53CA;&#x7BA1;&#x7406;&#x5C5E;&#x6027;
+</code></pre>
+<ul>
+<li><p>nmcli</p>
+<p>```shell
+&#x6CE8;:<strong>
+</strong>1.centos8&#x91C7;&#x7528;nmcli&#x7EDF;&#x4E00;&#x7BA1;&#x7406;&#x7F51;&#x7EDC; &#xFF0C; &#x624B;&#x52A8;&#x66F4;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x53EA;&#x80FD;&#x4E34;&#x65F6;&#x751F;&#x6548;<strong>
+</strong>2.&#x6267;&#x884C;&#x5B8C;nmcli&#x547D;&#x4EE4;&#x540E;&#xFF0C;&#x9700;&#x91C7;&#x7528; &#x4F8B;&#x5982;nmcli connection up ens18 &#xFF08;&#x9488;&#x5BF9;&#x67D0;&#x7F51;&#x5361;&#x751F;&#x6548;&#xFF09;&#x6216;&#x8005; nmcli networking off ; nmcli networking on &#x91CD;&#x542F;&#x7F51;&#x7EDC;&#x670D;&#x52A1;**</p>
+<p>&#x67E5;&#x770B;&#x7F51;&#x7EDC;&#x4FE1;&#x606F;
+nmcli</p>
+<p>&#x6DFB;&#x52A0;ipv4 ip
+nmcli connection modify ens18 +ipv4.addresses 10.61.74.56/23
+&#x5220;&#x9664;ipv4 ip
+nmcli connection modify ens18 -ipv4.addresses 10.61.74.56/23</p>
+<p>&#x5F00;&#x542F;&#x7F51;&#x5361;
+nmcli connection up ens18
+&#x5173;&#x95ED;&#x7F51;&#x5361;
+nmcli connection down ens18</p>
+<p>&#x6DFB;&#x52A0;ipv6 ip
+nmcli connection modify ens18 +ipv6.addresses fe81::/64
+&#x5220;&#x9664;ipv6 ip
+nmcli connection modify ens18 -ipv6.addresses fe81::/64</p>
+<p>&#x6DFB;&#x52A0;ipv4&#x8DEF;&#x7531;
+nmcli connection modify ens18 +ipv4.routes &quot;10.61.74.57/23 10.61.74.1 &quot;
+nmcli connection up ens18</p>
+</li>
+</ul>
+<pre><code>&#x5220;&#x9664;ipv4&#x8DEF;&#x7531;
+nmcli connection modify ens18 -ipv4.routes &quot;10.61.74.57/23 10.61.74.1 &quot;
+
+&#x6DFB;&#x52A0;ipv6&#x8DEF;&#x7531;
+nmcli connection modify ens18 +ipv6.routes fe81::/64
+&#x5220;&#x9664;ipv6&#x8DEF;&#x7531;
+nmcli connection modify ens18 -ipv6.routes fe81::/64
+
+&#x6DFB;&#x52A0;ipv4 dns
+nmcli connection modify ens18 +ipv4.dns  200.200.10.199
+
+&#x5220;&#x9664;ipv4 dns
+nmcli connection modify ens18 -ipv4.dns  200.200.10.199
+
+&#x6DFB;&#x52A0;ipv6 dns
+nmcli connection modify ens18 +ipv6.dns 2001:0db8:3c4d:0015:0000:0000:1a2f:1a2b
+
+&#x5220;&#x9664;ipv6 dns
+nmcli connection modify ens18 -ipv6.dns 2001:0db8:3c4d:0015:0000:0000:1a2f:1a2b
+
+&#x914D;&#x7F6E;
+
+nmcli connection add type ethernet ifname ens19 con-name ens19 ipv4.addresses 192.168.44.55/16 ipv4.gateway 192.168.44.1 ipv4.method manual
+
+&#x67E5;&#x770B;&#x8DEF;&#x7531;&#x914D;&#x7F6E;
+
+route -n
+
+&#x4FEE;&#x6539;&#x8DEF;&#x7531;&#x5BF9;&#x5E94;&#x7684;&#x5EA6;&#x91CF;&#x503C;
+
+nmcli connection modify ens19 ipv4.routes &apos;0.0.0.0/0 10.61.74.25 155&apos;
+```
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="系统查看.html" class="navigation navigation-prev " aria-label="Previous page: 系统查看">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../1-git/gitbook目录如何自动生成.html" class="navigation navigation-next " aria-label="Next page: Gitbook目录如何自动生成">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"网络配置命令详解","level":"1.12","depth":1,"next":{"title":"Gitbook目录如何自动生成","level":"2.1","depth":1,"path":"1-git/gitbook目录如何自动生成.md","ref":"1-git/gitbook目录如何自动生成.md","articles":[]},"previous":{"title":"系统查看","level":"1.11","depth":1,"path":"0-linux/系统查看.md","ref":"0-linux/系统查看.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据之路","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"0-linux/网络配置命令详解.md","mtime":"2021-03-19T02:29:15.436Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-08T07:31:15.822Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

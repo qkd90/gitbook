@@ -1,0 +1,699 @@
+{
+  "Service": {
+    "id": "OutRegistrationRepository",
+    "description": "门诊挂号"
+  },
+  "Interface":{
+    "id": "Insert",
+    "description": "新增挂号记录"
+  },
+  "Command": "INSERT INTO REG.REG_RECORD(ID,ORG_NAME,ORG_CODE,HOSP_NAME,HOSP_CODE,PATIENT_ID,PATIENT_NAME,SEX,AGE,REG_TYPE,REG_SUB,OUTPATIENT_NO,CARD_NO,CARD_CODE,DEPT_ID,DEPT_NAME,SITLEVEL_ID,SITLEVEL_NAME,DOCTOR_ID,DOCTOR_NAME,TOTAL_MONEY,REG_DATE,REG_TIME,QUEUE_NO,IS_APPOINT,REGSOURCE,STATUS,PAY_STATUS,CREATE_USER,CREATE_DATE,IS_DELETE,ID_NUMBER,CREATE_USERNAME,ASSIGNEDUNITNAME,ASSIGNEDUNITCODE,PREFERENTIALSCHEMENAME,PREFERENTIALSCHEMECODE,INSURANCETYPECODE,INSURANCETYPENAME,ISREVISIT,PATTYPECODE,PATTYPENAME,ORDERNUMBER,START_TIME,END_TIME,SOURSE_ID) VALUES (@ID,@ORG_NAME,@ORG_CODE,@HOSP_NAME,@HOSP_CODE,@PATIENT_ID,@PATIENT_NAME,@SEX,@AGE,@REG_TYPE,@REG_SUB,@OUTPATIENT_NO,@CARD_NO,@CARD_CODE,@DEPT_ID,@DEPT_NAME,@SITLEVEL_ID,@SITLEVEL_NAME,@DOCTOR_ID,@DOCTOR_NAME,@TOTAL_MONEY,to_date(@REG_DATE,'yyyy-mm-dd'),@REG_TIME,@QUEUE_NO,@IS_APPOINT,@REGSOURCE,@STATUS,@PAY_STATUS,@CREATE_USER,to_date(@CREATE_DATE,'yyyy-mm-dd hh24:mi:ss'),@IS_DELETE,@ID_NUMBER,@CREATE_USERNAME,@ASSIGNEDUNITNAME,@ASSIGNEDUNITCODE,@PREFERENTIALSCHEMENAME,@PREFERENTIALSCHEMECODE,@INSURANCETYPECODE,@INSURANCETYPENAME,@ISREVISIT,@PATTYPECODE,@PATTYPENAME,@ORDERNUMBER,@START_TIME,@END_TIME,@SOURSE_ID)",
+  "Arguments":{
+      "type": "Map",
+      "value": {
+        "ID": {
+          "type": "UUID"
+        },
+        "ORG_NAME": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/ORG_NAME"
+          }
+        },
+        "ORG_CODE": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/ORG_CODE"
+          }
+        },
+        "HOSP_NAME": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/HOSP_NAME"
+          }
+        },
+        "HOSP_CODE": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/HOSP_CODE"
+          }
+        },
+        "PATIENT_ID": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/PATIENT_ID"
+          }
+        },
+        "PATIENT_NAME": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/PATIENT_NAME"
+          }
+        },
+        "SEX": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/SEX"
+          }
+        },
+        "AGE": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/AGE"
+          }
+        },
+        "REG_TYPE": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/REG_TYPE"
+          }
+        },
+        "REG_SUB": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/REG_SUB"
+          }
+        },
+        "OUTPATIENT_NO": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/OUTPATIENT_NO"
+          }
+        },
+        "CARD_NO": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/CARD_NO"
+          }
+        },
+        "CARD_CODE": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/CARD_CODE"
+          }
+        },
+        "DEPT_ID": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/DEPT_ID"
+          }
+        },
+        "DEPT_NAME": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/DEPT_NAME"
+          }
+        },
+        "SITLEVEL_ID": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/SITLEVEL_ID"
+          }
+        },
+        "SITLEVEL_NAME": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/SITLEVEL_NAME"
+          }
+        },
+        "DOCTOR_ID": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/DOCTOR_ID"
+          }
+        },
+        "DOCTOR_NAME": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/DOCTOR_NAME"
+          }
+        },
+        "TOTAL_MONEY": {
+          "type": "Result",
+          "value": {
+            "target": "$use_pool",
+            "selector": "data/Value/Reg_Doctors_Pool/REGMONEY"
+          }
+        },
+        "REG_DATE": {
+          "type": "Datetime",
+          "cast": "Date",
+          "value": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/REG_DATE"
+            }
+          }
+        },
+        "REG_TIME": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/REG_TIME"
+          }
+        },
+        "QUEUE_NO": {
+          "type": "Result",
+          "value": {
+            "target": "$use_pool",
+            "selector": "data/Value/Reg_Doctors_Pool/QUENEN_NO"
+          }
+        },
+        "IS_APPOINT": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/IS_APPOINT"
+          }
+        },
+        "REGSOURCE": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/REGSOURCE"
+          }
+        },
+        "STATUS": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/STATUS"
+          }
+        },
+        "PAY_STATUS": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/PAY_STATUS"
+          }
+        },
+        "CREATE_USER": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/CREATE_USER"
+          }
+        },
+        "CREATE_DATE": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/CREATE_DATE"
+          }
+        },
+        "IS_DELETE": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/IS_DELETE"
+          }
+        },
+        "ID_NUMBER": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/ID_NUMBER"
+          }
+        },
+        "CREATE_USERNAME": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/CREATE_USERNAME"
+          }
+        },
+        "ASSIGNEDUNITNAME": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/ASSIGNEDUNITNAME"
+          }
+        },
+        "ASSIGNEDUNITCODE": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/ASSIGNEDUNITCODE"
+          }
+        },
+        "PREFERENTIALSCHEMENAME": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/PREFERENTIALSCHEMENAME"
+          }
+        },
+        "PREFERENTIALSCHEMECODE": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/PREFERENTIALSCHEMECODE"
+          }
+        },
+        "INSURANCETYPECODE": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/INSURANCETYPECODE"
+          }
+        },
+        "INSURANCETYPENAME": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/INSURANCETYPENAME"
+          }
+        },
+        "ISREVISIT": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/ISREVISIT"
+          }
+        },
+        "PATTYPECODE": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/PATTYPECODE"
+          }
+        },
+        "PATTYPENAME": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/PATTYPENAME"
+          }
+        },
+        "ORDERNUMBER": {
+          "type": "Result",
+          "value": {
+            "target": "$entry",
+            "selector": "Reg_Record/ORDERNUMBER"
+          }
+        },
+        "START_TIME": {
+          "type": "Result",
+          "value": {
+            "target": "$use_pool",
+            "selector": "data/Value/Reg_Doctors_Pool/START_TIME"
+          }
+        },
+        "END_TIME": {
+          "type": "Result",
+          "value": {
+            "target": "$use_pool",
+            "selector": "data/Value/Reg_Doctors_Pool/END_TIME"
+          }
+        },
+        "SOURSE_ID": {
+          "type": "Result",
+          "value": {
+            "target": "$use_pool",
+            "selector": "data/Value/Reg_Doctors_Pool/ID"
+          }
+        }
+      }
+    },
+  "Results": {
+    "type": "Nothing"
+  },
+  "Mappings": [
+    {
+      "depends": {
+        "entry": {
+          "id": "",
+          "type": "Entry",
+          "properties": {
+            "arguments": {
+              "type": "Map",
+              "value": {}
+            }
+          }
+        },
+        "use_pool": {
+          "type": "Service",
+          "id": "",
+          "properties": {
+            "address": "192.168.18.70:9101/api/ServiceProxy/SendRequest",
+            "service": {
+              "id": "DoctorsPoolServices",
+              "description": "医生号源池"
+            },
+            "api": {
+              "id": "UseDorctorPool",
+              "description": "占用号源"
+            }
+          }
+        }
+      },
+      "template": {
+        "type": "Map",
+        "value": {
+          "ID": {
+            "type": "UUID"
+          },
+          "ORG_NAME": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/ORG_NAME"
+            }
+          },
+          "ORG_CODE": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/ORG_CODE"
+            }
+          },
+          "HOSP_NAME": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/HOSP_NAME"
+            }
+          },
+          "HOSP_CODE": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/HOSP_CODE"
+            }
+          },
+          "PATIENT_ID": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/PATIENT_ID"
+            }
+          },
+          "PATIENT_NAME": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/PATIENT_NAME"
+            }
+          },
+          "SEX": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/SEX"
+            }
+          },
+          "AGE": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/AGE"
+            }
+          },
+          "REG_TYPE": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/REG_TYPE"
+            }
+          },
+          "REG_SUB": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/REG_SUB"
+            }
+          },
+          "OUTPATIENT_NO": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/OUTPATIENT_NO"
+            }
+          },
+          "CARD_NO": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/CARD_NO"
+            }
+          },
+          "CARD_CODE": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/CARD_CODE"
+            }
+          },
+          "DEPT_ID": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/DEPT_ID"
+            }
+          },
+          "DEPT_NAME": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/DEPT_NAME"
+            }
+          },
+          "SITLEVEL_ID": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/SITLEVEL_ID"
+            }
+          },
+          "SITLEVEL_NAME": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/SITLEVEL_NAME"
+            }
+          },
+          "DOCTOR_ID": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/DOCTOR_ID"
+            }
+          },
+          "DOCTOR_NAME": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/DOCTOR_NAME"
+            }
+          },
+          "TOTAL_MONEY": {
+            "type": "Result",
+            "value": {
+              "target": "$use_pool",
+              "selector": "data/Value/Reg_Doctors_Pool/REGMONEY"
+            }
+          },
+          "REG_DATE": {
+            "type": "Datetime",
+            "cast": "Date",
+            "value": {
+              "type": "Result",
+              "value": {
+                "target": "$entry",
+                "selector": "Reg_Record/REG_DATE"
+              }
+            }
+          },
+          "REG_TIME": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/REG_TIME"
+            }
+          },
+          "QUEUE_NO": {
+            "type": "Result",
+            "value": {
+              "target": "$use_pool",
+              "selector": "data/Value/Reg_Doctors_Pool/QUENEN_NO"
+            }
+          },
+          "IS_APPOINT": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/IS_APPOINT"
+            }
+          },
+          "REGSOURCE": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/REGSOURCE"
+            }
+          },
+          "STATUS": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/STATUS"
+            }
+          },
+          "PAY_STATUS": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/PAY_STATUS"
+            }
+          },
+          "CREATE_USER": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/CREATE_USER"
+            }
+          },
+          "CREATE_DATE": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/CREATE_DATE"
+            }
+          },
+          "IS_DELETE": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/IS_DELETE"
+            }
+          },
+          "ID_NUMBER": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/ID_NUMBER"
+            }
+          },
+          "CREATE_USERNAME": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/CREATE_USERNAME"
+            }
+          },
+          "ASSIGNEDUNITNAME": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/ASSIGNEDUNITNAME"
+            }
+          },
+          "ASSIGNEDUNITCODE": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/ASSIGNEDUNITCODE"
+            }
+          },
+          "PREFERENTIALSCHEMENAME": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/PREFERENTIALSCHEMENAME"
+            }
+          },
+          "PREFERENTIALSCHEMECODE": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/PREFERENTIALSCHEMECODE"
+            }
+          },
+          "INSURANCETYPECODE": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/INSURANCETYPECODE"
+            }
+          },
+          "INSURANCETYPENAME": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/INSURANCETYPENAME"
+            }
+          },
+          "ISREVISIT": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/ISREVISIT"
+            }
+          },
+          "PATTYPECODE": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/PATTYPECODE"
+            }
+          },
+          "PATTYPENAME": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/PATTYPENAME"
+            }
+          },
+          "ORDERNUMBER": {
+            "type": "Result",
+            "value": {
+              "target": "$entry",
+              "selector": "Reg_Record/ORDERNUMBER"
+            }
+          },
+          "START_TIME": {
+            "type": "Result",
+            "value": {
+              "target": "$use_pool",
+              "selector": "data/Value/Reg_Doctors_Pool/START_TIME"
+            }
+          },
+          "END_TIME": {
+            "type": "Result",
+            "value": {
+              "target": "$use_pool",
+              "selector": "data/Value/Reg_Doctors_Pool/END_TIME"
+            }
+          },
+          "SOURSE_ID": {
+            "type": "Result",
+            "value": {
+              "target": "$use_pool",
+              "selector": "data/Value/Reg_Doctors_Pool/ID"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

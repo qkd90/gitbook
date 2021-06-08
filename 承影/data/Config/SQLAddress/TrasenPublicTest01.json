@@ -1,9 +1,0 @@
-{
-  "id": "TrasenPublicTest01",
-  "description": "创星SQL公网测试01",
-  "type": "Oracle",
-  "address": "192.168.18.68:1521",
-  "username": "system",
-  "password": "Abc,.123",
-  "service": "PDB01"
-}

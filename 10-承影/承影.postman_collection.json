@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "974cc66c-1639-404a-a2d4-70ce1beb7f94",
+		"name": "承影",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "数据清单",
+			"item": [
+				{
+					"name": "获取sql服务清单",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ServiceName\":\"OutRegistrationRepository\",\r\n    \"InterfaceName\":\"IsExists\",\r\n    \"RepositoryType\":\"Service\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/storage/flow/event/service_list/read/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"storage",
+								"flow",
+								"event",
+								"service_list",
+								"read",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "错误码测试",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/city?cityName=",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"city"
+					],
+					"query": [
+						{
+							"key": "cityName",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "服务地址查询",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/storage/flow/event/service_address/read/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"storage",
+						"flow",
+						"event",
+						"service_address",
+						"read",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sql地址查询",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8080/storage/flow/event/sql_service_address/read/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"storage",
+						"flow",
+						"event",
+						"sql_service_address",
+						"read",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "读取流程图",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"flow_simple\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/storage/flow/event/graph/read/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"storage",
+						"flow",
+						"event",
+						"graph",
+						"read",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "服务出入参查询",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ServiceName\":\"DoctorStoodService\",\r\n    \"InterfaceName\":\"SaveRegTriageRecord\",\r\n    \"DocumentType\":\"Result\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/storage/flow/event/service",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"storage",
+						"flow",
+						"event",
+						"service"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取SQL服务文档",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ServiceName\":\"OutRegistrationRepository\",\r\n    \"InterfaceName\":\"Insert\",\r\n    \"DocumentType\":\"Result\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/storage/flow/event/sql_service_document/read/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"storage",
+						"flow",
+						"event",
+						"sql_service_document",
+						"read",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取流程图清单",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8080/storage/flow/event/graph_list/read",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"storage",
+						"flow",
+						"event",
+						"graph_list",
+						"read"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,6 +1,0 @@
-{
-  "id": "TrasenPublicTest01",
-  "description": "创星微服务公网01",
-  "address": "192.168.18.70:9101/api/ServiceProxy/SendRequest"
-}
-

@@ -1,0 +1,275 @@
+{
+  "Service": {
+    "id": "DoctorsPoolServices",
+    "description": "医生号源池"
+  },
+  "Interface":{
+    "id": "UseDorctorPool",
+    "description": "占用号源"
+  },
+  "Arguments": {
+      "type": "Map",
+      "value": {
+        "ORG_CODE": {"type":"Nothing"},
+        "HOSP_CODE": {"type":"Nothing"},
+        "DEPT_ID": {"type":"Nothing"},
+        "DEPT_NAME": {"type":"Nothing"},
+        "ORDER_DATE": {"type":"Nothing"},
+        "TIME_QUANTUM": {"type":"Nothing"},
+        "DOC_LEVEL": {"type":"Nothing"},
+        "DOC_LEVEL_NAME": {"type":"Nothing"},
+        "DOCTOR_ID": {"type":"Nothing"},
+        "DOCTOR_NAME": {"type":"Nothing"},
+        "ISUSE": {
+          "type": "Integer",
+          "value": 1
+        },
+        "QUENEN_NO": {"type":"Nothing"}
+      }
+  },
+  "Results": {
+    "type": "Map",
+    "value": {
+        "Success": {
+            "type": "Nothing"
+        },
+        "data": {
+            "type": "Map",
+            "value": {
+                "IsCompress": {
+                    "type": "Nothing"
+                },
+                "Value": {
+                    "type": "Map",
+                    "value": {
+                        "Code": {
+                            "type": "Nothing"
+                        },
+                        "Message": {
+                            "type": "Nothing"
+                        },
+                        "Reg_Doctors_Pool": {
+                            "type": "Map",
+                            "value": {
+                                "ID": {
+                                    "type": "Nothing"
+                                },
+                                "SCHED_ID": {
+                                    "type": "Nothing"
+                                },
+                                "ORG_CODE": {
+                                    "type": "Nothing"
+                                },
+                                "ORG_NAME": {
+                                    "type": "Nothing"
+                                },
+                                "HOSP_CODE": {
+                                    "type": "Nothing"
+                                },
+                                "HOSP_NAME": {
+                                    "type": "Nothing"
+                                },
+                                "DEPT_ID": {
+                                    "type": "Nothing"
+                                },
+                                "DEPT_NAME": {
+                                    "type": "Nothing"
+                                },
+                                "DOC_LEVEL": {
+                                    "type": "Nothing"
+                                },
+                                "DOC_LEVEL_NAME": {
+                                    "type": "Nothing"
+                                },
+                                "DOCTOR_ID": {
+                                    "type": "Nothing"
+                                },
+                                "DOCTOR_NAME": {
+                                    "type": "Nothing"
+                                },
+                                "ORDER_DATE": {
+                                    "type": "Nothing"
+                                },
+                                "TIME_QUANTUM": {
+                                    "type": "Nothing"
+                                },
+                                "TIME_QUANTUM_NAME": {
+                                    "type": "Nothing"
+                                },
+                                "ROOTIN": {
+                                    "type": "Nothing"
+                                },
+                                "REGMONEY": {
+                                    "type": "Nothing"
+                                },
+                                "TIME_ID": {
+                                    "type": "Nothing"
+                                },
+                                "TIME_QUEUE_ID": {
+                                    "type": "Nothing"
+                                },
+                                "START_TIME": {
+                                    "type": "Nothing"
+                                },
+                                "END_TIME": {
+                                    "type": "Nothing"
+                                },
+                                "QUENEN_NO": {
+                                    "type": "Nothing"
+                                },
+                                "IS_USEED": {
+                                    "type": "Nothing"
+                                },
+                                "CREATE_USER": {
+                                    "type": "Nothing"
+                                },
+                                "CREATE_DATE": {
+                                    "type": "Nothing"
+                                },
+                                "UPDATE_USER": {
+                                    "type": "Nothing"
+                                },
+                                "UPDATE_DATE": {
+                                    "type": "Nothing"
+                                },
+                                "IS_DELETE": {
+                                    "type": "Nothing"
+                                },
+                                "Reg_Queue_Dayrole": {
+                                    "type": "Nothing"
+                                },
+                                "Oper": {
+                                    "type": "Nothing"
+                                },
+                                "ISBOOK": {
+                                    "type": "Nothing"
+                                },
+                                "IS_VALID": {
+                                    "type": "Nothing"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+  },
+  "Mappings": [
+    {
+      "depends": {
+        "src": {
+          "id": "",
+          "type": "Entry",
+          "description": "挂号记录来源节点ID（从入口取值）",
+          "properties": {
+              "arguments": {
+              "type": "Map",
+              "value": {"type":"Nothing"}
+            }
+          }
+        }
+      },
+      "template": {
+        "type": "Map",
+        "value": {
+          "ORG_CODE": {
+            "type": "Result",
+            "value": {
+              "target": "$src",
+              "selector": "Reg_Record/ORG_CODE"
+            }
+          },
+          "HOSP_CODE": {
+            "type": "Result",
+            "value": {
+              "target": "$src",
+              "selector": "Reg_Record/HOSP_CODE"
+            }
+          },
+          "DEPT_ID": {
+            "type": "Result",
+            "value": {
+              "target": "$src",
+              "selector": "Reg_Record/DEPT_ID"
+            }
+          },
+          "DEPT_NAME": {
+            "type": "Result",
+            "value": {
+              "target": "$src",
+              "selector": "Reg_Record/DEPT_NAME"
+            }
+          },
+          "ORDER_DATE": {
+            "type": "Result",
+            "value": {
+              "target": "$src",
+              "selector": "Reg_Record/REG_DATE"
+            }
+          },
+          "TIME_QUANTUM": {
+            "type": "Result",
+            "value": {
+              "target": "$src",
+              "selector": "Reg_Record/TIME_QUANTUM"
+            }
+          },
+          "DOC_LEVEL": {
+            "type": "Result",
+            "value": {
+              "target": "$src",
+              "selector": "Reg_Record/SITLEVEL_ID"
+            }
+          },
+          "DOC_LEVEL_NAME": {
+            "type": "Result",
+            "value": {
+              "target": "$src",
+              "selector": "Reg_Record/SITLEVEL_NAME"
+            }
+          },
+          "DOCTOR_ID": {
+            "type": "Result",
+            "value": {
+              "target": "$src",
+              "selector": "Reg_Record/DOCTOR_ID"
+            }
+          },
+          "DOCTOR_NAME": {
+            "type": "Result",
+            "value": {
+              "target": "$src",
+              "selector": "Reg_Record/DOCTOR_NAME"
+            }
+          },
+          "ISUSE": {
+            "type": "Integer",
+            "value": 1
+          },
+          "QUENEN_NO": {
+            "type": "Condition",
+            "if": {
+              "type": "Result",
+              "value": {
+                "target": "$src",
+                "selector": "Reg_Record/QUEUE_NO"
+              }
+            },
+            "then": {
+              "type": "Result",
+              "value": {
+                "target": "$src",
+                "selector": "Reg_Record/QUEUE_NO"
+              }
+            },
+            "else": {
+              "type": "Integer",
+              "value": 0
+            }
+          }
+        }
+      }
+    }
+  ]
+}
