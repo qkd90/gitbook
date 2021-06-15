@@ -1,7 +1,6 @@
 
 ## Linux
 
-- [Linux Root下的文件 Anaconda Ks.Cfg](0-linux/Linux-root下的文件-anaconda-ks.cfg.md)
 - [Systemd 入门教程：命令篇](0-linux/Systemd 入门教程：命令篇.md)
 - [Centos7 设置MongoDB开机自启动](0-linux/centos7 设置MongoDB开机自启动.md)
 - [Es](0-linux/es.md)
@@ -34,6 +33,10 @@
     - [Page]()
     - [Property]()
 
+## Docker
+
+- [Docker Ps的结果很乱怎么办](11-docker/docker ps的结果很乱怎么办.md)
+
 ## Java提高
 
 - [HTTP 协议的 8 种请求类型介绍](2-Java提高/HTTP 协议的 8 种请求类型介绍.md)
@@ -62,6 +65,7 @@
 - [搭建EFK+Logstash日志分析系统](8-监控相关/搭建EFK+logstash日志分析系统.md)
 - [数据库监控](8-监控相关/数据库监控.md)
 - [独立部署Prometheus Alertmanager Granfan监控平台](8-监控相关/独立部署Prometheus Alertmanager Granfan监控平台.md)
+- [赤霄配置](8-监控相关/赤霄配置.md)
 - [部署Prometheus+Alertmanager+Granfan监控平台](8-监控相关/部署Prometheus+Alertmanager+Granfan监控平台.md)
 - [配置Alertmanager的短信和邮件告警](8-监控相关/配置alertmanager的短信和邮件告警.md)
 
