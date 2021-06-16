@@ -692,10 +692,11 @@ source .bash_profile
 sh oracle_exporter.sh
 
 碰到 pinging oracle: empty dsn
-export DATA_SOURCE_NAME="C##test/123456@//192.168.18.203:1521/ORCLCDB"
+export DATA_SOURCE_NAME=C##test/123456@//192.168.18.203:1521/ORCLCDB
 
 碰到 error while loading shared libraries: libclntsh.so.18.1: cannot open shared object file: No such file or directory
-
+配置
+export LD_LIBRARY_PATH=/opt/oracle/product/19c/dbhome_1/lib/
 
 ```
 
