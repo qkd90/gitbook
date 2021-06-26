@@ -7,6 +7,7 @@
 - [Linux操作系统](0-linux/linux操作系统.md)
 - [Linux硬链接](0-linux/linux硬链接.md)
 - [Pyc和Bak文件](0-linux/pyc和bak文件.md)
+- [Snmp Trap相关](0-linux/snmp trap相关.md)
 - [打入数据失败排查](0-linux/打入数据失败排查.md)
 - [操作](0-linux/操作.md)
 - [系统查看](0-linux/系统查看.md)
@@ -17,7 +18,7 @@
 - [Gitbook目录如何自动生成](1-git/gitbook目录如何自动生成.md)
 - [Git相关](1-git/git相关.md)
 
-## 承影
+## 具体的产品
 
 - [Data]()
     - [Config]()
@@ -32,10 +33,15 @@
         - [SerialNoService]()
     - [Page]()
     - [Property]()
+- [赤霄部署文档](10-具体的产品/赤霄部署文档.md)
 
 ## Docker
 
 - [Docker Ps的结果很乱怎么办](11-docker/docker ps的结果很乱怎么办.md)
+
+## Nginx
+
+- [Nginx相关](12-nginx/nginx相关.md)
 
 ## Java提高
 
@@ -74,3 +80,5 @@
 - [Fiddler使用手册](9-测试相关/fiddler使用手册.md)
 - [Fiddler使用说明](9-测试相关/fiddler使用说明.md)
 - [Postman](9-测试相关/postman.md)
+
+## 杂七杂八

@@ -1,4 +1,4 @@
-### Prometheus+Alertmanager+Granfan监控告警平台
+### 独立部署Prometheus Alertmanager Granfan监控平台
 
 #### 1.安装组件基本介绍：
 
@@ -6,9 +6,11 @@
 
 server端守护进程，负责拉取各个终端exporter收集到metrics（监控指标数据），并记录在本身提供的tsdb时序记录数据库中，默认保留天数15天，可以通过启动参数自行设置数据保留天数。
 
-prometheus官方提供了多种exporter,对外提供web图形查询页面，以及数据库查询访问接口。配置监控规则rules（需自行手动配置），并将触发规则的告警发送至alertmanager ，并由alertmanager中配置的告警媒介向外发送告警。
+prometheus官方提供了多种exporter,
 
-默认监听9090端口
+默认监听9090端口，对外提供web图形查询页面，以及数据库查询访问接口。
+
+配置监控规则rules（需自行手动配置），并将触发规则的告警发送至alertmanager ，并由alertmanager中配置的告警媒介向外发送告警。
 
 **grafana：**
 
@@ -28,17 +30,13 @@ agent端，prometheus官方提供的诸多exporter中的一种，安装与各监
 
 默认监听端口： 9100
 
-**oracle_exporter:**
-
-适用于Oracle的Prometheus导出器，以MySQL导出器为模型。我不是DBA或经验丰富的Go开发人员，因此PR绝对受到欢迎。
-
-##### 1.1通用准备工作
+##### 1.1上传文件准备
 
 ```
 #上传到新建的rq文件夹，我有一个压缩包会包括所有的安装包
 cd /usr/local/rq
 
-#权限问题，每次添加了文件之后记得赋予权限
+#权限问题
 cd /usr/local
 sudo chmod -R 777 rq
 
@@ -95,13 +93,15 @@ systemctl status prometheus.service
 
 ```text
 #新增开放一个端口号
-firewall-cmd --zone=public --add-port=9100/tcp --permanent
+firewall-cmd --zone=public --add-port=9090/tcp --permanent
 重启防火墙
 firewall-cmd --reload
 查看所有打开端口
 firewall-cmd  --list-ports
 
 firewall-cmd --zone=external --add-forward-port=port=9001:proto=tcp:toport=9100:toaddr=192.168.1.30 --permanent
+
+
 ```
 
 - 浏览器访问：
@@ -364,7 +364,7 @@ http://ip:port
 
 ##### 5.2 安装alertmanager
 
-linux（centos7）安装：
+###### 5.2.1 linux（centos7）安装：
 
 - 下载地址： [https://github.com/prometheus/alertmanager](https://link.zhihu.com/?target=https%3A//github.com/prometheus/alertmanager)
 - 下载并安装：
@@ -380,6 +380,15 @@ cd /usr/local && ln -sv alertmanager-0.20.0.linux-amd64/ alertmanager && cd aler
 
 ```text
 nohup ./alertmanager --config.file="alertmanager.yml" --storage.path="data/ --web.listen-address=":9093" &
+```
+
+###### 5.2.2 docker安装：
+
+- image： prom/alertmanager
+- docker run
+
+```text
+docker run -dit --name monitor-alertmanager -v ./alertmanager/db/:/alertmanager -v ./alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml ./alertmanager/templates/:/etc/alertmanager/templates -p 9093:9093 --restart always --privileged true prom/alertmanager --config.file="/etc/alertmanager/alertmanager.yml" --storage.path="/alertmanager --web.listen-address=":9093"
 ```
 
 ##### 5.3 核心概念
@@ -656,57 +665,14 @@ send_resolved: <boolean> | default = false   # 故障恢复之后，是否发送
   微信API官方文档 https://work.weixin.qq.com/api/doc#90002/90151/90854 
 ```
 
-###### 5.6.2配置企业微信告警
+企业微信告警配置
 
 ```text
-
+  inhibit_rules:
+ - source_match:
+  severity: 'critical'
+target_match:
+  severity: 'warning'
+equal: ['alertname', 'dev', 'instance']
 ```
 
-#### 6.oracle-explorer
-
-##### 6.1 运行oracle exporter
-
-解压安装文件到 /usr/local/rq
-
-
-
-在启动之前，请确保正确设置了环境变量DATA_SOURCE_NAME。DATA_SOURCE_NAME应该采用Oracle EZCONNECT格式：
-
-https://docs.oracle.com/en/database/oracle/oracle-database/19/netag/configuring-naming-methods.html#GUID-B0437826-43C1-49EC-A94D-B650B6A4A6EE
-
-```
-新建一个oracle账户
-create user monitor identified by monitor;
-赋予账户权限
-grant connect, resource to monitor;
-
-直接运行命令：
-export DATA_SOURCE_NAME="monitor/monitor@//192.168.0.185:1521/orcl"
-
-同时需要在oracle目录配置 .bash_profile,使用我配置好的文件
-然后运行
-source .bash_profile
-
-添加
-然后使用脚本运行：
-sh oracle_exporter.sh
-
-碰到 pinging oracle: empty dsn
-export DATA_SOURCE_NAME=C##test/123456@//192.168.18.203:1521/ORCLCDB
-
-碰到 error while loading shared libraries: libclntsh.so.18.1: cannot open shared object file: No such file or directory
-配置
-export LD_LIBRARY_PATH=/opt/oracle/product/19c/dbhome_1/lib/
-
-```
-
-##### 6.2 orcle相关操作
-
-```
-Oracle用户下输入
-sqlplus / as sysdba
-连接test账户
-conn test/123456
-```
-
-![下载 (1)](C:\Users\rq\Desktop\下载 (1).jpg)
