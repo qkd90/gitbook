@@ -1,0 +1,1606 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>独立部署Prometheus Alertmanager Granfan监控平台 · 大数据之路</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="配置alertmanager的短信和邮件告警.html" />
+    
+    
+    <link rel="prev" href="数据库监控.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Linux</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../0-linux/Systemd 入门教程：命令篇.html">
+            
+                <a href="../0-linux/Systemd 入门教程：命令篇.html">
+            
+                    
+                    Systemd 入门教程：命令篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../0-linux/centos7 设置MongoDB开机自启动.html">
+            
+                <a href="../0-linux/centos7 设置MongoDB开机自启动.html">
+            
+                    
+                    Centos7 设置MongoDB开机自启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../0-linux/es.html">
+            
+                <a href="../0-linux/es.html">
+            
+                    
+                    Es
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../0-linux/linux操作系统.html">
+            
+                <a href="../0-linux/linux操作系统.html">
+            
+                    
+                    Linux操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../0-linux/linux硬链接.html">
+            
+                <a href="../0-linux/linux硬链接.html">
+            
+                    
+                    Linux硬链接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../0-linux/pyc和bak文件.html">
+            
+                <a href="../0-linux/pyc和bak文件.html">
+            
+                    
+                    Pyc和Bak文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../0-linux/snmp trap相关.html">
+            
+                <a href="../0-linux/snmp trap相关.html">
+            
+                    
+                    Snmp Trap相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../0-linux/打入数据失败排查.html">
+            
+                <a href="../0-linux/打入数据失败排查.html">
+            
+                    
+                    打入数据失败排查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../0-linux/操作.html">
+            
+                <a href="../0-linux/操作.html">
+            
+                    
+                    操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../0-linux/系统查看.html">
+            
+                <a href="../0-linux/系统查看.html">
+            
+                    
+                    系统查看
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../0-linux/网络配置命令详解.html">
+            
+                <a href="../0-linux/网络配置命令详解.html">
+            
+                    
+                    网络配置命令详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Git</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../1-git/gitbook目录如何自动生成.html">
+            
+                <a href="../1-git/gitbook目录如何自动生成.html">
+            
+                    
+                    Gitbook目录如何自动生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../1-git/git相关.html">
+            
+                <a href="../1-git/git相关.html">
+            
+                    
+                    Git相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">具体的产品</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    Data
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" >
+            
+                <span>
+            
+                    
+                    Config
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.1" >
+            
+                <span>
+            
+                    
+                    SQLAddress
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.2" >
+            
+                <span>
+            
+                    
+                    ServiceAddress
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" >
+            
+                <span>
+            
+                    
+                    Graph
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" >
+            
+                <span>
+            
+                    
+                    SQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.3.1" >
+            
+                <span>
+            
+                    
+                    OutRegistrationRepository
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" >
+            
+                <span>
+            
+                    
+                    Service
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.4.1" >
+            
+                <span>
+            
+                    
+                    DoctorStoodService
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.2" >
+            
+                <span>
+            
+                    
+                    DoctorsPoolServices
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3" >
+            
+                <span>
+            
+                    
+                    SerialNoService
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" >
+            
+                <span>
+            
+                    
+                    Page
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" >
+            
+                <span>
+            
+                    
+                    Property
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../10-具体的产品/赤霄部署文档.html">
+            
+                <a href="../10-具体的产品/赤霄部署文档.html">
+            
+                    
+                    赤霄部署文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docker</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../11-docker/docker ps的结果很乱怎么办.html">
+            
+                <a href="../11-docker/docker ps的结果很乱怎么办.html">
+            
+                    
+                    Docker Ps的结果很乱怎么办
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Nginx</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../12-nginx/nginx相关.html">
+            
+                <a href="../12-nginx/nginx相关.html">
+            
+                    
+                    Nginx相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">文本编辑器</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../13-文本编辑器/typora设置修改.html">
+            
+                <a href="../13-文本编辑器/typora设置修改.html">
+            
+                    
+                    Typora设置修改
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java提高</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../2-Java提高/HTTP 协议的 8 种请求类型介绍.html">
+            
+                <a href="../2-Java提高/HTTP 协议的 8 种请求类型介绍.html">
+            
+                    
+                    HTTP 协议的 8 种请求类型介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../2-Java提高/什么是CRUD( What is CRUD">
+            
+                <span>
+            
+                    
+                    什么是CRUD( What Is CRUD)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Springboot</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../3-springboot/Spring Boot常用注解- 声明Bean的注解.html">
+            
+                <a href="../3-springboot/Spring Boot常用注解- 声明Bean的注解.html">
+            
+                    
+                    Spring Boot常用注解  声明Bean的注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../3-springboot/springboot使用MongoTemplate进行增删改查.html">
+            
+                <a href="../3-springboot/springboot使用MongoTemplate进行增删改查.html">
+            
+                    
+                    Springboot使用MongoTemplate进行增删改查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../3-springboot/有了基本数据类型，为什么还需要包装类型.html">
+            
+                <a href="../3-springboot/有了基本数据类型，为什么还需要包装类型.html">
+            
+                    
+                    有了基本数据类型，为什么还需要包装类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../3-springboot/统一异常处理与统一结果返回.html">
+            
+                <a href="../3-springboot/统一异常处理与统一结果返回.html">
+            
+                    
+                    统一异常处理与统一结果返回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../3-springboot/自定义拦截器实现接口校验.html">
+            
+                <a href="../3-springboot/自定义拦截器实现接口校验.html">
+            
+                    
+                    自定义拦截器实现接口校验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据相关</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../4-数据相关/MongoDB操作.html">
+            
+                <a href="../4-数据相关/MongoDB操作.html">
+            
+                    
+                    MongoDB操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../4-数据相关/es的使用.html">
+            
+                <a href="../4-数据相关/es的使用.html">
+            
+                    
+                    Es的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../4-数据相关/kafka操作.html">
+            
+                <a href="../4-数据相关/kafka操作.html">
+            
+                    
+                    Kafka操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../4-数据相关/mysql设计规范.html">
+            
+                <a href="../4-数据相关/mysql设计规范.html">
+            
+                    
+                    Mysql设计规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../4-数据相关/数据库监控指标.html">
+            
+                <a href="../4-数据相关/数据库监控指标.html">
+            
+                    
+                    数据库监控指标
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">监控相关</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="27服务器的监控需要软件配置.html">
+            
+                <a href="27服务器的监控需要软件配置.html">
+            
+                    
+                    27服务器的监控需要软件配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="prometheus配套的各个数据库监控部署.html">
+            
+                <a href="prometheus配套的各个数据库监控部署.html">
+            
+                    
+                    Prometheus配套的各个数据库监控部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="windows服务监控.html">
+            
+                <a href="windows服务监控.html">
+            
+                    
+                    Windows服务监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="安装node_exporter.html">
+            
+                <a href="安装node_exporter.html">
+            
+                    
+                    安装Node Exporter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="搭建EFK+logstash日志分析系统.html">
+            
+                <a href="搭建EFK+logstash日志分析系统.html">
+            
+                    
+                    搭建EFK+Logstash日志分析系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="数据库监控.html">
+            
+                <a href="数据库监控.html">
+            
+                    
+                    数据库监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="10.7" data-path="独立部署Prometheus Alertmanager Granfan监控平台.html">
+            
+                <a href="独立部署Prometheus Alertmanager Granfan监控平台.html">
+            
+                    
+                    独立部署Prometheus Alertmanager Granfan监控平台
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="配置alertmanager的短信和邮件告警.html">
+            
+                <a href="配置alertmanager的短信和邮件告警.html">
+            
+                    
+                    配置Alertmanager的短信和邮件告警
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">测试相关</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../9-测试相关/fiddler使用手册.html">
+            
+                <a href="../9-测试相关/fiddler使用手册.html">
+            
+                    
+                    Fiddler使用手册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../9-测试相关/fiddler使用说明.html">
+            
+                <a href="../9-测试相关/fiddler使用说明.html">
+            
+                    
+                    Fiddler使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../9-测试相关/postman.html">
+            
+                <a href="../9-测试相关/postman.html">
+            
+                    
+                    Postman
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">杂七杂八</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >独立部署Prometheus Alertmanager Granfan监控平台</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="prometheusalertmanagergranfan&#x76D1;&#x63A7;&#x544A;&#x8B66;&#x5E73;&#x53F0;">Prometheus+Alertmanager+Granfan&#x76D1;&#x63A7;&#x544A;&#x8B66;&#x5E73;&#x53F0;</h3>
+<h4 id="1&#x5B89;&#x88C5;&#x7EC4;&#x4EF6;&#x57FA;&#x672C;&#x4ECB;&#x7ECD;&#xFF1A;">1.&#x5B89;&#x88C5;&#x7EC4;&#x4EF6;&#x57FA;&#x672C;&#x4ECB;&#x7ECD;&#xFF1A;</h4>
+<p><strong>prometheus:</strong></p>
+<p>server&#x7AEF;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#xFF0C;&#x8D1F;&#x8D23;&#x62C9;&#x53D6;&#x5404;&#x4E2A;&#x7EC8;&#x7AEF;exporter&#x6536;&#x96C6;&#x5230;metrics&#xFF08;&#x76D1;&#x63A7;&#x6307;&#x6807;&#x6570;&#x636E;&#xFF09;&#xFF0C;&#x5E76;&#x8BB0;&#x5F55;&#x5728;&#x672C;&#x8EAB;&#x63D0;&#x4F9B;&#x7684;tsdb&#x65F6;&#x5E8F;&#x8BB0;&#x5F55;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x9ED8;&#x8BA4;&#x4FDD;&#x7559;&#x5929;&#x6570;15&#x5929;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x542F;&#x52A8;&#x53C2;&#x6570;&#x81EA;&#x884C;&#x8BBE;&#x7F6E;&#x6570;&#x636E;&#x4FDD;&#x7559;&#x5929;&#x6570;&#x3002;</p>
+<p>prometheus&#x5B98;&#x65B9;&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x79CD;exporter,&#x5BF9;&#x5916;&#x63D0;&#x4F9B;web&#x56FE;&#x5F62;&#x67E5;&#x8BE2;&#x9875;&#x9762;&#xFF0C;&#x4EE5;&#x53CA;&#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#x8BBF;&#x95EE;&#x63A5;&#x53E3;&#x3002;&#x914D;&#x7F6E;&#x76D1;&#x63A7;&#x89C4;&#x5219;rules&#xFF08;&#x9700;&#x81EA;&#x884C;&#x624B;&#x52A8;&#x914D;&#x7F6E;&#xFF09;&#xFF0C;&#x5E76;&#x5C06;&#x89E6;&#x53D1;&#x89C4;&#x5219;&#x7684;&#x544A;&#x8B66;&#x53D1;&#x9001;&#x81F3;alertmanager &#xFF0C;&#x5E76;&#x7531;alertmanager&#x4E2D;&#x914D;&#x7F6E;&#x7684;&#x544A;&#x8B66;&#x5A92;&#x4ECB;&#x5411;&#x5916;&#x53D1;&#x9001;&#x544A;&#x8B66;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x76D1;&#x542C;9090&#x7AEF;&#x53E3;</p>
+<p><strong>grafana&#xFF1A;</strong></p>
+<p>&#x7531;&#x4E8E;prometheus&#x672C;&#x8EAB;&#x63D0;&#x4F9B;&#x7684;&#x56FE;&#x5F62;&#x9875;&#x9762;&#x8FC7;&#x4E8E;&#x7B80;&#x964B;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;grafana&#x6765;&#x63D0;&#x4F9B;&#x56FE;&#x5F62;&#x9875;&#x9762;&#x5C55;&#x793A;&#x3002;</p>
+<p>grafana &#x662F;&#x4E13;&#x95E8;&#x7528;&#x4E8E;&#x56FE;&#x5F62;&#x5C55;&#x793A;&#x7684;&#x8F6F;&#x4EF6;&#xFF0C;&#x652F;&#x6301;&#x591A;&#x79CD;&#x6570;&#x636E;&#x6765;&#x6E90;&#xFF0C;prometheus&#x53EA;&#x662F;&#x5176;&#x4E2D;&#x4E00;&#x79CD;&#x3002;</p>
+<p>&#x81EA;&#x5E26;&#x544A;&#x8B66;&#x529F;&#x80FD;&#xFF0C;&#x4E14;&#x544A;&#x8B66;&#x89C4;&#x5219;&#x53EF;&#x5728;&#x76D1;&#x63A7;&#x56FE;&#x5F62;&#x4E0A;&#x76F4;&#x63A5;&#x914D;&#x7F6E;&#xFF0C;&#x4E0D;&#x8FC7;&#x7531;&#x4E8E;&#x6B64;&#x79CD;&#x65B9;&#x5F0F;&#x4E0D;&#x652F;&#x6301;&#x6A21;&#x677F;&#x53D8;&#x91CF;&#xFF08;dashboard&#x4E2D;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x5C55;&#x793A;&#x914D;&#x7F6E;&#x7684;&#x7279;&#x6B8A;&#x53D8;&#x91CF;&#xFF09;&#xFF0C;&#x5373;&#x6BCF;&#x4E00;&#x4E2A;&#x6307;&#x6807;&#xFF0C;&#x6BCF;&#x4E00;&#x53F0;&#x8BBE;&#x5907;&#x5747;&#x9700;&#x8981;&#x5355;&#x72EC;&#x914D;&#x7F6E;&#xFF0C;&#x6240;&#x4EE5;&#x5B9E;&#x7528;&#x6027;&#x8F83;&#x4F4E;</p>
+<p>&#x9ED8;&#x8BA4;&#x76D1;&#x542C;&#x7AEF;&#x53E3;&#xFF1A;3000</p>
+<p><strong>node_exporter:</strong></p>
+<p>agent&#x7AEF;&#xFF0C;prometheus&#x5B98;&#x65B9;&#x63D0;&#x4F9B;&#x7684;&#x8BF8;&#x591A;exporter&#x4E2D;&#x7684;&#x4E00;&#x79CD;&#xFF0C;&#x5B89;&#x88C5;&#x4E0E;&#x5404;&#x76D1;&#x63A7;&#x8282;&#x70B9;&#x4E3B;&#x673A;</p>
+<p>&#x8D1F;&#x8D23;&#x6293;&#x53D6;&#x4E3B;&#x673A;&#x53CA;&#x7CFB;&#x7EDF;&#x5404;&#x9879;&#x4FE1;&#x606F;&#xFF0C;&#x5982;cpu&#xFF0C;mem ,disk,networtk.filesystem&#xFF0C;...&#x7B49;&#x7B49;&#x5404;&#x9879;&#x57FA;&#x672C;&#x6307;&#x6807;&#xFF0C;&#x975E;&#x5E38;&#x5168;&#x9762;&#x3002;&#x5E76;&#x5C06;&#x6293;&#x53D6;&#x5230;&#x7684;&#x5404;&#x9879;&#x6307;&#x6807;metrics &#x901A;&#x8FC7;http&#x534F;&#x8BAE;&#x5BF9;&#x65B9;&#x53D1;&#x5E03;&#xFF0C;&#x4F9B;prometheus server&#x7AEF;&#x6293;&#x53D6;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x76D1;&#x542C;&#x7AEF;&#x53E3;&#xFF1A; 9100</p>
+<p><strong>oracle_exporter:</strong></p>
+<p>&#x9002;&#x7528;&#x4E8E;Oracle&#x7684;Prometheus&#x5BFC;&#x51FA;&#x5668;&#xFF0C;&#x4EE5;MySQL&#x5BFC;&#x51FA;&#x5668;&#x4E3A;&#x6A21;&#x578B;&#x3002;&#x6211;&#x4E0D;&#x662F;DBA&#x6216;&#x7ECF;&#x9A8C;&#x4E30;&#x5BCC;&#x7684;Go&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#xFF0C;&#x56E0;&#x6B64;PR&#x7EDD;&#x5BF9;&#x53D7;&#x5230;&#x6B22;&#x8FCE;&#x3002;</p>
+<h5 id="11&#x901A;&#x7528;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;">1.1&#x901A;&#x7528;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h5>
+<pre><code>#&#x4E0A;&#x4F20;&#x5230;&#x65B0;&#x5EFA;&#x7684;rq&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x6211;&#x6709;&#x4E00;&#x4E2A;&#x538B;&#x7F29;&#x5305;&#x4F1A;&#x5305;&#x62EC;&#x6240;&#x6709;&#x7684;&#x5B89;&#x88C5;&#x5305;
+cd /usr/local/rq
+
+#&#x6743;&#x9650;&#x95EE;&#x9898;&#xFF0C;&#x6BCF;&#x6B21;&#x6DFB;&#x52A0;&#x4E86;&#x6587;&#x4EF6;&#x4E4B;&#x540E;&#x8BB0;&#x5F97;&#x8D4B;&#x4E88;&#x6743;&#x9650;
+cd /usr/local
+sudo chmod -R 777 rq
+
+#&#x4E0A;&#x4F20;&#x670D;&#x52A1;&#x6587;&#x4EF6;
+cd /usr/lib/systemd/system/
+</code></pre><h4 id="2prometheus-server">2.prometheus-server</h4>
+<h5 id="21&#x57FA;&#x672C;&#x4FE1;&#x606F;&#xFF1A;">2.1&#x57FA;&#x672C;&#x4FE1;&#x606F;&#xFF1A;</h5>
+<ul>
+<li>&#x5B98;&#x65B9;&#x6587;&#x6863;&#x5730;&#x5740;&#xFF1A;<a href="https://link.zhihu.com/?target=https%3A//prometheus.io/docs/introduction/overview/" target="_blank">https://prometheus.io/docs/introduction/overview/</a></li>
+<li>github&#x9879;&#x76EE;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A; <a href="https://link.zhihu.com/?target=https%3A//github.com/prometheus/prometheus" target="_blank">https://github.com/prometheus/prometheus</a></li>
+</ul>
+<h5 id="22-&#x5B89;&#x88C5;-prometheus-server">2.2 &#x5B89;&#x88C5; prometheus server</h5>
+<ul>
+<li>&#x521B;&#x5EFA;unit file&#xFF0C;&#x8BA9;systemd &#x7BA1;&#x7406;prometheus</li>
+</ul>
+<pre><code class="lang-shell"> cd /usr/lib/systemd/system
+ &#x4E0A;&#x4F20;prometheus.service&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;
+ [Unit]
+ Description=The Prometheus 2 monitoring system and time series database.
+ Documentation=https://prometheus.io
+ After=network.target
+ [Service]
+ EnvironmentFile=-/etc/sysconfig/prometheus   #&#x6587;&#x4EF6;
+ User=root
+ ExecStart=/usr/local/prometheus/prometheus \
+ --storage.tsdb.path=/home/prometheus/prometheus \
+ --config.file=/usr/local/prometheus/prometheus.yml \
+ --web.listen-address=0.0.0.0:9090 \
+ --web.external-url= $PROM_EXTRA_ARGS
+ Restart=on-failure
+ StartLimitInterval=1
+ RestartSec=3
+ [Install]
+ WantedBy=multi-user.target
+</code></pre>
+<ul>
+<li>&#x5176;&#x4ED6;&#x8FD0;&#x884C;&#x65F6;&#x53C2;&#x6570;&#xFF1A; ./prometheus --help</li>
+<li>&#x542F;&#x52A8;&#x670D;&#x52A1;</li>
+</ul>
+<pre><code class="lang-text">systemctl daemon-reload
+systemctl start prometheus.service
+systemctl status prometheus.service
+</code></pre>
+<ul>
+<li>&#x6CE8;&#x610F;&#x5F00;&#x542F;&#x9632;&#x706B;&#x5899;&#x7AEF;&#x53E3;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-text">#&#x65B0;&#x589E;&#x5F00;&#x653E;&#x4E00;&#x4E2A;&#x7AEF;&#x53E3;&#x53F7;
+firewall-cmd --zone=public --add-port=9100/tcp --permanent
+&#x91CD;&#x542F;&#x9632;&#x706B;&#x5899;
+firewall-cmd --reload
+&#x67E5;&#x770B;&#x6240;&#x6709;&#x6253;&#x5F00;&#x7AEF;&#x53E3;
+firewall-cmd  --list-ports
+
+firewall-cmd --zone=external --add-forward-port=port=9001:proto=tcp:toport=9100:toaddr=192.168.1.30 --permanent
+</code></pre>
+<ul>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-text">http://IP:PORT
+</code></pre>
+<pre><code>&#x9632;&#x706B;&#x5899;&#x64CD;&#x4F5C;&#x53C2;&#x8003;&#xFF1A;
+#&#x8BF4;&#x660E;:
+#&#x2013;zone #&#x4F5C;&#x7528;&#x57DF;
+#&#x2013;add-port=80/tcp #&#x6DFB;&#x52A0;&#x7AEF;&#x53E3;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;&#x7AEF;&#x53E3;/&#x901A;&#x8BAF;&#x534F;&#x8BAE;
+#&#x2013;permanent &#x6C38;&#x4E45;&#x751F;&#x6548;&#xFF0C;&#x6CA1;&#x6709;&#x6B64;&#x53C2;&#x6570;&#x91CD;&#x542F;&#x540E;&#x5931;&#x6548;
+#&#x591A;&#x4E2A;&#x7AEF;&#x53E3;:
+firewall-cmd --zone=public --add-port=80-90/tcp --permanent
+#&#x67E5;&#x770B;&#x7AEF;&#x53E3;&#x662F;&#x5426;&#x88AB;&#x5360;&#x7528;
+lsof -i:9100
+</code></pre><h5 id="23&#x95EE;&#x9898;&#x6392;&#x67E5;">2.3&#x95EE;&#x9898;&#x6392;&#x67E5;</h5>
+<h4 id="3nodeexporter">3.node_exporter</h4>
+<h5 id="31&#x57FA;&#x672C;">3.1&#x57FA;&#x672C;</h5>
+<p>node_exporter &#x5728;&#x88AB;&#x76D1;&#x63A7;&#x8282;&#x70B9;&#x5B89;&#x88C5;&#xFF0C;&#x6293;&#x53D6;&#x4E3B;&#x673A;&#x76D1;&#x63A7;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;http&#x670D;&#x52A1;&#xFF0C;&#x4F9B;prometheus&#x6293;&#x53D6;&#x76D1;&#x63A7;&#x4FE1;&#x606F;&#x3002;
+&#x9879;&#x76EE;&#x53CA;&#x6587;&#x6863;&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/prometheus/node_exporter" target="_blank">https://github.com/prometheus/node_exporter</a>
+prometheus&#x5B98;&#x65B9;&#x63D0;&#x4F9B;&#x4E86;&#x5F88;&#x591A;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;exporter&#xFF0C;&#x5217;&#x8868;&#x5730;&#x5740;&#xFF1A; <a href="https://prometheus.io/docs/inst" target="_blank">https://prometheus.io/docs/inst</a></p>
+<h5 id="32-&#x5B89;&#x88C5;nodeexporter">3.2 &#x5B89;&#x88C5;node_exporter</h5>
+<ul>
+<li>&#x4E0B;&#x8F7D;&#x5E76;&#x89E3;&#x538B;</li>
+</ul>
+<pre><code class="lang-text">cd /usr/local
+</code></pre>
+<ul>
+<li>&#x542F;&#x52A8;&#x670D;&#x52A1;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-text">systemctl daemon-reload
+systemctl start node_exporter.service
+systemctl status node_exporter.service
+</code></pre>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x624B;&#x52A8;&#x6D4B;&#x8BD5;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;metrics&#x4FE1;&#x606F;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-text">curl http://localhost:9100/metrics
+</code></pre>
+<ul>
+<li><p>&#x5F00;&#x542F;&#x9632;&#x706B;&#x5899;&#xFF1A;</p>
+<pre><code>firewall-cmd --zone=public --add-port=9100/tcp --permanent
+</code></pre></li>
+</ul>
+<h5 id="33-&#x914D;&#x7F6E;nodeexporter">3.3 &#x914D;&#x7F6E;node_exporter</h5>
+<ul>
+<li>&#x5F00;&#x542F;&#x5173;&#x95ED;collectors:</li>
+</ul>
+<pre><code class="lang-text">./node_exporter --help  # &#x67E5;&#x770B;&#x652F;&#x6301;&#x7684;&#x6240;&#x6709;collectors&#xFF0C;&#x53EF;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x9700;&#x6C42; enable &#x548C; disabled &#x5404;&#x9879;&#x6307;&#x6807;&#x6536;&#x96C6;
+
+&#x5982; --collector.cpu=disabled &#xFF0C;&#x4E0D;&#x518D;&#x6536;&#x96C6;cpu&#x76F8;&#x5173;&#x4FE1;&#x606F;
+</code></pre>
+<ul>
+<li>Textfile Collector&#xFF1A; &#x6587;&#x672C;&#x6587;&#x4EF6;&#x6536;&#x96C6;&#x5668;</li>
+</ul>
+<pre><code class="lang-text">&#x901A;&#x8FC7; &#x542F;&#x52A8;&#x53C2;&#x6570; --collector.textfile.directory=&quot;DIR&quot; &#x53EF;&#x5F00;&#x542F;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x6536;&#x96C6;&#x5668;
+&#x6536;&#x96C6;&#x5668;&#x4F1A;&#x6536;&#x96C6;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;*.prom&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6307;&#x6807;&#xFF0C;&#x6307;&#x6807;&#x5FC5;&#x987B;&#x6EE1;&#x8DB3; prom&#x683C;&#x5F0F;
+</code></pre>
+<p>&#x793A;&#x4F8B;:</p>
+<pre><code class="lang-text">echo my_batch_job_completion_time $(date +%s) &gt; /path/to/directory/my_batch_job.prom.$$
+mv /path/to/directory/my_batch_job.prom.$$ /path/to/directory/my_batch_job.prom   
+echo &apos;role{role=&quot;application_server&quot;} 1&apos; &gt; /path/to/directory/role.prom.$$
+mv /path/to/directory/role.prom.$$ /path/to/directory/role.prom 
+rpc_duration_seconds{quantile=&quot;0.5&quot;} 4773
+http_request_duration_seconds_bucket{le=&quot;0.5&quot;} 129389
+</code></pre>
+<p>&#x5373;&#x5982;&#x679C;node_exporter &#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#x81EA;&#x8EAB;&#x6307;&#x6807;&#x6293;&#x53D6;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x811A;&#x672C;&#x5F62;&#x5F0F;&#x5C06;&#x6307;&#x6807;&#x6293;&#x53D6;&#x4E4B;&#x540E;&#x5199;&#x5165;&#x6587;&#x4EF6;&#xFF0C;&#x7531;node_exporter&#x5BF9;&#x5916;&#x63D0;&#x4F9B;&#x4E2A;prometheus&#x6293;&#x53D6; &#x53EF;&#x4EE5;&#x7701;&#x6389;pushgateway</p>
+<ul>
+<li>&#x6709;&#x5173;prom&#x683C;&#x5F0F;&#x548C;&#x67E5;&#x8BE2;&#x8BED;&#x6CD5;&#xFF0C;&#x5C06;&#x518D;&#x4E4B;&#x540E;&#x4ECB;&#x7ECD;</li>
+</ul>
+<h5 id="34-&#x914D;&#x7F6E;prometheus&#x6293;&#x53D6;nodeexporter-&#x6307;&#x6807;">3.4 &#x914D;&#x7F6E;prometheus&#x6293;&#x53D6;node_exporter &#x6307;&#x6807;</h5>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A; prometheus.yml</li>
+</ul>
+<pre><code class="lang-text">scrape_configs:
+# The job name is added as a label `job=&lt;job_name&gt;` to any timeseries scraped from this config.
+- job_name: &apos;prometheus&apos;
+ # metrics_path defaults to &apos;/metrics&apos;
+ # scheme defaults to &apos;http&apos;.
+ static_configs:
+ - targets: [&apos;localhost:9090&apos;]
+- job_name: &apos;nodes&apos;
+ static_configs:
+ - targets: [&apos;localhost:9100&apos;]
+ - targets: [&apos;172.20.94.1:9100&apos;]
+
+- job_name: &apos;node_real_lan&apos;
+file_sd_configs:
+ - files:
+- ./sd_files/real_lan.yml
+refresh_interval: 30s
+params:   # &#x53EF;&#x9009;
+collect[]:
+ - cpu
+ - meminfo
+ - diskstats
+ - netdev
+ - netstat
+ - filefd
+ - filesystem
+ - xfs
+</code></pre>
+<h4 id="4grafana">4.grafana</h4>
+<h5 id="41-&#x5B98;&#x65B9;&#x5730;&#x5740;"><strong>4.1 &#x5B98;&#x65B9;&#x5730;&#x5740;</strong></h5>
+<ul>
+<li>grafana&#x7A0B;&#x5E8F;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A;<a href="https://link.zhihu.com/?target=https%3A//grafana.com/grafana/download" target="_blank">https://grafana.com/grafana/download</a></li>
+<li>grafana dashboard &#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A; <a href="https://link.zhihu.com/?target=https%3A//grafana.com/grafana/download/" target="_blank">https://grafana.com/grafana/download/</a></li>
+</ul>
+<h5 id="42-&#x5B89;&#x88C5;grafana"><strong>4.2 &#x5B89;&#x88C5;grafana</strong></h5>
+<h6 id="421-linuxcentos7&#x5B89;&#x88C5;">4.2.1 linux(centos7)&#x5B89;&#x88C5;</h6>
+<ul>
+<li>&#x4E0B;&#x8F7D;&#x5E76;&#x5B89;&#x88C5;</li>
+</ul>
+<pre><code class="lang-text">cd /usr/local/rq/
+yum clean all
+yum --installroot=/usr/local/rq localinstall &#x2013;y --skip-broken ./* grafana-7.4.5-1.x86_64.rpm
+</code></pre>
+<ul>
+<li>&#x51C6;&#x5907;service &#x6587;&#x4EF6;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-text">[Unit]
+Description=Grafana instance
+Documentation=http://docs.grafana.org
+Wants=network-online.target
+After=network-online.target
+After=postgresql.service mariadb.service mysqld.service
+
+[Service]
+EnvironmentFile=/etc/sysconfig/grafana-server
+User=grafana
+Group=grafana
+Type=notify
+Restart=on-failure
+WorkingDirectory=/usr/share/grafana
+RuntimeDirectory=grafana
+RuntimeDirectoryMode=0750
+ExecStart=/usr/sbin/grafana-server  \
+ --config=${CONF_FILE}  \
+ --pidfile=${PID_FILE_DIR}/grafana-server.pid\
+ --packaging=rpm  \
+ cfg:default.paths.logs=${LOG_DIR}  \
+ cfg:default.paths.data=${DATA_DIR} \
+ cfg:default.paths.plugins=${PLUGINS_DIR} \
+ cfg:default.paths.provisioning=${PROVISIONING_CFG_DIR}
+
+LimitNOFILE=10000
+TimeoutStopSec=20
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<ul>
+<li>&#x542F;&#x52A8;grafana</li>
+</ul>
+<pre><code class="lang-text">systemctl enable grafana-server.service
+systemctl restart grafana-server.service
+</code></pre>
+<p>&#x9ED8;&#x8BA4;&#x76D1;&#x542C;3000&#x7AEF;&#x53E3;</p>
+<ul>
+<li>&#x5F00;&#x542F;&#x9632;&#x706B;&#x5899;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-text">firewall-cmd --zone=public --add-port=3000/tcp --permanent
+</code></pre>
+<h5 id="43-grafana-&#x7B80;&#x5355;&#x4F7F;&#x7528;&#x6D41;&#x7A0B;">4.3 grafana &#x7B80;&#x5355;&#x4F7F;&#x7528;&#x6D41;&#x7A0B;</h5>
+<ul>
+<li>web&#x9875;&#x9762;&#x8BBF;&#x95EE;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-text">http://ip:port
+</code></pre>
+<p>&#x9996;&#x6B21;&#x767B;&#x9646;&#x4F1A;&#x8981;&#x6C42;&#x81EA;&#x884C;&#x8BBE;&#x7F6E;&#x8D26;&#x53F7;&#x5BC6;&#x7801; 7.2&#x7248;&#x672C;&#x4F1A;&#x8981;&#x6C42;&#x8F93;&#x5165;&#x8D26;&#x53F7;&#x5BC6;&#x7801;&#x4E4B;&#x540E;&#x91CD;&#x7F6E;&#xFF0C;&#x521D;&#x59CB;&#x8D26;&#x53F7;&#x5BC6;&#x7801;&#x90FD;&#x662F;admin</p>
+<ul>
+<li><p>&#x4F7F;&#x7528;&#x6D41;&#x7A0B;&#xFF1A;</p>
+</li>
+<li><p>&#x6DFB;&#x52A0;&#x6570;&#x636E;&#x6E90;:   <a href="http://localhost:9090" target="_blank">http://localhost:9090</a></p>
+</li>
+<li><p>&#x6DFB;&#x52A0;dashboard&#xFF0C;&#x914D;&#x7F6E;&#x56FE;&#x5F62;&#x76D1;&#x63A7;&#x9762;&#x677F;&#xFF0C;&#x4E5F;&#x53EF;&#x5728;&#x5B98;&#x7F51;&#x4E0B;&#x8F7D;&#x5BF9;&#x5E94;&#x670D;&#x52A1;&#x7684;dashboard&#x6A21;&#x677F;&#xFF0C;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A;<a href="https://link.zhihu.com/?target=https%3A//grafana.com/grafana/download/" target="_blank">https://grafana.com/grafana/download/</a></p>
+</li>
+<li><p>&#x5BFC;&#x5165;&#x6A21;&#x677F;&#xFF0C;json &#x6216; &#x94FE;&#x63A5; &#x6216;&#x6A21;&#x677F;&#x7F16;&#x53F7;</p>
+</li>
+<li><p>&#x67E5;&#x770B;dashboard</p>
+</li>
+<li><p>&#x5E38;&#x7528;&#x6A21;&#x677F;&#x7F16;&#x53F7;&#xFF1A;</p>
+</li>
+<li><p>node-exporter&#xFF1A; cn/8919,en/11074</p>
+</li>
+<li><p>k8s: 13105</p>
+</li>
+<li><p>docker: 12831</p>
+</li>
+<li><p>alertmanager: 9578</p>
+</li>
+<li><p>blackbox_exportre: 9965</p>
+</li>
+<li><p>&#x91CD;&#x7F6E;&#x7BA1;&#x7406;&#x5458;&#x5BC6;&#x7801;&#xFF1A;</p>
+<pre><code>&#x67E5;&#x770B;Grafana&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x786E;&#x5B9A;grafana.db&#x7684;&#x8DEF;&#x5F84;
+ &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF1A;/etc/grafana/grafana.ini
+ [paths]
+ ;data = /var/lib/grafana
+ [database]
+ # For &quot;sqlite3&quot; only, path relative to data_path setting
+ ;path = grafana.db
+&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5F97;&#x77E5;grafana.db&#x7684;&#x5B8C;&#x6574;&#x8DEF;&#x5F84;&#x5982;&#x4E0B;&#xFF1A;
+ /var/lib/grafana/grafana.db
+
+&#x4F7F;&#x7528;sqlites&#x4FEE;&#x6539;admin&#x5BC6;&#x7801; 
+ sqlite3 /var/lib/grafana/grafana.db
+ sqlite&gt; update user set password = 
+&apos;59acf18b94d7eb0694c61e60ce44c110c7a683ac6a8f09580d626f90f4a242000746579358d77dd9e570e83fa24faa88a8a6&apos;, 
+salt = &apos;F3FAxVm33R&apos; where login = &apos;admin&apos;;
+ .exit
+&#x4F7F;&#x7528;admin admin &#x767B;&#x5F55;
+</code></pre></li>
+</ul>
+<h4 id="5alertmanager"><strong>5.alertmanager</strong></h4>
+<h5 id="51-prometheus--alertmanager-&#x62A5;&#x8B66;&#x8FC7;&#x7A0B;">5.1 prometheus + alertmanager &#x62A5;&#x8B66;&#x8FC7;&#x7A0B;</h5>
+<ul>
+<li>&#x6587;&#x6863;&#x5730;&#x5740;&#xFF1A;<a href="https://link.zhihu.com/?target=https%3A//prometheus.io/docs/alerting/latest/configuration/" target="_blank">https://prometheus.io/docs/alerting/latest/configuration/</a></li>
+<li>&#x8BBE;&#x7F6E;&#x8B66;&#x62A5;&#x548C;&#x901A;&#x77E5;&#x7684;&#x4E3B;&#x8981;&#x6B65;&#x9AA4;&#x662F;&#xFF1A;</li>
+<li>&#x5B89;&#x88C5;&#x548C;&#x914D;&#x7F6E; Alertmanager</li>
+<li>&#x914D;&#x7F6E;Prometheus&#x4E0E;Alertmanager&#x5BF9;&#x8BDD;</li>
+<li>&#x5728;Prometheus&#x4E2D;&#x521B;&#x5EFA;&#x8B66;&#x62A5;&#x89C4;&#x5219;</li>
+</ul>
+<h5 id="52-&#x5B89;&#x88C5;alertmanager">5.2 &#x5B89;&#x88C5;alertmanager</h5>
+<p>linux&#xFF08;centos7&#xFF09;&#x5B89;&#x88C5;&#xFF1A;</p>
+<ul>
+<li>&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A; <a href="https://link.zhihu.com/?target=https%3A//github.com/prometheus/alertmanager" target="_blank">https://github.com/prometheus/alertmanager</a></li>
+<li>&#x4E0B;&#x8F7D;&#x5E76;&#x5B89;&#x88C5;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-text">wget https://github.com/prometheus/alertmanager/releases/download/v0.20.0/
+alertmanager-0.20.0.linux-amd64.tar.gz
+tar -xf alertmanager-0.20.0.linux-amd64.tar.gz -C /usr/local
+cd /usr/local &amp;&amp; ln -sv alertmanager-0.20.0.linux-amd64/ alertmanager &amp;&amp; cd alertmanager
+</code></pre>
+<p>&#x542F;&#x52A8;&#xFF1A;</p>
+<pre><code class="lang-text">nohup ./alertmanager --config.file=&quot;alertmanager.yml&quot; --storage.path=&quot;data/ --web.listen-address=&quot;:9093&quot; &amp;
+</code></pre>
+<h5 id="53-&#x6838;&#x5FC3;&#x6982;&#x5FF5;">5.3 &#x6838;&#x5FC3;&#x6982;&#x5FF5;</h5>
+<ul>
+<li>grouping: &#x5206;&#x7EC4;</li>
+<li>&#x5206;&#x7EC4;&#x5C06;&#x7C7B;&#x4F3C;&#x6027;&#x8D28;&#x7684;&#x8B66;&#x62A5;&#x5206;&#x7C7B;&#x4E3A;&#x5355;&#x4E2A;&#x901A;&#x77E5;&#x3002;&#x5F53;&#x8BB8;&#x591A;&#x7CFB;&#x7EDF;&#x540C;&#x65F6;&#x53D1;&#x751F;&#x6545;&#x969C;&#x5E76;&#x4E14;&#x53EF;&#x80FD;&#x540C;&#x65F6;&#x89E6;&#x53D1;&#x6570;&#x767E;&#x5230;&#x6570;&#x5343;&#x4E2A;&#x8B66;&#x62A5;&#x65F6;&#xFF0C;&#x6B64;&#x529F;&#x80FD;&#x7279;&#x522B;&#x6709;&#x7528;&#x3002;</li>
+</ul>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-text">&#x53D1;&#x751F;&#x7F51;&#x7EDC;&#x5206;&#x533A;&#x65F6;&#xFF0C;&#x7FA4;&#x96C6;&#x4E2D;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x6570;&#x5341;&#x4E2A;&#x6216;&#x6570;&#x767E;&#x4E2A;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x3002;&#x60A8;&#x6709;&#x4E00;&#x534A;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x4E0D;&#x518D;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5E93;&#x3002;
+Prometheus&#x4E2D;&#x7684;&#x8B66;&#x62A5;&#x89C4;&#x5219;&#x914D;&#x7F6E;&#x4E3A;&#x5728;&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x65E0;&#x6CD5;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x901A;&#x4FE1;&#x65F6;&#x4E3A;&#x5176;&#x53D1;&#x9001;&#x8B66;&#x62A5;&#x3002;&#x7ED3;&#x679C;&#xFF0C;&#x6570;&#x767E;&#x4E2A;&#x8B66;&#x62A5;&#x88AB;&#x53D1;&#x9001;&#x5230;Alertmanager&#x3002;
+&#x4F5C;&#x4E3A;&#x7528;&#x6237;&#xFF0C;&#x4EBA;&#x4EEC;&#x53EA;&#x5E0C;&#x671B;&#x83B7;&#x5F97;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#xFF0C;&#x540C;&#x65F6;&#x4ECD;&#x7136;&#x80FD;&#x591F;&#x51C6;&#x786E;&#x67E5;&#x770B;&#x53D7;&#x5F71;&#x54CD;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;Alertmanager&#x914D;&#x7F6E;&#x4E3A;&#x6309;&#x8B66;&#x62A5;&#x7684;&#x7FA4;&#x96C6;&#x548C;
+&#x8B66;&#x62A5;&#x540D;&#x79F0;&#x5206;&#x7EC4;&#x8B66;&#x62A5;&#xFF0C;&#x4EE5;&#x4FBF;&#x5B83;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x7D27;&#x51D1;&#x7684;&#x901A;&#x77E5;&#x3002;
+</code></pre>
+<ul>
+<li>&#x8B66;&#x62A5;&#x7684;&#x5206;&#x7EC4;&#xFF0C;&#x5206;&#x7EC4;&#x901A;&#x77E5;&#x7684;&#x65F6;&#x95F4;&#x4EE5;&#x53CA;&#x8FD9;&#x4E9B;&#x901A;&#x77E5;&#x7684;&#x63A5;&#x6536;&#x8005;&#x7531;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x8DEF;&#x7531;&#x6811;&#xFF08;routing tree&#xFF09;&#x914D;&#x7F6E;&#x3002;</li>
+<li>Inhibition&#xFF1A; &#x6291;&#x5236;</li>
+<li>&#x6291;&#x5236;&#x662F;&#x4E00;&#x79CD;&#x6982;&#x5FF5;&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E9B;&#x5176;&#x4ED6;&#x8B66;&#x62A5;&#x5DF2;&#x7ECF;&#x89E6;&#x53D1;&#xFF0C;&#x5219;&#x6291;&#x5236;&#x67D0;&#x4E9B;&#x8B66;&#x62A5;&#x7684;&#x901A;&#x77E5;&#x3002;</li>
+<li>&#x793A;&#x4F8B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-text">&#x6B63;&#x5728;&#x89E6;&#x53D1;&#x8B66;&#x62A5;&#xFF0C;&#x901A;&#x77E5;&#x60A8;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x6574;&#x4E2A;&#x7FA4;&#x96C6;&#x3002;&#x53EF;&#x4EE5;&#x5C06;Alertmanager&#x914D;&#x7F6E;&#x4E3A;&#x4F7F;&#x4E0E;&#x8BE5;&#x7FA4;&#x96C6;&#x6709;&#x5173;&#x7684;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x8B66;&#x62A5;&#x9759;&#x97F3;&#x3002;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x9632;&#x6B62;&#x4E0E;&#x5B9E;&#x9645;&#x95EE;&#x9898;&#x65E0;&#x5173;&#x7684;&#x6570;&#x767E;&#x6216;&#x6570;&#x5343;&#x4E2A;&#x89E6;&#x53D1;&#x8B66;&#x62A5;&#x7684;&#x901A;&#x77E5;&#x3002;
+</code></pre>
+<ul>
+<li>&#x901A;&#x8FC7;Alertmanager&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#x7981;&#x6B62;&#x3002;</li>
+<li>Silences&#xFF1A; &#x9759;&#x9ED8;</li>
+<li>&#x9759;&#x9ED8;&#x662F;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x7ED9;&#x5B9A;&#x65F6;&#x95F4;&#x5185;&#x7B80;&#x5355;&#x5730;&#x4F7F;&#x8B66;&#x62A5;&#x9759;&#x97F3;&#x3002;&#x6C89;&#x9ED8;&#x662F;&#x6839;&#x636E;&#x5339;&#x914D;&#x5668;&#x914D;&#x7F6E;&#x7684;&#xFF0C;&#x5C31;&#x50CF;&#x8DEF;&#x7531;&#x6811;&#x4E00;&#x6837;&#x3002;&#x68C0;&#x67E5;&#x4F20;&#x5165;&#x8B66;&#x62A5;&#x662F;&#x5426;&#x4E0E;&#x6D3B;&#x52A8;&#x9759;&#x9ED8;&#x7684;&#x6240;&#x6709;&#x76F8;&#x7B49;&#x6216;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5339;&#x914D;&#x9879;&#x5339;&#x914D;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x8FD9;&#x6837;&#x505A;&#xFF0C;&#x5219;&#x4E0D;&#x4F1A;&#x9488;&#x5BF9;&#x8BE5;&#x8B66;&#x62A5;&#x53D1;&#x9001;&#x4EFB;&#x4F55;&#x901A;&#x77E5;&#x3002;</li>
+</ul>
+<h5 id="54-&#x914D;&#x7F6E;prometheus&#x5BF9;&#x63A5;alertmanager">5.4 &#x914D;&#x7F6E;prometheus&#x5BF9;&#x63A5;alertmanager</h5>
+<ul>
+<li>alerting&#xFF1A;</li>
+</ul>
+<pre><code class="lang-text">alerting:
+alertmanagers:
+- static_configs:
+ - targets: [&quot;127.0.0.1:9093&quot;]
+</code></pre>
+<ul>
+<li>rule_files:</li>
+</ul>
+<pre><code class="lang-text"># Load rules once and periodically evaluate them according to the global &apos;evaluation_interval&apos;.
+rule_files:
+- &quot;rules/*.yml&quot;
+</code></pre>
+<ul>
+<li>scrape_configs:</li>
+</ul>
+<pre><code class="lang-text">scrape_configs:   
+- job_name: &apos;alertmanager&apos;
+ static_configs:
+- targets: [&apos;127.0.0.1:9093&apos;]
+</code></pre>
+<h5 id="55-prometheus-rules&#x7F16;&#x5199;">5.5 prometheus rules&#x7F16;&#x5199;</h5>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-text">[root@xiang-03 /usr/local/prometheus]#cat rules/node.yml 
+groups:
+- name: &quot;system info&quot;
+ rules:
+- alert: &quot;&#x670D;&#x52A1;&#x5668;&#x5B95;&#x673A;&quot;    # &#x544A;&#x8B66;&#x540D;&#x79F0; alertname
+expr: up == 0    # &#x544A;&#x8B66;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5F53;&#x8868;&#x8FBE;&#x5F0F;&#x6761;&#x4EF6;&#x6EE1;&#x8DB3;&#xFF0C;&#x5373;&#x53D1;&#x9001;&#x544A;&#x8B66;
+for: 1m     # &#x7B49;&#x5F85;&#x65F6;&#x957F;&#xFF0C;&#x7B49;&#x5F85;&#x81EA;&#x52A8;&#x6062;&#x590D;&#x7684;&#x65F6;&#x95F4;&#x3002;
+labels:  # &#x6B64;label&#x4E0D;&#x540C;&#x4E8E; metric&#x4E2D;&#x7684;label&#xFF0C;&#x53D1;&#x9001;&#x7ED9;alertmanager&#x4E4B;&#x540E;&#x7528;&#x4E8E;&#x7BA1;&#x7406;&#x544A;&#x8B66;&#x9879;&#xFF0C;&#x6BD4;&#x5982;&#x5339;&#x914D;&#x5230;&#x90A3;&#x4E2A;label&#x5373;&#x89E6;&#x53D1;&#x54EA;&#x79CD;&#x544A;&#x8B66;
+ severity: critical   # key:value &#x7686;&#x53EF;&#x5B8C;&#x5168;&#x81EA;&#x5B9A;&#x4E49;
+annotations:     # &#x5B9A;&#x4E49;&#x53D1;&#x9001;&#x544A;&#x8B66;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6CE8;&#x610F;&#x6B64;&#x5730;&#x7684;labels&#x4E3A;metric&#x4E2D;&#x7684;label
+ summary: &quot;{ {$labels.instance} }:&#x670D;&#x52A1;&#x5668;&#x5B95;&#x673A;&quot;
+ description: &quot;{ {$labels.instance} }:&#x670D;&#x52A1;&#x5668;&#x65E0;&#x6CD5;&#x8FDE;&#x63A5;&#xFF0C;&#x6301;&#x7EED;&#x65F6;&#x95F4;&#x5DF2;&#x8D85;&#x8FC7;3mins&quot;
+- alert: &quot;CPU &#x4F7F;&#x7528;&#x8FC7;&#x9AD8;&quot;
+expr: 100-(avg(rate(node_cpu_seconds_total{mode=&quot;idle&quot;}[1m]))by(instance)*100) &gt; 40
+for: 1m
+labels:
+ servirity: warning
+annotations:
+ summary: &quot;{ {$labels.instance} }:CPU &#x4F7F;&#x7528;&#x8FC7;&#x9AD8;&quot;
+ description: &quot;{ {$labels.instance} }:CPU &#x4F7F;&#x7528;&#x7387;&#x8D85;&#x8FC7; 40%&quot;
+ value: &quot;{ {$value} }&quot;
+- alert: &quot;CPU &#x4F7F;&#x7528;&#x7387;&#x8D85;&#x8FC7;90%&quot;
+expr: 100-(avg(rate(node_cpu_seconds_total{mode=&quot;idle&quot;}[1m])) by(instance)* 100) &gt; 90
+for: 1m
+labels:
+ severity: critical
+annotations:
+ summary: &quot;{ {$labels.instance} }:CPU &#x4F7F;&#x7528;&#x7387;90%&quot;
+ description: &quot;{ {$labels.instance} }:CPU &#x4F7F;&#x7528;&#x7387;&#x8D85;&#x8FC7;90%&#xFF0C;&#x6301;&#x7EED;&#x65F6;&#x95F4;&#x8D85;&#x8FC7;5mins&quot;
+ value: &quot;{ {$value} }&quot;
+</code></pre>
+<ul>
+<li>&#x5982;&#x679C;&#x9700;&#x8981;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&#x4E2D;&#x6587;&#xFF0C;&#x52A1;&#x5FC5;&#x6CE8;&#x610F;&#x7F16;&#x7801;&#x89C4;&#x5219;&#x4E3A;utf8&#xFF0C;&#x5426;&#x5219;&#x62A5;&#x9519;</li>
+</ul>
+<h5 id="56-&#x914D;&#x7F6E;alertmanager">5.6 &#x914D;&#x7F6E;alertmanager</h5>
+<ul>
+<li>&#x8BE6;&#x7EC6;&#x6587;&#x6863;&#x5730;&#x5740;&#xFF1A; <a href="https://link.zhihu.com/?target=https%3A//prometheus.io/docs/alerting/latest/configuration/" target="_blank">https://prometheus.io/docs/alerting/latest/configuration/</a></li>
+<li>&#x4E3B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A; alertmanager.yml</li>
+<li>&#x6A21;&#x677F;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A; *.tmpl</li>
+<li>&#x53EA;&#x662F;&#x4ECB;&#x7ECD;&#x5C11;&#x90E8;&#x9700;&#x8981;&#x7528;&#x5230;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x9700;&#x67E5;&#x770B;&#x5B8C;&#x6574;&#x914D;&#x7F6E;&#xFF0C;&#x8BF7;&#x67E5;&#x770B;&#x5B98;&#x65B9;&#x6587;&#x6863;</li>
+</ul>
+<h6 id="561-alertmanageryml">5.6.1 alertmanager.yml</h6>
+<ul>
+<li>&#x4E3B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x9700;&#x8981;&#x914D;&#x7F6E;&#xFF1A;</li>
+<li>global: &#x53D1;&#x4EF6;&#x90AE;&#x7BB1;&#x914D;&#x7F6E;&#xFF0C;</li>
+<li>templates: &#x6307;&#x5B9A;&#x90AE;&#x4EF6;&#x6A21;&#x677F;&#x6587;&#x4EF6;&#xFF08;&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;&#xFF0C;&#x5219;&#x4F7F;&#x7528;alertmanager&#x9ED8;&#x8BA4;&#x6A21;&#x677F;&#xFF09;&#xFF0C;</li>
+<li>routes&#xFF1A; &#x914D;&#x7F6E;&#x544A;&#x8B66;&#x89C4;&#x5219;&#xFF0C;&#x6BD4;&#x5982;&#x5339;&#x914D;&#x54EA;&#x4E2A;label&#x7684;&#x89C4;&#x5219;&#x53D1;&#x9001;&#x5230;&#x54EA;&#x4E2A;&#x540E;&#x7AEF;</li>
+<li>receivers&#xFF1A; &#x914D;&#x7F6E;&#x540E;&#x7AEF;&#x544A;&#x8B66;&#x5A92;&#x4ECB;&#xFF1A; email&#xFF0C;wechat&#xFF0C;webhook&#x7B49;&#x7B49;</li>
+<li>&#x5148;&#x770B;&#x793A;&#x4F8B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-text">vim alertmanager.yml
+global:
+smtp_smarthost: &apos;xxx&apos;
+smtp_from: &apos;xxx&apos;
+smtp_auth_username: &apos;xxx&apos;
+smtp_auth_password: &apos;xxx&apos;
+smtp_require_tls: false
+templates:
+- &apos;/alertmanager/template/*.tmpl&apos;
+route:
+receiver: &apos;default-receiver&apos;
+group_wait: 1s #&#x7EC4;&#x62A5;&#x8B66;&#x7B49;&#x5F85;&#x65F6;&#x95F4;
+group_interval: 1s  #&#x7EC4;&#x62A5;&#x8B66;&#x95F4;&#x9694;&#x65F6;&#x95F4;
+repeat_interval: 1s  #&#x91CD;&#x590D;&#x62A5;&#x8B66;&#x95F4;&#x9694;&#x65F6;&#x95F4;
+group_by: [cluster, alertname]
+routes:
+- receiver: test
+ group_wait: 1s
+ match_re:
+severity: test
+receivers:
+- name: &apos;default-receiver&apos;
+email_configs:
+- to: &apos;xx@xx.xx&apos;
+ html: &apos;{ { template &quot;xx.html&quot; . } }&apos;
+ headers: { Subject: &quot; { { .CommonAnnotations.summary } }&quot; }
+- name: &apos;test&apos;
+email_configs:
+- to: &apos;xxx@xx.xx&apos;
+ html: &apos;{ { template &quot;xx.html&quot; . } }&apos;
+ headers: { Subject: &quot; { { &#x7B2C;&#x4E8C;&#x8DEF;&#x7531;&#x5339;&#x914D;&#x6D4B;&#x8BD5;} }&quot; } 
+
+vim test.tmpl
+{ { define &quot;xx.html&quot; } }
+&lt;table border=&quot;5&quot;&gt;
+ &lt;tr&gt;&lt;td&gt;&#x62A5;&#x8B66;&#x9879;&lt;/td&gt;
+&lt;td&gt;&#x78C1;&#x76D8;&lt;/td&gt;
+&lt;td&gt;&#x62A5;&#x8B66;&#x9600;&#x503C;&lt;/td&gt;
+&lt;td&gt;&#x5F00;&#x59CB;&#x65F6;&#x95F4;&lt;/td&gt;
+ &lt;/tr&gt;
+ { { range $i, $alert := .Alerts } }
+&lt;tr&gt;&lt;td&gt;{ { index $alert.Labels &quot;alertname&quot; } }&lt;/td&gt;
+&lt;td&gt;{ { index $alert.Labels &quot;instance&quot; } }&lt;/td&gt;
+&lt;td&gt;{ { index $alert.Annotations &quot;value&quot; } }&lt;/td&gt;
+&lt;td&gt;{ { $alert.StartsAt } }&lt;/td&gt;
+&lt;/tr&gt;
+ { { end } }
+&lt;/table&gt;
+{ { end } }
+</code></pre>
+<ul>
+<li>&#x8BE6;&#x89E3;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-text">gloable&#xFF1A; 
+
+resolve_timeout:    # &#x5728;&#x6CA1;&#x6709;&#x62A5;&#x8B66;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x58F0;&#x660E;&#x4E3A;&#x5DF2;&#x89E3;&#x51B3;&#x7684;&#x65F6;&#x95F4;
+</code></pre>
+<ul>
+<li>&#x5176;&#x4ED6;&#x90AE;&#x4EF6;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x793A;&#x4F8B;</li>
+</ul>
+<pre><code class="lang-text">route&#xFF1A;  # &#x6240;&#x6709;&#x62A5;&#x8B66;&#x4FE1;&#x606F;&#x8FDB;&#x5165;&#x540E;&#x7684;&#x6839;&#x8DEF;&#x7531;&#xFF0C;&#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x62A5;&#x8B66;&#x7684;&#x5206;&#x53D1;&#x7B56;&#x7565;
+
+group_by: [&apos;LABEL_NAME&apos;,&apos;alertname&apos;, &apos;cluster&apos;,&apos;job&apos;,&apos;instance&apos;,...]
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x7684;&#x6807;&#x7B7E;&#x5217;&#x8868;&#x662F;&#x63A5;&#x6536;&#x5230;&#x62A5;&#x8B66;&#x4FE1;&#x606F;&#x540E;&#x7684;&#x91CD;&#x65B0;&#x5206;&#x7EC4;&#x6807;&#x7B7E;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x63A5;&#x6536;&#x5230;&#x7684;&#x62A5;&#x8B66;&#x4FE1;&#x606F;&#x91CC;&#x9762;&#x6709;&#x8BB8;&#x591A;&#x5177;&#x6709; cluster=A &#x548C;alertname=LatncyHigh &#x8FD9;&#x6837;&#x7684;&#x6807;&#x7B7E;&#x7684;&#x62A5;&#x8B66;&#x4FE1;&#x606F;&#x5C06;&#x4F1A;&#x6279;&#x91CF;&#x88AB;&#x805A;&#x5408;&#x5230;&#x4E00;&#x4E2A;&#x5206;&#x7EC4;&#x91CC;&#x9762;</p>
+<pre><code class="lang-text">group_wait: 30s
+</code></pre>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x62A5;&#x8B66;&#x5206;&#x7EC4;&#x88AB;&#x521B;&#x5EFA;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x7B49;&#x5F85;&#x81F3;&#x5C11;group_wait&#x65F6;&#x95F4;&#x6765;&#x521D;&#x59CB;&#x5316;&#x901A;&#x77E5;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x786E;&#x4FDD;&#x60A8;&#x80FD;&#x6709;&#x8DB3;&#x591F;&#x7684;&#x65F6;&#x95F4;&#x4E3A;&#x540C;&#x4E00;&#x5206;&#x7EC4;&#x6765;&#x83B7;&#x53D6;&#x591A;&#x4E2A;&#x8B66;&#x62A5;&#xFF0C;&#x7136;&#x540E;&#x4E00;&#x8D77;&#x89E6;&#x53D1;&#x8FD9;&#x4E2A;&#x62A5;&#x8B66;&#x4FE1;&#x606F;&#x3002;</p>
+<pre><code class="lang-text">group_interval: 5m
+</code></pre>
+<p>&#x5F53;&#x7B2C;&#x4E00;&#x4E2A;&#x62A5;&#x8B66;&#x53D1;&#x9001;&#x540E;&#xFF0C;&#x7B49;&#x5F85;&apos;group_interval&apos;&#x65F6;&#x95F4;&#x6765;&#x53D1;&#x9001;&#x65B0;&#x7684;&#x4E00;&#x7EC4;&#x62A5;&#x8B66;&#x4FE1;&#x606F;&#x3002;</p>
+<pre><code class="lang-text">repeat_interval: 5m
+</code></pre>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x62A5;&#x8B66;&#x4FE1;&#x606F;&#x5DF2;&#x7ECF;&#x53D1;&#x9001;&#x6210;&#x529F;&#x4E86;&#xFF0C;&#x7B49;&#x5F85;&apos;repeat_interval&apos;&#x65F6;&#x95F4;&#x6765;&#x91CD;&#x65B0;&#x53D1;&#x9001;&#x4ED6;&#x4EEC;</p>
+<pre><code class="lang-text">match&#xFF1A; 
+ label_name: NAME
+</code></pre>
+<p>&#x5339;&#x914D;&#x62A5;&#x8B66;&#x89C4;&#x5219;&#xFF0C;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x544A;&#x8B66;&#x5C06;&#x88AB;&#x53D1;&#x7ED9; receiver</p>
+<pre><code class="lang-text">match_re:
+ label_name: &lt;regex&gt;, ...
+</code></pre>
+<p>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5339;&#x914D;&#x3002;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x544A;&#x8B66;&#x5C06;&#x88AB;&#x53D1;&#x7ED9; receiver</p>
+<pre><code class="lang-text">receiver: receiver_name
+</code></pre>
+<p>&#x5C06;&#x6EE1;&#x8DB3;match &#x548C; match_re&#x7684;&#x544A;&#x8B66;&#x53D1;&#x7ED9;&#x540E;&#x7AEF; &#x544A;&#x8B66;&#x5A92;&#x4ECB;&#xFF08;&#x90AE;&#x4EF6;&#xFF0C;webhook&#xFF0C;pagerduty&#xFF0C;wechat&#xFF0C;...&#xFF09; &#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A;default receivererr=&quot;root route must specify a default receiver&quot;</p>
+<pre><code class="lang-text">routes:
+ - &lt;route&gt; ...
+</code></pre>
+<p>&#x914D;&#x7F6E;&#x591A;&#x6761;&#x89C4;&#x5219;&#x3002;</p>
+<pre><code class="lang-text">  templates&#xFF1A;
+   [ - &lt;filepath&gt; ... ]
+</code></pre>
+<p> &#x914D;&#x7F6E;&#x6A21;&#x677F;&#xFF0C;&#x6BD4;&#x5982;&#x90AE;&#x4EF6;&#x544A;&#x8B66;&#x9875;&#x9762;&#x6A21;&#x677F;</p>
+<pre><code class="lang-text">  receivers:
+   - &lt;receiver&gt; ...# &#x5217;&#x8868;
+
+- name&#xFF1A; receiver_name  # &#x7528;&#x4E8E;&#x586B;&#x5199;&#x5728;route.receiver&#x4E2D;&#x7684;&#x540D;&#x5B57; 
+
+ email_configs:   # &#x914D;&#x7F6E;&#x90AE;&#x4EF6;&#x544A;&#x8B66;
+
+ - to: &lt;tmpl_string&gt;
+send_resolved: &lt;boolean&gt; | default = false   # &#x6545;&#x969C;&#x6062;&#x590D;&#x4E4B;&#x540E;&#xFF0C;&#x662F;&#x5426;&#x53D1;&#x9001;&#x6062;&#x590D;&#x901A;&#x77E5;
+</code></pre>
+<p>&#x914D;&#x7F6E;&#x63A5;&#x53D7;&#x90AE;&#x4EF6;&#x544A;&#x8B66;&#x7684;&#x90AE;&#x7BB1;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x5355;&#x72EC;&#x914D;&#x7F6E;&#x53D1;&#x4EF6;&#x90AE;&#x7BB1;&#x3002; &#x8BE6;&#x89C1;&#x5B98;&#x65B9;&#x6587;&#x6863; <a href="https://link.zhihu.com/?target=https%3A//prometheus.io/docs/alerting/latest/configuration/%23email_config" target="_blank">https://prometheus.io/docs/alerting/latest/configuration/#email_config</a></p>
+<pre><code class="lang-text">- name: ...
+  wechat_configs:
+  - send_resolved: &lt;boolean&gt; | default = false
+
+ api_secret: &lt;secret&gt; | default = global.wechat_api_secret
+ api_url: &lt;string&gt; | default = global.wechat_api_url
+ corp_id: &lt;string&gt; | default = global.wechat_api_corp_id
+ message: &lt;tmpl_string&gt; | default = &apos;{ { template &quot;wechat.default.message&quot; . } }&apos;
+
+ agent_id: &lt;string&gt; | default = &apos;{ { template &quot;wechat.default.agent_id&quot; . } }&apos;
+
+ to_user: &lt;string&gt; | default = &apos;{ { template &quot;wechat.default.to_user&quot; . } }&apos;
+ to_party: &lt;string&gt; | default = &apos;{ { template &quot;wechat.default.to_party&quot; . } }&apos;
+ to_tag: &lt;string&gt; | default = &apos;{ { template &quot;wechat.default.to_tag&quot; . } }&apos;    
+ # &#x8BF4;&#x660E;
+  to_user: &#x4F01;&#x4E1A;&#x5FAE;&#x4FE1;&#x7528;&#x6237;ID
+  to_party: &#x9700;&#x8981;&#x53D1;&#x9001;&#x7684;&#x7EC4;id
+
+  corp_id: &#x4F01;&#x4E1A;&#x5FAE;&#x4FE1;&#x8D26;&#x53F7;&#x552F;&#x4E00;ID &#x53EF;&#x4EE5;&#x5728; &#x6211;&#x7684;&#x4F01;&#x4E1A; &#x67E5;&#x770B;       
+  agent_id: &#x5E94;&#x7528;&#x7684; ID&#xFF0C;&#x5E94;&#x7528;&#x7BA1;&#x7406; --&gt; &#x6253;&#x5F00;&#x81EA;&#x5B9A;&#x5E94;&#x7528;&#x67E5;&#x770B;
+  api_secret: &#x5E94;&#x7528;&#x7684;&#x5BC6;&#x94A5;
+
+  &#x6253;&#x5F00;&#x4F01;&#x4E1A;&#x5FAE;&#x4FE1;&#x6CE8;&#x518C; https://work.weixin.qq.com
+  &#x5FAE;&#x4FE1;API&#x5B98;&#x65B9;&#x6587;&#x6863; https://work.weixin.qq.com/api/doc#90002/90151/90854
+</code></pre>
+<h6 id="562&#x914D;&#x7F6E;&#x4F01;&#x4E1A;&#x5FAE;&#x4FE1;&#x544A;&#x8B66;">5.6.2&#x914D;&#x7F6E;&#x4F01;&#x4E1A;&#x5FAE;&#x4FE1;&#x544A;&#x8B66;</h6>
+<pre><code class="lang-text">
+
+</code></pre>
+<h4 id="6oracle-explorer">6.oracle-explorer</h4>
+<h5 id="61-&#x8FD0;&#x884C;oracle-exporter">6.1 &#x8FD0;&#x884C;oracle exporter</h5>
+<p>&#x89E3;&#x538B;&#x5B89;&#x88C5;&#x6587;&#x4EF6;&#x5230; /usr/local/rq</p>
+<p>&#x5728;&#x542F;&#x52A8;&#x4E4B;&#x524D;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x6B63;&#x786E;&#x8BBE;&#x7F6E;&#x4E86;&#x73AF;&#x5883;&#x53D8;&#x91CF;DATA_SOURCE_NAME&#x3002;DATA_SOURCE_NAME&#x5E94;&#x8BE5;&#x91C7;&#x7528;Oracle EZCONNECT&#x683C;&#x5F0F;&#xFF1A;</p>
+<p><a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/netag/configuring-naming-methods.html#GUID-B0437826-43C1-49EC-A94D-B650B6A4A6EE" target="_blank">https://docs.oracle.com/en/database/oracle/oracle-database/19/netag/configuring-naming-methods.html#GUID-B0437826-43C1-49EC-A94D-B650B6A4A6EE</a></p>
+<pre><code>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;oracle&#x8D26;&#x6237;
+create user monitor identified by monitor;
+&#x8D4B;&#x4E88;&#x8D26;&#x6237;&#x6743;&#x9650;
+grant connect, resource to monitor;
+
+&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x547D;&#x4EE4;&#xFF1A;
+export DATA_SOURCE_NAME=&quot;monitor/monitor@//192.168.0.185:1521/orcl&quot;
+
+&#x540C;&#x65F6;&#x9700;&#x8981;&#x5728;oracle&#x76EE;&#x5F55;&#x914D;&#x7F6E; .bash_profile,&#x4F7F;&#x7528;&#x6211;&#x914D;&#x7F6E;&#x597D;&#x7684;&#x6587;&#x4EF6;
+&#x7136;&#x540E;&#x8FD0;&#x884C;
+source .bash_profile
+
+&#x6DFB;&#x52A0;
+&#x7136;&#x540E;&#x4F7F;&#x7528;&#x811A;&#x672C;&#x8FD0;&#x884C;&#xFF1A;
+sh oracle_exporter.sh
+
+&#x78B0;&#x5230; pinging oracle: empty dsn
+export DATA_SOURCE_NAME=C##test/123456@//192.168.18.203:1521/ORCLCDB
+
+&#x78B0;&#x5230; error while loading shared libraries: libclntsh.so.18.1: cannot open shared object file: No such file or directory
+&#x914D;&#x7F6E;
+export LD_LIBRARY_PATH=/opt/oracle/product/19c/dbhome_1/lib/
+</code></pre><h5 id="62-orcle&#x76F8;&#x5173;&#x64CD;&#x4F5C;">6.2 orcle&#x76F8;&#x5173;&#x64CD;&#x4F5C;</h5>
+<pre><code>Oracle&#x7528;&#x6237;&#x4E0B;&#x8F93;&#x5165;
+sqlplus / as sysdba
+&#x8FDE;&#x63A5;test&#x8D26;&#x6237;
+conn test/123456
+</code></pre><p><img src="C:\Users\rq\Desktop\&#x4E0B;&#x8F7D; (1" alt="&#x4E0B;&#x8F7D; (1)">.jpg)</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="数据库监控.html" class="navigation navigation-prev " aria-label="Previous page: 数据库监控">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="配置alertmanager的短信和邮件告警.html" class="navigation navigation-next " aria-label="Next page: 配置Alertmanager的短信和邮件告警">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"独立部署Prometheus Alertmanager Granfan监控平台","level":"10.7","depth":1,"next":{"title":"配置Alertmanager的短信和邮件告警","level":"10.8","depth":1,"path":"8-监控相关/配置alertmanager的短信和邮件告警.md","ref":"8-监控相关/配置alertmanager的短信和邮件告警.md","articles":[]},"previous":{"title":"数据库监控","level":"10.6","depth":1,"path":"8-监控相关/数据库监控.md","ref":"8-监控相关/数据库监控.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据之路","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"8-监控相关/独立部署Prometheus Alertmanager Granfan监控平台.md","mtime":"2021-06-30T09:27:08.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-30T09:27:14.165Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

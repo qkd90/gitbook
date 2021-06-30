@@ -453,26 +453,26 @@ for: 1m     # 等待时长，等待自动恢复的时间。
 labels:  # 此label不同于 metric中的label，发送给alertmanager之后用于管理告警项，比如匹配到那个label即触发哪种告警
  severity: critical   # key:value 皆可完全自定义
 annotations:     # 定义发送告警的内容，注意此地的labels为metric中的label
- summary: "{{$labels.instance}}:服务器宕机"
- description: "{{$labels.instance}}:服务器无法连接，持续时间已超过3mins"
+ summary: "{ {$labels.instance} }:服务器宕机"
+ description: "{ {$labels.instance} }:服务器无法连接，持续时间已超过3mins"
 - alert: "CPU 使用过高"
 expr: 100-(avg(rate(node_cpu_seconds_total{mode="idle"}[1m]))by(instance)*100) > 40
 for: 1m
 labels:
  servirity: warning
 annotations:
- summary: "{{$labels.instance}}:CPU 使用过高"
- description: "{{$labels.instance}}:CPU 使用率超过 40%"
- value: "{{$value}}"
+ summary: "{ {$labels.instance} }:CPU 使用过高"
+ description: "{ {$labels.instance} }:CPU 使用率超过 40%"
+ value: "{ {$value} }"
 - alert: "CPU 使用率超过90%"
 expr: 100-(avg(rate(node_cpu_seconds_total{mode="idle"}[1m])) by(instance)* 100) > 90
 for: 1m
 labels:
  severity: critical
 annotations:
- summary: "{{$labels.instance}}:CPU 使用率90%"
- description: "{{$labels.instance}}:CPU 使用率超过90%，持续时间超过5mins"
- value: "{{$value}}"
+ summary: "{ {$labels.instance} }:CPU 使用率90%"
+ description: "{ {$labels.instance} }:CPU 使用率超过90%，持续时间超过5mins"
+ value: "{ {$value} }"
 ```
 
 - 如果需要在配置文件中使用中文，务必注意编码规则为utf8，否则报错
@@ -518,31 +518,31 @@ receivers:
 - name: 'default-receiver'
 email_configs:
 - to: 'xx@xx.xx'
- html: '{{ template "xx.html" . }}'
- headers: { Subject: " {{ .CommonAnnotations.summary }}" }
+ html: '{ { template "xx.html" . } }'
+ headers: { Subject: " { { .CommonAnnotations.summary } }" }
 - name: 'test'
 email_configs:
 - to: 'xxx@xx.xx'
- html: '{{ template "xx.html" . }}'
- headers: { Subject: " {{ 第二路由匹配测试}}" } 
+ html: '{ { template "xx.html" . } }'
+ headers: { Subject: " { { 第二路由匹配测试} }" } 
 
 vim test.tmpl
-{{ define "xx.html" }}
+{ { define "xx.html" } }
 <table border="5">
  <tr><td>报警项</td>
 <td>磁盘</td>
 <td>报警阀值</td>
 <td>开始时间</td>
  </tr>
- {{ range $i, $alert := .Alerts }}
-<tr><td>{{ index $alert.Labels "alertname" }}</td>
-<td>{{ index $alert.Labels "instance" }}</td>
-<td>{{ index $alert.Annotations "value" }}</td>
-<td>{{ $alert.StartsAt }}</td>
+ { { range $i, $alert := .Alerts } }
+<tr><td>{ { index $alert.Labels "alertname" } }</td>
+<td>{ { index $alert.Labels "instance" } }</td>
+<td>{ { index $alert.Annotations "value" } }</td>
+<td>{ { $alert.StartsAt } }</td>
 </tr>
- {{ end }}
+ { { end } }
 </table>
-{{ end }}
+{ { end } }
 ```
 
 - 详解：
@@ -637,13 +637,13 @@ send_resolved: <boolean> | default = false   # 故障恢复之后，是否发送
  api_secret: <secret> | default = global.wechat_api_secret
  api_url: <string> | default = global.wechat_api_url
  corp_id: <string> | default = global.wechat_api_corp_id
- message: <tmpl_string> | default = '{{ template "wechat.default.message" . }}'
+ message: <tmpl_string> | default = '{ { template "wechat.default.message" . } }'
  
- agent_id: <string> | default = '{{ template "wechat.default.agent_id" . }}'
+ agent_id: <string> | default = '{ { template "wechat.default.agent_id" . } }'
  
- to_user: <string> | default = '{{ template "wechat.default.to_user" . }}'
- to_party: <string> | default = '{{ template "wechat.default.to_party" . }}'
- to_tag: <string> | default = '{{ template "wechat.default.to_tag" . }}'    
+ to_user: <string> | default = '{ { template "wechat.default.to_user" . } }'
+ to_party: <string> | default = '{ { template "wechat.default.to_party" . } }'
+ to_tag: <string> | default = '{ { template "wechat.default.to_tag" . } }'    
  # 说明
   to_user: 企业微信用户ID
   to_party: 需要发送的组id

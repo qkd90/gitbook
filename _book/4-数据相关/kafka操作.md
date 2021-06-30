@@ -1,6 +1,6 @@
+# kafka命令行操作
 
-
-1.  kafka
+1.kafka
 
 ```shell
 /usr/share/kafka_2.11-2.3.0/bin/

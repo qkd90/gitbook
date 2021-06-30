@@ -43,6 +43,10 @@
 
 - [Nginx相关](12-nginx/nginx相关.md)
 
+## 文本编辑器
+
+- [Typora设置修改](13-文本编辑器/typora设置修改.md)
+
 ## Java提高
 
 - [HTTP 协议的 8 种请求类型介绍](2-Java提高/HTTP 协议的 8 种请求类型介绍.md)
@@ -56,23 +60,23 @@
 - [统一异常处理与统一结果返回](3-springboot/统一异常处理与统一结果返回.md)
 - [自定义拦截器实现接口校验](3-springboot/自定义拦截器实现接口校验.md)
 
-## 数据存储相关
+## 数据相关
 
-- [MongoDB操作](4-数据存储相关/MongoDB操作.md)
-- [Es的使用](4-数据存储相关/es的使用.md)
-- [Kafka操作](4-数据存储相关/kafka操作.md)
-- [Mysql设计规范](4-数据存储相关/mysql设计规范.md)
+- [MongoDB操作](4-数据相关/MongoDB操作.md)
+- [Es的使用](4-数据相关/es的使用.md)
+- [Kafka操作](4-数据相关/kafka操作.md)
+- [Mysql设计规范](4-数据相关/mysql设计规范.md)
+- [数据库监控指标](4-数据相关/数据库监控指标.md)
 
 ## 监控相关
 
+- [27服务器的监控需要软件配置](8-监控相关/27服务器的监控需要软件配置.md)
 - [Prometheus配套的各个数据库监控部署](8-监控相关/prometheus配套的各个数据库监控部署.md)
 - [Windows服务监控](8-监控相关/windows服务监控.md)
 - [安装Node Exporter](8-监控相关/安装node_exporter.md)
 - [搭建EFK+Logstash日志分析系统](8-监控相关/搭建EFK+logstash日志分析系统.md)
 - [数据库监控](8-监控相关/数据库监控.md)
 - [独立部署Prometheus Alertmanager Granfan监控平台](8-监控相关/独立部署Prometheus Alertmanager Granfan监控平台.md)
-- [赤霄配置](8-监控相关/赤霄配置.md)
-- [部署Prometheus+Alertmanager+Granfan监控平台](8-监控相关/部署Prometheus+Alertmanager+Granfan监控平台.md)
 - [配置Alertmanager的短信和邮件告警](8-监控相关/配置alertmanager的短信和邮件告警.md)
 
 ## 测试相关
