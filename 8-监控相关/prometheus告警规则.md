@@ -142,8 +142,8 @@
     labels:
       severity: warning
     annotations:
-      summary: Host unusual disk write latency (instance {{ $labels.instance }})
-      description: "Disk latency is growing (write operations > 100ms)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+      summary: 主机异常磁盘写入延迟 (instance {{ $labels.instance }})
+      description: "磁盘写入延迟一直增加 (write operations > 100ms)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
 
   - alert: HostHighCpuLoad
     expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[2m])) * 100) > 80
@@ -151,8 +151,8 @@
     labels:
       severity: warning
     annotations:
-      summary: Host high CPU load (instance {{ $labels.instance }})
-      description: "CPU load is > 80%\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+      summary: 主机 CPU 负载高于80%(instance {{ $labels.instance }})
+      description: "CPU 负载高于80%\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
 
   - alert: HostCpuStealNoisyNeighbor
     expr: avg by(instance) (rate(node_cpu_seconds_total{mode="steal"}[5m])) * 100 > 10
