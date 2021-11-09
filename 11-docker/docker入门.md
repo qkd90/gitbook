@@ -48,3 +48,7 @@ docker restart a2737a8fc891
 
 6.删除docker容器
 
+```
+docker rm a2737a8fc891
+```
+

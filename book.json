@@ -1,7 +1,0 @@
-{
-    "title" : "大数据之路",
-    "theme-default": {
-        "showLevel": true
-    },
-    "plugins": ["summary"]
-}
