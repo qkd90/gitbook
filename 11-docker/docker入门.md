@@ -1,7 +1,19 @@
-1.docker查看已经在运行的镜像
+# docker操作
+
+## 一、基本操作
+
+1.docker查看镜像
+
+已经在运行的镜像
 
 ```
 docker ps
+```
+
+全部镜像
+
+```
+docker ps -a
 ```
 
 2.docker查看已经拉下来的镜像
@@ -50,5 +62,13 @@ docker restart a2737a8fc891
 
 ```
 docker rm a2737a8fc891
+```
+
+## 二、清理操作
+
+1.清理所有状态为 exited 的容器
+
+```
+docker rm $(docker ps -qf status=exited)
 ```
 
