@@ -122,7 +122,7 @@ kube-proxy 维护节点上的网络规则。这些网络规则允许从集群内
 
 ![img](https://cdn.nlark.com/yuque/0/2021/png/1613913/1626605698082-bf4351dd-6751-44b7-aaf7-7608c847ea42.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_37%2Ctext_YXRndWlndS5jb20gIOWwmuehheiwtw%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)
 
-## 三、kubeadm创建集群
+## 3.kubeadm创建集群
 
 请参照以前Docker安装。先提前为所有机器安装Docker
 
@@ -250,8 +250,6 @@ kubeadm init \
 #所有网络范围不重叠
 ```
 
-
-
 ```shell
 #成功运行之后结果输出：
 
@@ -284,7 +282,7 @@ kubeadm join cluster-endpoint:6443 --token hums8f.vyx71prsg74ofce7 \
     --discovery-token-ca-cert-hash sha256:a394d059dd51d68bb007a532a037d0a477131480ae95f75840c461e85e2c6ae3
 ```
 
-
+k8s命令：
 
 ```bash
 #查看集群所有节点
@@ -301,7 +299,7 @@ kubectl get pods -A
 
 
 
-### 3、根据提示继续
+##### 3、根据提示继续
 
 master成功后提示如下：
 
@@ -336,15 +334,15 @@ kubeadm join cluster-endpoint:6443 --token u10511.z57ogobsyx0d0eku \
 
 ```
 
+##### 4. 设置.kube/config
 
+```shell
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
 
-#### 1、设置.kube/config
-
-复制上面命令
-
-
-
-#### 2、安装网络组件
+##### 5. 安装网络组件
 
 [calico官网](https://docs.projectcalico.org/getting-started/kubernetes/self-managed-onprem/onpremises#install-calico-with-kubernetes-api-datastore-more-than-50-nodes)
 
@@ -356,7 +354,7 @@ kubectl apply -f calico.yaml
 
 
 
-### 4、加入node节点
+##### 6.加入node节点
 
 ```bash
 kubeadm join cluster-endpoint:6443 --token x5g4uy.wpjjdbgra92s25pp \
@@ -373,21 +371,14 @@ kubeadm token create --print-join-command
 
 
 
+##### 7. 验证集群
 
+```
+#验证集群节点状态
+kubectl get nodes
+```
 
-### 5、验证集群
-
-
-
-- 验证集群节点状态
-
-- - kubectl get nodes
-
-
-
-
-
-### 6、部署dashboard
+### 3.2 部署dashboard
 
 #### 1、部署
 
@@ -731,8 +722,14 @@ kubectl get svc -A |grep kubernetes-dashboard
 
 #### 3、创建访问账号
 
+创建访问账号，准备一个yaml文件； 
+
+```shell
+vi dash-usr.yaml
+```
+
 ```yaml
-#创建访问账号，准备一个yaml文件； vi dash.yaml
+
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -761,10 +758,10 @@ kubectl apply -f dash.yaml
 kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/admin-user -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}"
 ```
 
-
+令牌如下：
 
 ```json
-eyJhbGciOiJSUzI1NiIsImtpZCI6InpXSkU0TjhCUmVKQzBJaC03Nk9ES2NMZ1daRTRmQ1FMZU9rRUJ3VXRnM3MifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLXgyczhmIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIzOTZmYjdlNS0wMjA2LTQxMjctOGQzYS0xMzRlODVmYjU0MDAiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1kYXNoYm9hcmQ6YWRtaW4tdXNlciJ9.Hf5mhl35_R0iBfBW7fF198h_klEnN6pRKfk_roAzOtAN-Aq21E4804PUhe9Rr9e_uFzLfoFDXacjJrHCuhiML8lpHIfJLK_vSD2pZNaYc2NWZq2Mso-BMGpObxGA23hW0nLQ5gCxlnxIAcyE76aYTAB6U8PxpvtVdgUknBVrwXG8UC_D8kHm9PTwa9jgbZfSYAfhOHWmZxNYo7CF2sHH-AT_WmIE8xLmB7J11vDzaunv92xoUoI0ju7OBA2WRr61bOmSd8WJgLCDcyBblxz4Wa-3zghfKlp0Rgb8l56AAI7ML_snF59X6JqaCuAcCJjIu0FUTS5DuyIObEeXY-z-Rw
+eyJhbGciOiJSUzI1NiIsImtpZCI6Inh6U1R4WlRwQk5wVGRhdVYwVE9CN3JrbmhnendhTm4yaUM5c3FZWWhTOEEifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLW1oczI5Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI4MjUzY2YzMS03MGZlLTRlMjMtYjdlYS1lODljNDE2ZDFiMWMiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1kYXNoYm9hcmQ6YWRtaW4tdXNlciJ9.PrYV0YaLtTZB8CywzyA5JSODVWYkH_y47ZIHLzCbiXNksNF17azmbbrtmfCQo209tqyvIxLu0BsdoQhQI3BlX5VPMymv61cLZuYHH7YsryQ23UMlYdiPmNqKn5mXZHBLT0EbtPh0YH26yONR2a8lMEJS_8041o5W2eUS8631aH_-ghMYni4gTncYxu763YUpAzVCaK0Hi6e6fiwMAqRv8MUsDTu2i6Pwak4iD7NrpU4_sczvUu4sRkbW5j8SCkq9irHAO4KW8jgF9ciVXP1SsoYaCBZHXc4NobrNReDrPDCJ3ykn1hwC-QRHDzsUieEJUBudqXjSyMdSU53ha0UsIw
 ```
 
 #### 5、界面
