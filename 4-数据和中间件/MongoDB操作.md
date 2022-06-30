@@ -1,6 +1,12 @@
-一、MongoDB：
+[toc]
 
-1.查看数据库相关信息
+
+
+
+
+# 一、MongoDB：
+
+## 1.查看数据库相关信息
 
 ```shell
 mongod.sh mongo
@@ -69,7 +75,7 @@ mongoimport -d dbname -c collectionname --file filename --headerline --type json
 
  
 
-9.查找MongoDB：
+### 9.查找MongoDB：
 
 ps -ax | grep mongod
 
@@ -77,7 +83,7 @@ ps -ax | grep mongod
 
  db.event_manage.remove({})
 
-二、数据聚合：
+## 二、数据聚合：
 
 1.
 
