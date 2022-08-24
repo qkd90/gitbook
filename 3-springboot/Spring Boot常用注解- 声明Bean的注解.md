@@ -1,13 +1,8 @@
-### Spring Boot常用注解- 声明Bean的注解
+# Spring Boot常用注解
 
-#### 1.概述
+## 1.概述
 
-Spring Boot简化了Spring应用的开发，不需要繁琐的XML配置就能开发。
-那Spring Boot是怎么实现自动配置的呢？
-这就要用到Spring Boot中提供的许多注解：
-
-Spring提供XML配置、注解配置或Java配置来实现Bean的创建和注入
-Spring IoC(ApplicationContext)容器负责进行扫描Bean，进行Bean的初始化、配置和依赖管理
+Spring提供XML配置、注解配置或Java配置来实现Bean的创建和注入Spring IoC(ApplicationContext)容器负责进行扫描Bean，进行Bean的初始化、配置和依赖管理
 本节介绍注解：
 
 ```
@@ -20,7 +15,14 @@ Spring IoC(ApplicationContext)容器负责进行扫描Bean，进行Bean的初始
 @RequestMapping
 @PathVariable
 @ResponseBody
+
 ```
+
+## 2.使用方法
+
+@ResponseBody，一般是使用在单独的方法上的，需要哪个方法返回json数据格式，就在哪个方法上使用，具有针对性。
+
+ @RestController，一般是使用在类上的，它表示的意思其实就是结合了@Controller和@ResponseBody两个注解，
 
 #### 2.声明Bean的注解
 
@@ -62,32 +64,7 @@ import java.lang.annotation.Target;
     String value() default "";
 
 }
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
+
 @Component作用在类上
 @Component注解作用域默认为singleton
 使用注解配置和类路径扫描时，被@Component注解标注的类会被Spring扫描并注册为Bean
@@ -371,10 +348,10 @@ package org.springframework.context.annotation;
  2. @see org.springframework.stereotype.Component
  3. @see org.springframework.context.annotation.Bean
  */
- @Target({ElementType.TYPE, ElementType.METHOD})
- @Retention(RetentionPolicy.RUNTIME)
- @Documented
- public @interface Scope {
+  @Target({ElementType.TYPE, ElementType.METHOD})
+  @Retention(RetentionPolicy.RUNTIME)
+  @Documented
+  public @interface Scope {
 
     @AliasFor("scopeName")
     String value() default "";
@@ -383,7 +360,7 @@ package org.springframework.context.annotation;
     String scopeName() default "";
 
     ScopedProxyMode proxyMode() default ScopedProxyMode.DEFAULT;
- }
+  }
 
 @Scope有5中取值：
 基本作用域：
@@ -761,11 +738,11 @@ import org.springframework.core.annotation.AliasFor;
  * @see org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter
  * @see org.springframework.web.reactive.result.method.annotation.RequestMappingHandlerAdapter
  */
- @Target({ElementType.METHOD, ElementType.TYPE})
- @Retention(RetentionPolicy.RUNTIME)
- @Documented
- @Mapping
- public @interface RequestMapping {
+  @Target({ElementType.METHOD, ElementType.TYPE})
+  @Retention(RetentionPolicy.RUNTIME)
+  @Documented
+  @Mapping
+  public @interface RequestMapping {
 
     String name() default "";
 
@@ -784,63 +761,63 @@ import org.springframework.core.annotation.AliasFor;
     String[] consumes() default {};
 
     String[] produces() default {};
- }
- 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
- 10
- 11
- 12
- 13
- 14
- 15
- 16
- 17
- 18
- 19
- 20
- 21
- 22
- 23
- 24
- 25
- 26
- 27
- 28
- 29
- 30
- 31
- 32
- 33
- 34
- 35
- 36
- 37
- 38
- 39
- 40
- 41
- 42
- 43
- 44
- 45
- 46
- 47
- 48
- 49
- 50
- 51
- @RequestMapping注解作用在类或方法上
- @RequestMapping注解用来处理请求地址映射
- @RequestMapping注解有7个属性
- 7.1 value和path参数
- 指定请求的实际地址，指定的地址可以是URI Template 模式
+  }
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+  10
+  11
+  12
+  13
+  14
+  15
+  16
+  17
+  18
+  19
+  20
+  21
+  22
+  23
+  24
+  25
+  26
+  27
+  28
+  29
+  30
+  31
+  32
+  33
+  34
+  35
+  36
+  37
+  38
+  39
+  40
+  41
+  42
+  43
+  44
+  45
+  46
+  47
+  48
+  49
+  50
+  51
+  @RequestMapping注解作用在类或方法上
+  @RequestMapping注解用来处理请求地址映射
+  @RequestMapping注解有7个属性
+  7.1 value和path参数
+  指定请求的实际地址，指定的地址可以是URI Template 模式
 
 使用示例：
 
