@@ -1,0 +1,9 @@
+{
+    "title": "json-config-name",
+    "outputfile": "SUMMARY.md",
+    "catalog": "all",  
+    "ignores": [],  
+    "unchanged": [], 
+    "sortedBy": "-",
+    "disableTitleFormatting": true 
+}
