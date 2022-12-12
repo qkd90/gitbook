@@ -1,9 +1,23 @@
-# bigdata
+# 一条大数据之路
 
-自动生成gitbook目录
+## 自动生成gitbook目录
 
+### 1.安装插件
+
+github地址：https://github.com/imfly/gitbook-summary
+
+npm安装：
+
+```shell
+npm install -g gitbook-summary
 ```
-gitbook serve
+
+### 2.生成目录
+
+```shell
+book sm
 ```
 
-一条从头开始的大数据之路
+## 项目概述
+
+由学徒强走出的大数据之路。

@@ -32,14 +32,18 @@
   * [Spring Boot常用注解- 声明Bean的注解](3-springboot/Spring%20Boot常用注解- 声明Bean的注解.md)
   * [SpringBoot的配置文件properties和yml格式](3-springboot/SpringBoot的配置文件properties和yml格式.md)
   * [springboot使用MongoTemplate进行增删改查](3-springboot/springboot使用MongoTemplate进行增删改查.md)
-- 数据和中间件
-  * [数据库监控指标](4-数据和中间件/数据库监控指标.md)
-  * [修改yum的源](4-数据和中间件/修改yum的源.md)
-  * [centos7的oracle19c安装指南](4-数据和中间件/centos7的oracle19c安装指南.md)
-  * [es的使用](4-数据和中间件/es的使用.md)
-  * [kafka操作](4-数据和中间件/kafka操作.md)
-  * [MongoDB操作](4-数据和中间件/MongoDB操作.md)
-  * [mysql设计规范](4-数据和中间件/mysql设计规范.md)
+- 数据库和中间件
+  * [数据库监控指标](4-数据库和中间件/数据库监控指标.md)
+  * [修改yum的源](4-数据库和中间件/修改yum的源.md)
+  * [centos7的oracle19c安装指南](4-数据库和中间件/centos7的oracle19c安装指南.md)
+  * [es的使用](4-数据库和中间件/es的使用.md)
+  * [kafka操作](4-数据库和中间件/kafka操作.md)
+  * [MongoDB操作](4-数据库和中间件/MongoDB操作.md)
+  * [MySQL 5.7以上 root用户默认密码问题](4-数据库和中间件/MySQL%205.7以上 root用户默认密码问题.md)
+  * [MySQL5.7升级到MySQL8全过程指导总结](4-数据库和中间件/MySQL5.7升级到MySQL8全过程指导总结.md)
+  * [mysql设计规范](4-数据库和中间件/mysql设计规范.md)
+- 微服务
+  * [搭建nacos](6-微服务/搭建nacos.md)
 - python
   * [anaconda3相关配置](7-python/anaconda3相关配置.md)
 - 监控
@@ -74,6 +78,7 @@
   * [区块链技术框架](16-区块链框架fabric手册/区块链技术框架.md)
   * [使用 Fabric 测试网络](16-区块链框架fabric手册/使用%20Fabric 测试网络.md)
   * [Hyperledger Cello的rq使用手册](16-区块链框架fabric手册/Hyperledger%20Cello的rq使用手册.md)
+  * [linux搭建fabirc的区块链测试环境](16-区块链框架fabric手册/linux搭建fabirc的区块链测试环境.md)
 - k8s云原生实战
   * [k8s创建容器报错CrashLoopBackOff](17-k8s云原生实战/k8s创建容器报错CrashLoopBackOff.md)
   * [k8s基础操作](17-k8s云原生实战/k8s基础操作.md)
