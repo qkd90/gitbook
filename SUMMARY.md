@@ -16,6 +16,7 @@
 - git
   * [git相关](1-git/git相关.md)
   * [gitbook目录如何自动生成](1-git/gitbook目录如何自动生成.md)
+  * [gitlab设置保护分支](1-git/gitlab设置保护分支.md)
 - Java提高
   * [代码规范](2-Java提高/代码规范.md)
   * [什么是CRUD( What is CRUD)](2-Java提高/什么是CRUD(%20What is CRUD).md)
@@ -74,11 +75,13 @@
   * [typora设置修改](13-文本编辑器/typora设置修改.md)
 - ruoyi-plus：
   * [maven利用profile实现多环境开发](15-ruoyi-plus：/maven利用profile实现多环境开发.md)
-- 区块链框架fabric手册
-  * [区块链技术框架](16-区块链框架fabric手册/区块链技术框架.md)
-  * [使用 Fabric 测试网络](16-区块链框架fabric手册/使用%20Fabric 测试网络.md)
-  * [Hyperledger Cello的rq使用手册](16-区块链框架fabric手册/Hyperledger%20Cello的rq使用手册.md)
-  * [linux搭建fabirc的区块链测试环境](16-区块链框架fabric手册/linux搭建fabirc的区块链测试环境.md)
+- 区块链相关技术
+  - fisco bcos区块链
+    * [FISCO BCOS 区块链Java SDK](16-区块链相关技术/fisco%20bcos区块链/FISCO BCOS 区块链Java SDK.md)
+  * [区块链技术框架](16-区块链相关技术/区块链技术框架.md)
+  * [使用 Fabric 测试网络](16-区块链相关技术/使用%20Fabric 测试网络.md)
+  * [Hyperledger Cello的rq使用手册](16-区块链相关技术/Hyperledger%20Cello的rq使用手册.md)
+  * [linux搭建fabirc的区块链测试环境](16-区块链相关技术/linux搭建fabirc的区块链测试环境.md)
 - k8s云原生实战
   * [k8s创建容器报错CrashLoopBackOff](17-k8s云原生实战/k8s创建容器报错CrashLoopBackOff.md)
   * [k8s基础操作](17-k8s云原生实战/k8s基础操作.md)

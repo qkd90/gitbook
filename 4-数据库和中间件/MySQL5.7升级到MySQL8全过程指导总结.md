@@ -163,7 +163,6 @@ cat /etc/yum.repos.d/mysql-community.repo
 
 ```bash
 yum install mysql-community-server
-1
 ```
 
 ### 6.开启mysql 服务
@@ -173,21 +172,18 @@ yum install mysql-community-server
 ```bash
 #(使用repo安装的mysql，生成的文件为my.cnfreoNew,修改为my.cnf即可)
 vi /etc/my.cnf
-12
 ```
 
 在[mysqlId]下增加配置
 
 ```bash
 lower_case_table_names=1
-1
 ```
 
 然后ESC退出，:wq退出并保存，然后在启动服务
 
 ```bash
 systemctl start mysqld.service
-1
 ```
 
 ### 7.获取初始密码登录mysql
@@ -207,14 +203,53 @@ mysql -u root -p  #会提示输入密码
 修改初始密码：
 
 ```bash
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass4!';#注意位数和种类至少大+写+小写+符号+数字
+#注意位数和种类至少大+写+小写+符号+数字
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Trasen@8812';
 ```
 
-忘记密码重置密码
+### 9.允许用户远程登录
+
+2，输入以下语句，进入mysql库：
+
+```sql
+use mysql
+```
+
+3，更新域属性，'%'表示允许外部访问：
+
+```sql
+update user set host='%' where user ='root';
+```
+
+4，执行以上语句之后再执行：
+
+```sql
+FLUSH PRIVILEGES;
+```
+
+5，再执行授权语句：
+
+```sql
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'WITH GRANT OPTION;
+```
+
+然后外部就可以通过账户密码访问了。
+
+6，其它说明：
+
+FLUSH PRIVILEGES; 命令本质上的作用是：
+
+将当前user和privilige表中的用户信息/权限设置从mysql库(MySQL数据库的内置库)中提取到内存里。
+
+MySQL用户数据和权限有修改后，希望在"不重启MySQL服务"的情况下直接生效，那么就需要执行这个命令。
+
+通常是在修改ROOT帐号的设置后，怕重启后无法再登录进来，那么直接flush之后就可以看权限设置是否生效
+
+### 10.忘记密码-重置密码
+
 输入初始密码后，如果遇到下面的错误
 
-> ERROR 1045 (28000): Access denied for user ‘root’@‘localhost’ (using
-> password: YES)]
+> ERROR 1045 (28000): Access denied for user ‘root’@‘localhost’ (using password: YES)]
 
 重置密码解决MySQL for Linux错误
 
@@ -283,47 +318,21 @@ set global validate_password.length=1;
 
 然后再次执行步骤1中的语句即可，这样密码就算是设置好了。
 
-#### 有多个root用户如何解决
-
-先查询都有哪些用户
-
-```
-select host,user from mysql.user;
-```
-
-删除多余用户
-
-```
-drop user '用户名'@'主机名';
-drop user 'wyy'@'192.168.0.105';
-```
-
-创建需要用户
-
-```
-create user '用户名'@'允许那个主机链接' identified by '密码';
-
-create user 'wyy'@'192.168.0.105' identified by 'wyy18222';
-只允许192.168.0.105的主机链接
-```
-
-## 5、修改密码
+## 修改密码
 
 ```
 Alter user '用户名'@'主机名' identified by '新密码';
 alter user 'wyy'@'192.168.0.105' identified by '123';
-12
 ```
 
-## 6、授权
+## 授权
 
-##### 给用户授权所有权限
+### 给用户授权所有权限
 
 ```
 grant all privileges on *.* to '用户名'@'主机名' with grant option;
 
 grant all privileges on *.* to 'wyy'@'192.168.0.105' with grant option;
-123
 ```
 
 grant：授权、授予
@@ -334,13 +343,12 @@ with grant option：表示该用户可以给其他用户赋予权限，但不能
 
 例如：如果wyy只有select、update权限，没有insert、delete权限，给另一个用户授权时，只能授予它select、update权限，不能授予insert、delete权限。
 
-#### 给用户授权个别权限
+### 给用户授权个别权限
 
 all privileges 可换成 select,update,insert,delete,drop,create 等操作
 
 ```
 grant select,insert,update,delete on *.* to '用户名'@'主机名';
-1
 ```
 
 #### 给用户授权指定权限
@@ -375,9 +383,6 @@ grant all privileges * . * to ‘要创建的用户’@‘localhost’ identifie
 
 ```
 flush privileges;
-新设置用户或更改密码后需用flush privileges刷新MySQL的系统权限相关表，
-否则会出现拒绝访问
-123
 ```
 
 还有一种方法，就是重新启动mysql服务器，来使新设置生效。­
@@ -459,7 +464,6 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '你的mysql密码' PASSWORD EXPIRE 
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '你的mysql密码'; #修改密码
 
 FLUSH PRIVILEGES; #刷新数据
-1234
 ```
 
 此处报错：
@@ -487,7 +491,6 @@ FLUSH PRIVILEGES; #刷新数据
 
 ```bash
 service mysqld restart
-1
 ```
 
 在使用navicat即可登录成功
@@ -533,3 +536,33 @@ service mysqld restart
 > 这样可以完美解决
 
 三、多个root用户密码修改
+
+
+
+## 疑难解答
+
+### 1.有多个root用户如何解决
+
+公司服务器出现多个root用户，密码还不一致
+
+先查询都有哪些用户
+
+```
+select host,user from mysql.user;
+```
+
+删除多余用户
+
+```
+drop user '用户名'@'主机名';
+drop user 'wyy'@'192.168.0.105';
+```
+
+创建需要用户
+
+```
+create user '用户名'@'允许那个主机链接' identified by '密码';
+
+create user 'wyy'@'192.168.0.105' identified by 'wyy18222';
+只允许192.168.0.105的主机链接
+```
