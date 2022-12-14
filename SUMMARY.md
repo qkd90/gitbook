@@ -76,12 +76,13 @@
 - ruoyi-plus：
   * [maven利用profile实现多环境开发](15-ruoyi-plus：/maven利用profile实现多环境开发.md)
 - 区块链相关技术
+  - hyperledger fabric区块链
+    * [区块链技术框架](16-区块链相关技术/1-hyperledger%20fabric区块链/区块链技术框架.md)
+    * [使用 Fabric 测试网络](16-区块链相关技术/1-hyperledger%20fabric区块链/使用 Fabric 测试网络.md)
+    * [Hyperledger Cello的rq使用手册](16-区块链相关技术/1-hyperledger%20fabric区块链/Hyperledger Cello的rq使用手册.md)
+    * [linux搭建fabirc的区块链测试环境](16-区块链相关技术/1-hyperledger%20fabric区块链/linux搭建fabirc的区块链测试环境.md)
   - fisco bcos区块链
-    * [FISCO BCOS 区块链Java SDK](16-区块链相关技术/fisco%20bcos区块链/FISCO BCOS 区块链Java SDK.md)
-  * [区块链技术框架](16-区块链相关技术/区块链技术框架.md)
-  * [使用 Fabric 测试网络](16-区块链相关技术/使用%20Fabric 测试网络.md)
-  * [Hyperledger Cello的rq使用手册](16-区块链相关技术/Hyperledger%20Cello的rq使用手册.md)
-  * [linux搭建fabirc的区块链测试环境](16-区块链相关技术/linux搭建fabirc的区块链测试环境.md)
+    * [FISCO BCOS 区块链Java SDK](16-区块链相关技术/2-fisco%20bcos区块链/FISCO BCOS 区块链Java SDK.md)
 - k8s云原生实战
   * [k8s创建容器报错CrashLoopBackOff](17-k8s云原生实战/k8s创建容器报错CrashLoopBackOff.md)
   * [k8s基础操作](17-k8s云原生实战/k8s基础操作.md)
