@@ -1,10 +1,6 @@
 # FISCO BCOS 区块链Java SDK
 
-Java SDK 提供了访问 FISCO BCOS 节点的Java API，支持节点状态查询、部署和调用合约等功能，基于Java SDK可开发区块链应用，目前支持[FISCO BCOS 2.0+](https://fisco-bcos-documentation.readthedocs.io/zh_CN/v3.0.0/docs/change_log/index.html)。
-
-注解
-
-v2.0+版本的java-sdk仅支持v2.0+版本FISCO BCOS区块链，若区块链版本是v3.0+,请使用v3.0+版本java-sdk，具体参考 [这里](https://fisco-bcos-doc.readthedocs.io/zh_CN/latest/docs/develop/sdk/java_sdk/index.html)
+Java SDK 提供了访问 FISCO BCOS 节点的Java API，支持节点状态查询、部署和调用合约等功能，基于Java SDK可开发区块链应用
 
 > **主要特性**
 >
@@ -29,3 +25,12 @@ v2.0+版本的java-sdk仅支持v2.0+版本FISCO BCOS区块链，若区块链版�
 - [账户管理](https://fisco-bcos-documentation.readthedocs.io/zh_CN/v3.0.0/docs/sdk/java_sdk/key_tool.html)
 - [密码学模块](https://fisco-bcos-documentation.readthedocs.io/zh_CN/v3.0.0/docs/sdk/java_sdk/crypto.html)
 - [Java SDK JavaDoc](https://fisco-bcos-documentation.readthedocs.io/zh_CN/latest/javadoc/index.html)
+
+## 账户管理
+
+FISCO BCOS 使用账户来标识和区分每一个独立的用户。在采用公私钥体系的区块链系统里，每一个账户对应一对公钥和私钥。其中，账户的账户名为该账户的公钥经哈希等安全单向性算法计算后得到的字符串地址，即**账户地址**。
+
+TBaaS 可托管私钥，用户需要新增或者导入已有私钥来参与链共识。私钥以群组维度展示，页面可以切换群组。
+
+
+

@@ -31,7 +31,8 @@ docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}"
 在文件最后追加 
 
 ```
-alias dockerps='docker ps -a --format "table {{.ID}} {{.Image}}\t{{.Ports}}\t{{.Names}}\t{{.Status}}"'
+alias dockerps='docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Ports}}\t{{.Names}}\t{{.Status}}\t"'
+alias dockerport = 'docker ps -a --format "table {{.Image}}\t{{.Ports}}\t"'
 ```
 
 重新加载配置，使别名生效
@@ -46,4 +47,4 @@ alias dockerps='docker ps -a --format "table {{.ID}} {{.Image}}\t{{.Ports}}\t{{.
 
 当然，如果你希望显示其他的列，那么请参考如下表格
 
-[![fa571c3e6a754420bfd81a521dae5702.jpeg](https://liyangweb.com/wp-content/uploads/emlog/201903/8e881552357067.jpeg)](https://liyangweb.com/wp-content/uploads/emlog/201903/8e881552357067.jpeg)
+![image-20230104163056334](https://raw.githubusercontent.com/qkd90/figureBed/main/202301041630409.png)
