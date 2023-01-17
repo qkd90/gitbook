@@ -258,7 +258,6 @@ MySQL用户数据和权限有修改后，希望在"不重启MySQL服务"的情�
 ```bash
 vim /etc/my.cnf #注：windows下修改的是my.ini
 skip-grant-tables# 在[mysqld]后面任意一行添加skip-grant-tables用来跳过密码验证的过程;设置完密码记得删除
-12
 ```
 
 ![在这里插入图片描述](https://raw.githubusercontent.com/qkd90/figureBed/main/202211241528190.png)
@@ -266,12 +265,6 @@ skip-grant-tables# 在[mysqld]后面任意一行添加skip-grant-tables用来跳
 
 ```bash
 systemctl restart mysqld.service 
-```
-
-或
-
-```bash
-service mysqld restart
 ```
 
 进入mysql：
@@ -306,8 +299,7 @@ set password='your password';
 
 2、如果密码符合Mysql要求，会修改成功。如果出现以下错误信息：
 
-> ERROR 1819 (HY000): Your password does not satisfy the current policy
-> requirements
+> ERROR 1819 (HY000): Your password does not satisfy the current policy requirements
 
 执行如下两条语句：
 
@@ -401,7 +393,6 @@ show grants for 'wyy'@'192.168.0.105';
 
 ```
 revoke all privileges on *.* from 'wyy'@'192.168.0.105';
-1
 ```
 
 用户有什么权限就撤什么权限
@@ -416,7 +407,6 @@ firewall-cmd --zone=public --add-port=80/tcp --permanent    开启一个端口�
 firewall-cmd --permanent --add-port=80/tcp  开放端口80
 firewall-cmd --permanent --remove-port=80/tcp   移除端口80
 firewall-cmd --reload   重启防火墙，修改后重启防火墙生效
-12345
 ```
 
 第二步： 重启防火墙
@@ -535,9 +525,7 @@ service mysqld restart
 > 添加lower_case_table_names=1 在启动mysql。
 > 这样可以完美解决
 
-三、多个root用户密码修改
-
-
+三、多个root用户密码修
 
 ## 疑难解答
 
@@ -566,3 +554,4 @@ create user '用户名'@'允许那个主机链接' identified by '密码';
 create user 'wyy'@'192.168.0.105' identified by 'wyy18222';
 只允许192.168.0.105的主机链接
 ```
+
