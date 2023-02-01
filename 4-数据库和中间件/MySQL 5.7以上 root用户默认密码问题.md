@@ -7,7 +7,7 @@ CentOS系统用yum安装MySQL的朋友，请使用 ***grep "temporary password" 
 （如果不存在/var/log/mysqld.log文件，请确保您已经启动过一次MySQL服务。CentOS 7启动MySQL服务的命令是：***systemctl start mysqld.service***）
 
 ```
-mysql -uroot -p
+mysql -u root -p
 ```
 
 在MySQL的这篇名为《[Changes in MySQL 5.7.4 (2014-03-31, Milestone 14)](http://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-4.html)》的文档里，有这么一段：

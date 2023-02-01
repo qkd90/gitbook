@@ -205,8 +205,8 @@ MASTER_HOST='172.18.200.132',
 MASTER_PORT=3306,
 MASTER_USER='root',
 MASTER_PASSWORD='Trasen@8812',
-MASTER_LOG_FILE='master-bin.000004',
-MASTER_LOG_POS=1346,
+MASTER_LOG_FILE='master-bin.000001',
+MASTER_LOG_POS=157,
 GET_MASTER_PUBLIC_KEY=1;
 #开启slave
 start slave;
@@ -233,6 +233,28 @@ show slave status \G
 > 从这个指令的结果能够看到，有很多Replicate_开头的属性，这些属性指定了两个服务之间要同步哪些数据库、哪些表的配置。只是在我们这个示例中全都没有进行配置，就标识是全库进行同步。后面我们会补充如何配置需要同步的库和表。
 
 ### 3.3 主从集群测试
+
+**注意如果主数据库之前就有数据，那么需要先进行一次手动同步保证两个数据库一致，不然会出现slave_sql_running：no的情况**
+
+![image-20230201101427313](https://raw.githubusercontent.com/qkd90/figureBed/main/202302011014403.png)
+
+查看具体原因
+
+```bash
+select * from performance_schema.replication_applier_status_by_worker;
+```
+
+原因
+
+```xml
+ Worker 1 failed executing transaction 'ANONYMOUS' at master log master-bin.000001, end_log_pos 1326; Error executing row event: 'Unknown database 'trasenchain'' 
+```
+
+![image-20230201101632499](https://raw.githubusercontent.com/qkd90/figureBed/main/202302011016566.png)
+
+没有trasenchain的数据库，把主库数据备份过来就可以了。
+
+
 
  测试时，我们先用show databases，查看下两个MySQL服务中的数据库情况
 
@@ -290,7 +312,7 @@ Query OK, 1 row affected (0.01 sec)
 >
 > 但是这种方式要注意binlog的文件和位置，如果修改后和之前的同步接不上，那就会丢失部分数据。所以不太常用。
 
-### 3.4 集群搭建扩展：
+### 3.4 集群搭建扩展
 
 在完成这个基本的MySQL主从集群后，我们还可以进行后续的实验：
 
@@ -359,7 +381,7 @@ replicate-wild-do-table=masterdemo01.t_num
 
 > 我们这里是使用的最为传统的Binlog方式搭建集群，是基于日志记录点的方式来进行主从同步的。在这个实验中，Executed_Grid_Set一列，实际上就是另外一种搭建主从同步的方式，即GTID搭建方式。GTID的本质也是基于Binlog来实现的主从同步，只是他会基于一个全局的事务ID来标识同步进度。这个GTID全局事务ID是一个全局唯一、并且趋势递增的分布式ID策略。我们这里就不再去搭建了。
 
-### 3.5、GTID同步集群
+### 3.5 GTID同步集群
 
  上面我们搭建的集群方式，是基于Binlog日志记录点的方式来搭建的，这也是最为传统的MySQL集群搭建方式。而在这个实验中，可以看到有一个Executed_Grid_Set列，暂时还没有用上。实际上，这就是另外一种搭建主从同步的方式，即GTID搭建方式。这种模式是从MySQL5.6版本引入的。
 
