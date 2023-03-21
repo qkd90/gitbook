@@ -1,20 +1,6 @@
 # CentOS7安装GitLab
 
-## **文章目录**
-
-- 卸载gitlab
-
-- 安装依赖库
-
-- 安装gitlab-ce
-
-- 登录gitlab
-
-- gitlab日常使用
-
-- - 文件路径
-  - gitlab服务构成
-  - gitlab常用命令
+## 直接安装
 
 **01 卸载gitlab**
 注意：如果之前没有安装gitlab可以跳过`卸载gitlab`步骤，直接进入安装依赖库
@@ -93,12 +79,10 @@ https://packages.gitlab.com/gitlab/gitlab-ce?utm_source=ld246.com
 
 ```
 清华大学镜像源下载:
-https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el8
+https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/
 ```
 
 在下载好安装包后，放到自己习惯放的路径下即可，笔者这里放到`/usr/local`目录
-
-
 
 ```
 # 进入安装包所在目录
@@ -269,4 +253,67 @@ gitlab-ctl tail redis/postgresql/gitlab-workhorse/logrotate/nginx/sidekiq/unicor
 gitlab-ctl --help
 # 检查gitlab
 gitlab-rake gitlab:check SANITIZE=true --trace
+```
+
+## docker安装
+
+# docker 安装[gitlab](https://so.csdn.net/so/search?q=gitlab&spm=1001.2101.3001.7020)镜像
+
+### 安装
+
+```//
+docker pull gitlab/gitlab-ce:latest
+1
+```
+
+### 查看
+
+```//
+docker images 
+1
+```
+
+### 启动gitlab镜像
+
+```//
+ docker run -d -p 7080:80 -p 2222:22 \
+                       --name gitlab \
+                       --restart always \
+                       --volume /data/local/gitlab/config:/etc/gitlab \
+                       --volume /data/local/gitlab/logs:/var/log/gitlab \
+                       --volume /data/local/gitlab/data:/var/opt/gitlab \
+                       gitlab/gitlab-ce:latest
+ 
+ 说明：
+ 7080:80 本机端口:容器端口
+-d:后台运行容器并返回容器ID
+-p:将容器中端口号映射到本地指定端口号
+--restart:容器重启后的状态
+always:在容器退出时总是重启容器
+--volume:将容器中/etc/gitlab目录映射到本地的/data/local/gitlab/config目录,本地目录不存在自动创建,其他同理
+gitlab/gitlab-ce:latest:要运行的镜像的名称
+docker ps -a    $:查看当前运行的容器
+1234567891011121314151617
+```
+
+### 编辑gitlab配置文件
+
+```//
+ cd /data/local/gitlab/config       #进入配置文件所在目录下
+ cp gitlab.rb gitlab.rb.bak    #修改配置文件之前先备份
+  vim gitlab.rb                 #下列显示的都是编辑器中内容
+ # external_url 'GENERATED_EXTERNAL_URL'           #找到这一行,修改为下面这一行
+  external_url 'http://192.168.119.101'           #后面的地址改为gitlab地址
+# gitlab_rails['gitlab_shell_ssh_port'] = 22      #找到这一行,修改为下面一行
+  gitlab_rails['gitlab_shell_ssh_port'] = 2222    #开启gitlab的ssh功能并且端口改为2222;
+    :wq                                          #保存且推出vim编辑器
+
+ docker restart gitlab         #重启gitlab容器生效
+12345678910
+```
+
+### 访问gitlab
+
+```//
+在浏览器中输入gitlab配置文件中定义的IP地址,以及docker映射到本地的端口号查看是否可以访问,访问到页面即是成功
 ```

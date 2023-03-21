@@ -87,10 +87,16 @@ $ docker logs [OPTIONS] CONTAINER_ID
         --until string   显示自某个timestamp之前的日志，或相对时间，如42m（即42分钟）
 ```
 
+直接查看日志
+
+```
+docker logs -f -t --tail=100 CONTAINER_ID
+```
+
 查看指定时间后的日志，只显示最后100行：
 
 ```shell
-$ docker logs -f -t --since="2018-02-08" --tail=100 CONTAINER_ID
+docker logs -f -t --since="2018-02-08" --tail=100 CONTAINER_ID
 ```
 
 查看最近30分钟的日志:

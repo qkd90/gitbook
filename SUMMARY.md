@@ -8,7 +8,8 @@
   * [centos7 设置MongoDB开机自启动](0-linux/centos7%20设置MongoDB开机自启动.md)
   * [CentOS7安装GitLab](0-linux/CentOS7安装GitLab.md)
   * [es](0-linux/es.md)
-  * [linux操作系统](0-linux/linux操作系统.md)
+  * [linux操作系统常用命令](0-linux/linux操作系统常用命令.md)
+  * [Linux服务器时间设置及同步](0-linux/Linux服务器时间设置及同步.md)
   * [linux硬链接](0-linux/linux硬链接.md)
   * [pyc和bak文件](0-linux/pyc和bak文件.md)
   * [snmp trap相关](0-linux/snmp%20trap相关.md)
@@ -21,6 +22,7 @@
   * [代码规范](2-Java提高/代码规范.md)
   * [什么是CRUD( What is CRUD)](2-Java提高/什么是CRUD(%20What is CRUD).md)
   * [HTTP 协议的 8 种请求类型介绍](2-Java提高/HTTP%20协议的 8 种请求类型介绍.md)
+  * [java开发规范](2-Java提高/java开发规范.md)
 - springboot
   * [@Resource 和 @Autowired](3-springboot/@Resource%20和 @Autowired.md)
   * [代码优化技巧](3-springboot/代码优化技巧.md)
@@ -29,7 +31,10 @@
   * [有了基本数据类型，为什么还需要包装类型](3-springboot/有了基本数据类型，为什么还需要包装类型.md)
   * [自定义拦截器实现接口校验](3-springboot/自定义拦截器实现接口校验.md)
   * [idea快捷键操作](3-springboot/idea快捷键操作.md)
+  * [Log4j2与Slf4j的最佳实践](3-springboot/Log4j2与Slf4j的最佳实践.md)
+  * [logback最佳实践](3-springboot/logback最佳实践.md)
   * [lombok注解](3-springboot/lombok注解.md)
+  * [maven利用profile实现多环境开发](3-springboot/maven利用profile实现多环境开发.md)
   * [Spring Boot常用注解- 声明Bean的注解](3-springboot/Spring%20Boot常用注解- 声明Bean的注解.md)
   * [SpringBoot的配置文件properties和yml格式](3-springboot/SpringBoot的配置文件properties和yml格式.md)
   * [springboot使用MongoTemplate进行增删改查](3-springboot/springboot使用MongoTemplate进行增删改查.md)
@@ -43,6 +48,8 @@
   * [MySQL 5.7以上 root用户默认密码问题](4-数据库和中间件/MySQL%205.7以上 root用户默认密码问题.md)
   * [MySQL5.7升级到MySQL8全过程指导总结](4-数据库和中间件/MySQL5.7升级到MySQL8全过程指导总结.md)
   * [mysql设计规范](4-数据库和中间件/mysql设计规范.md)
+  * [mysqL主从架构配置](4-数据库和中间件/mysqL主从架构配置.md)
+  * [mysql字符集和排序规则](4-数据库和中间件/mysql字符集和排序规则.md)
 - 微服务
   * [搭建nacos](6-微服务/搭建nacos.md)
 - python
@@ -65,6 +72,7 @@
   * [修改docker的容器地址](11-docker/修改docker的容器地址.md)
   * [centos7安装Docker详细步骤（无坑版教程）](11-docker/centos7安装Docker详细步骤（无坑版教程）.md)
   * [docker ps的结果很乱怎么办](11-docker/docker%20ps的结果很乱怎么办.md)
+  * [maven-plugin插件使用](11-docker/docker-maven-plugin插件使用.md)
   * [docker入门](11-docker/docker入门.md)
   * [linux上用docker部署nginx](11-docker/linux上用docker部署nginx.md)
 - nginx
@@ -73,18 +81,19 @@
   * [Windows下Nginx的启动、停止等命令](12-nginx/Windows下Nginx的启动、停止等命令.md)
 - 文本编辑器
   * [typora设置修改](13-文本编辑器/typora设置修改.md)
-- ruoyi-plus：
-  * [maven利用profile实现多环境开发](15-ruoyi-plus：/maven利用profile实现多环境开发.md)
 - 区块链相关技术
   - hyperledgerfabric区块链
-    * [区块链技术框架](16-区块链相关技术/1-hyperledgerfabric区块链/区块链技术框架.md)
-    * [使用 Fabric 测试网络](16-区块链相关技术/1-hyperledgerfabric区块链/使用%20Fabric 测试网络.md)
+    * [部署fabric网络教程](16-区块链相关技术/1-hyperledgerfabric区块链/部署fabric网络教程.md)
+    * [使用 Fabric测试网络](16-区块链相关技术/1-hyperledgerfabric区块链/使用%20Fabric测试网络.md)
     * [Hyperledger Cello的rq使用手册](16-区块链相关技术/1-hyperledgerfabric区块链/Hyperledger%20Cello的rq使用手册.md)
     * [linux搭建fabirc的区块链测试环境](16-区块链相关技术/1-hyperledgerfabric区块链/linux搭建fabirc的区块链测试环境.md)
   - fiscobcos区块链
     * [FISCOBCOS 区块链Java SDK](16-区块链相关技术/2-fiscobcos区块链/FISCOBCOS%20区块链Java SDK.md)
 - k8s云原生实战
+  * [排查k8s问题](17-k8s云原生实战/排查k8s问题.md)
   * [k8s创建容器报错CrashLoopBackOff](17-k8s云原生实战/k8s创建容器报错CrashLoopBackOff.md)
   * [k8s基础操作](17-k8s云原生实战/k8s基础操作.md)
+  * [Kubernetes 测试网络](17-k8s云原生实战/Kubernetes%20测试网络.md)
   * [Kubernetes核心实战](17-k8s云原生实战/Kubernetes核心实战.md)
   * [Kubernetes基础概念](17-k8s云原生实战/Kubernetes基础概念.md)
+  * [Kubernetes上安装KubeSphere](17-k8s云原生实战/Kubernetes上安装KubeSphere.md)

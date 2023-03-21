@@ -1,6 +1,6 @@
 # Spring Boot常用注解
 
-## 1.概述
+## 1.sping常用注解
 
 Spring提供XML配置、注解配置或Java配置来实现Bean的创建和注入Spring IoC(ApplicationContext)容器负责进行扫描Bean，进行Bean的初始化、配置和依赖管理
 本节介绍注解：
@@ -15,16 +15,15 @@ Spring提供XML配置、注解配置或Java配置来实现Bean的创建和注入
 @RequestMapping
 @PathVariable
 @ResponseBody
-
 ```
 
-## 2.使用方法
+### 使用方法
 
 @ResponseBody，一般是使用在单独的方法上的，需要哪个方法返回json数据格式，就在哪个方法上使用，具有针对性。
 
  @RestController，一般是使用在类上的，它表示的意思其实就是结合了@Controller和@ResponseBody两个注解，
 
-#### 2.声明Bean的注解
+### 声明Bean的注解
 
 如何吸引Spring容器的注意而“有幸”成为Spring 容器管理的Bean呢？
 在Spring Boot中就依靠注解，Spring提供了多个注解来声明Bean为Spring容器管理的Bean，注解不同代表的含义不同，但是对Spring容器来说都是Spring管理的Bean
@@ -348,10 +347,10 @@ package org.springframework.context.annotation;
  2. @see org.springframework.stereotype.Component
  3. @see org.springframework.context.annotation.Bean
  */
-  @Target({ElementType.TYPE, ElementType.METHOD})
-  @Retention(RetentionPolicy.RUNTIME)
-  @Documented
-  public @interface Scope {
+    @Target({ElementType.TYPE, ElementType.METHOD})
+    @Retention(RetentionPolicy.RUNTIME)
+    @Documented
+    public @interface Scope {
 
     @AliasFor("scopeName")
     String value() default "";
@@ -360,7 +359,7 @@ package org.springframework.context.annotation;
     String scopeName() default "";
 
     ScopedProxyMode proxyMode() default ScopedProxyMode.DEFAULT;
-  }
+    }
 
 @Scope有5中取值：
 基本作用域：
@@ -738,11 +737,11 @@ import org.springframework.core.annotation.AliasFor;
  * @see org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter
  * @see org.springframework.web.reactive.result.method.annotation.RequestMappingHandlerAdapter
  */
-  @Target({ElementType.METHOD, ElementType.TYPE})
-  @Retention(RetentionPolicy.RUNTIME)
-  @Documented
-  @Mapping
-  public @interface RequestMapping {
+    @Target({ElementType.METHOD, ElementType.TYPE})
+    @Retention(RetentionPolicy.RUNTIME)
+    @Documented
+    @Mapping
+    public @interface RequestMapping {
 
     String name() default "";
 
@@ -761,63 +760,63 @@ import org.springframework.core.annotation.AliasFor;
     String[] consumes() default {};
 
     String[] produces() default {};
-  }
-  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-  11
-  12
-  13
-  14
-  15
-  16
-  17
-  18
-  19
-  20
-  21
-  22
-  23
-  24
-  25
-  26
-  27
-  28
-  29
-  30
-  31
-  32
-  33
-  34
-  35
-  36
-  37
-  38
-  39
-  40
-  41
-  42
-  43
-  44
-  45
-  46
-  47
-  48
-  49
-  50
-  51
-  @RequestMapping注解作用在类或方法上
-  @RequestMapping注解用来处理请求地址映射
-  @RequestMapping注解有7个属性
-  7.1 value和path参数
-  指定请求的实际地址，指定的地址可以是URI Template 模式
+    }
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+    12
+    13
+    14
+    15
+    16
+    17
+    18
+    19
+    20
+    21
+    22
+    23
+    24
+    25
+    26
+    27
+    28
+    29
+    30
+    31
+    32
+    33
+    34
+    35
+    36
+    37
+    38
+    39
+    40
+    41
+    42
+    43
+    44
+    45
+    46
+    47
+    48
+    49
+    50
+    51
+    @RequestMapping注解作用在类或方法上
+    @RequestMapping注解用来处理请求地址映射
+    @RequestMapping注解有7个属性
+    7.1 value和path参数
+    指定请求的实际地址，指定的地址可以是URI Template 模式
 
 使用示例：
 
@@ -1230,3 +1229,37 @@ public class RestControllerTest {
 其实，@Service、@Repository、@Component、@Controller、@RestController这5个注解的效果都是一样的，Spring会将被这5个注解标注的类加载到Spring上下文中
 
 但是在项目中，却建议你严格按照除Componen的其余几个注解的含义使用在项目中。这对分层结构的web架构很有好处
+
+
+
+## 2.lombok注解
+
+是一款在java开发中简洁化代码十分有用的插件工具，这篇博客对较为常用的几种注解进行记录，分享学习心得。
+
+使用lombok注解，目的和作用就在于不用再去写经常反复去写的（如Getter，Setter，Constructor等）一些代码了。
+
+首先，用到的几个注解：
+
+- @Data
+  使用这个注解，就不用再去手写Getter,Setter,equals,canEqual,hasCode,toString等方法了，注解后在编译时会自动加进去。
+- @AllArgsConstructor
+  使用后添加一个构造函数，该构造函数含有所有已声明字段属性参数
+- @NoArgsConstructor
+  使用后创建一个无参构造函数
+- @Builder
+  关于Builder较为复杂一些，Builder的作用之一是为了解决在某个类有很多构造函数的情况，也省去写很多构造函数的麻烦，在设计模式中的思想是：**用一个内部类去实例化一个对象，避免一个类出现过多构造函数，**
+
+然后，通过一个简单的代码例子说明：
+
+1）首先，建立一个简单的类，并用lombok进行注解：注意这是注解前的代码，可以与后面贴出的注解生成的代码进行比较
+
+```
+@Data //生成getter,setter等函数
+@AllArgsConstructor //生成全参数构造函数
+@NoArgsConstructor//生成无参构造函数
+@Builder
+public class test1 {
+    String name;
+    String age;
+    String 
+```
