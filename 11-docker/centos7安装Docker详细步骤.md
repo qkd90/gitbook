@@ -1,4 +1,4 @@
-# centos7安装Docker详细步骤（无坑版教程）
+# centos7安装Docker详细步骤
 
 ## 一、安装前必读
 
