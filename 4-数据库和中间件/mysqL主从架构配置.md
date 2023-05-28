@@ -39,7 +39,6 @@ mysql版本：mysql-8.0.20
 use mysql;
 update user set host='%' where user='root';
 flush privileges;
-复制代码
 ```
 
 # 三、搭建主从集群
@@ -78,8 +77,9 @@ flush privileges;
 
 搭建主从集群时，有两个必要的要求：
 
-- 双方MySQL必须版本一致。`至少需要主服务的版本低于从服务`
-- 两节点间的时间需要同步。
+双方MySQL必须版本一致。至少需要主服务的版本低于从服务
+
+两节点间的时间需要同步。
 
 ## 3、搭建主从集群
 
