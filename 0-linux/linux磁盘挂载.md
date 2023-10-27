@@ -34,6 +34,6 @@ blkid /dev/vdb
 # 编辑文件
 vim /etc/fstab
 #添加如下内容
-UUID=3a496e6f-9fdb-436f-8cc3-bfa21311ca4a /trasen    ext4    defaults    1 2
+UUID=c02575ac-9a28-4446-967a-244a2ab4b910 /trasen    ext4    defaults    1 2
 ```
 
