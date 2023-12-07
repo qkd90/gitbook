@@ -452,7 +452,7 @@ systemctl start mysqld.service
 mysql -u root -p
 use mysql;
 update user set host='%' where user='root';
-123
+FLUSH PRIVILEGES; #刷新数据
 ```
 
 ### 使用navicat进行连接测试
