@@ -430,7 +430,6 @@ firewall-cmd --reload   重启防火墙，修改后重启防火墙生效
 ```bash
 systemctl enable iptables.service
 systemctl start iptables.service
-12
 ```
 
 第三步： 将mysql 服务加入开机启动项，并启动mysql进程
@@ -438,7 +437,6 @@ systemctl start iptables.service
 ```bash
 systemctl enable mysqld.service
 systemctl start mysqld.service
-12
 ```
 
 第四步：开启mysql远程服务：
