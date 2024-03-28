@@ -30,10 +30,10 @@ sudo mount /dev/vdb /trasen
 ```
 blkid /dev/vdb
 # 输出结果
-/dev/sdb: UUID="3af607ac-5ebe-4cd5-bb5f-760434575364" TYPE="ext4"
+/dev/sdb: UUID="xxx-xxx" TYPE="ext4"
 # 编辑文件
 vim /etc/fstab
 #添加如下内容
-UUID=c02575ac-9a28-4446-967a-244a2ab4b910 /trasen    ext4    defaults    1 2
+UUID=f51c5584-1d66-487e-be2d-3442b9bb058e /trasen    ext4    defaults    1 2
 ```
 
