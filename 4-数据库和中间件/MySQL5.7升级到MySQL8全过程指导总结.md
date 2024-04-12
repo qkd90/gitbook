@@ -330,7 +330,7 @@ set global validate_password.length=1;
 
 ```
 Alter user '用户名'@'主机名' identified by '新密码';
-alter user 'wyy'@'192.168.0.105' identified by '123';
+alter user 'root'@'%' identified by 'Trasen@8812';
 ```
 
 ### 授权
@@ -398,7 +398,7 @@ flush privileges;
 ### 查看用户授权
 
 ```
-show grants for 'wyy'@'192.168.0.105';
+show grants for 'root'@'%';
 ```
 
 ![在这里插入图片描述](https://raw.githubusercontent.com/qkd90/figureBed/main/202211251758011.png)
