@@ -21,7 +21,6 @@ nginx: /usr/sbin/nginx /usr/lib64/nginx /etc/nginx /usr/share/nginx /usr/share/m
 使用ps aux命令查看Nginx进程,在命令行参数中可以看到安装目录，同时可以看到是否在运行
 
 ```
-bash 
 ps aux | grep nginx
 ```
 
@@ -63,7 +62,7 @@ rm -rf /etc/nginx/conf.d/
 
 ### 1. 安装前置环境
 
-```
+```shell
 yum -y install gcc pcre pcre-devel zlib zlib-devel openssl openssl-devel
 ```
 
@@ -81,10 +80,10 @@ make
 make install 
 ```
 
-### 3.创建软链接
+### 3.创建软链接（也就是配置全局命令）
 
 ```
-ln -s /usr/local/nginx/sbin/nginx /usr/bin/nginx
+ln -s /rgzn/nginx/sbin/nginx /usr/bin/nginx
 ```
 
 ### 4.启动Nginx查看版本
@@ -99,6 +98,3 @@ nginx -v
 ```
 echo "nginx" >> /etc/rc.local
 ```
-
-
-
