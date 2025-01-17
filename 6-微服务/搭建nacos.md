@@ -1,11 +1,13 @@
 
-官方网站： https://nacos.io/zh-cn/docs/quick-start.html
 
-## 一、window 启动
+
+## 一、window和linux启动
 
 ### 1、[Nacos](https://so.csdn.net/so/search?q=Nacos&spm=1001.2101.3001.7020) 下载
 
 Nacos 下载地址：https://github.com/alibaba/nacos/releases
+
+官方网站： https://nacos.io/zh-cn/docs/quick-start.html
 
 ### 2、nacos 配置 MySQL 数据库
 
@@ -51,7 +53,7 @@ startup.cmd -m standalone
 访问地址 http://127.0.0.1:8848/nacos ，默认登陆用户名密码 nacos/nacos，新增命名空间，新建配置文件如下
 ![在这里插入图片描述](https://raw.githubusercontent.com/qkd90/figureBed/main/202212091734278.png)
 
-## 二、docker 启动
+## 二、docker启动
 
 ### 1、docker 拉取 nacos镜像
 
@@ -270,8 +272,6 @@ CREATE TABLE permissions (
 INSERT INTO users (username, password, enabled) VALUES ('nacos', '$2a$10$EuWPZHzz32dJN7jexM34MOeYirDdFAZm2kuWj7VEOJhhZkDrxfvUu', TRUE);
 
 INSERT INTO roles (username, role) VALUES ('nacos', 'ROLE_ADMIN');
-
-
 ```
 
 ### 3、docker 启动 nacos（配置 MySQL 连接）
@@ -285,16 +285,55 @@ docker run -d \
 -e MYSQL_SERVICE_PORT=3306 \
 -e MYSQL_SERVICE_DB_NAME=nacos \
 -e MYSQL_SERVICE_USER=root \
--e MYSQL_SERVICE_PASSWORD=root\
+-e MYSQL_SERVICE_PASSWORD=Trasen@8812 \
 -e NACOS_APPLICATION_PORT=8848 \
 -p 8848:8848 -p 9848:9848 -p 9849:9849 \
 --name nacos \
 --restart=always \
 --privileged=true \
-nacos/nacos-server
+nacos/nacos-server:v2.4.3
 ```
 
-访问地址： http://192.168.18.17:8848/nacos 默认用户名密码： nacos/nacos，新增命名空间，新建配置文件如下
+命令解释：
+
+```shell
+参数解释：
+docker run -d：以分离模式（后台运行）启动容器。
+
+-e PREFER_HOST_MODE=ip：设置Nacos优先使用IP模式。
+
+-e MODE=standalone：指定Nacos以单机模式运行。
+
+-e SPRING_DATASOURCE_PLATFORM=mysql：指定数据源平台为MySQL。
+
+-e MYSQL_SERVICE_HOST=192.168.18.17：MySQL数据库的主机地址。
+
+-e MYSQL_SERVICE_PORT=3306：MySQL数据库的端口号。
+
+-e MYSQL_SERVICE_DB_NAME=nacos：MySQL数据库的名称。
+
+-e MYSQL_SERVICE_USER=root：MySQL数据库的用户名。
+
+-e MYSQL_SERVICE_PASSWORD=Trasen@8812：MySQL数据库的密码。
+
+-e NACOS_APPLICATION_PORT=8848：Nacos应用的端口号。
+
+-p 8848:8848：将容器的8848端口映射到宿主机的8848端口。
+
+-p 9848:9848：将容器的9848端口映射到宿主机的9848端口。
+
+-p 9849:9849：将容器的9849端口映射到宿主机的9849端口。
+
+--name nacos：为容器指定名称为nacos。
+
+--restart=always：设置容器在退出时总是重启。
+
+--privileged=true：赋予容器特权模式，可以访问宿主机的所有设备。
+
+nacos/nacos-server:v2.4.3：指定使用的Nacos镜像及其版本号（v2.4.3）。
+```
+
+访问地址： http://192.168.18.17:8848/nacos   默认用户名密码： nacos/nacos，新增命名空间，新建配置文件如下
 ![在这里插入图片描述](https://raw.githubusercontent.com/qkd90/figureBed/main/202212091734278.png)
 
 ### 4、解决问题
