@@ -23,3 +23,9 @@ firewall-cmd --reload
 6.如果重启不起来 估计是这个 unix://var/run/docker.sock 文件位置不对 
 find / -name docker.sock 查找一下正确位置就好了
 ```
+
+
+
+
+
+fd:// --containerd=/run/containerd/containerd.sock
