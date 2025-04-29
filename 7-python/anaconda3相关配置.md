@@ -75,7 +75,7 @@ rm -rf anaconda //ubuntu
 
 最后，建议清理下.bashrc中的Anaconda路径。
 
-# 4. conda环境使用基本命令
+#  conda环境使用基本命令
 
 conda update -n base conda #update最新版本的conda
 conda create -n xxxx python=3.5 #创建python3.5的xxxx虚拟环境
@@ -84,7 +84,7 @@ conda deactivate #关闭环境
 conda env list #显示所有的虚拟环境
 conda info --envs #显示所有的虚拟环境
 
-# 5. 查看指定包可安装版本信息命令
+# 查看指定包可安装版本信息命令
 
 查看tensorflow各个版本：（查看会发现有一大堆TensorFlow源，但是不能随便选，选择可以用查找命令定位）
 
@@ -221,6 +221,10 @@ pip install pip -U
 中国科学技术大学 http://pypi.mirrors.ustc.edu.cn/simple/
 
 ## pip安装包管理
+
+工具：anaconda prompt
+
+`conda activate tongue 可以切换环境`
 
 pip list #列出当前缓存的包
 pip purge #清除缓存
