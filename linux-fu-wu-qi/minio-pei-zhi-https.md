@@ -1,2 +1,0 @@
-# minio配置HTTPS
-

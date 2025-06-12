@@ -1,2 +1,0 @@
-# snmp trap相关
-
