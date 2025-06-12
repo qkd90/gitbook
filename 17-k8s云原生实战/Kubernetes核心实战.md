@@ -1,13 +1,13 @@
 # Kubernetes核心实战
 
-## 1.资源创建方式
+## Kubernetes核心实战
 
-- 命令行
-- YAML 
+### 1.资源创建方式
 
+* 命令行
+* YAML
 
-
-## 2.Namespace
+### 2.Namespace
 
 名称空间用来隔离资源
 
@@ -23,7 +23,7 @@ metadata:
   name: hello
 ```
 
-## 3.Pod
+### 3.Pod
 
 运行中的一组容器，Pod是kubernetes中应用的最小单位.
 
@@ -74,11 +74,9 @@ spec:
 
 ![img](https://cdn.nlark.com/yuque/0/2021/png/1613913/1625553938232-51976552-5bab-4c98-bb8d-c4bf612bf866.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_15%2Ctext_YXRndWlndS5jb20gIOWwmuehheiwtw%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)
 
-***此时的应用还不能外部访问\***
+\***此时的应用还不能外部访问\***
 
-
-
-# 4、Deployment
+## 4、Deployment
 
 控制Pod，使Pod拥有多副本，自愈，扩缩容等能力
 
@@ -90,9 +88,7 @@ kubectl create deployment mytomcat --image=tomcat:8.5.68
 # 自愈能力
 ```
 
-
-
-### 4.1多副本
+#### 4.1多副本
 
 ```bash
 kubectl create deployment my-dep --image=nginx --replicas=3
@@ -117,11 +113,7 @@ spec:
         name: nginx
 ```
 
-
-
-
-
-## 2、扩缩容
+### 2、扩缩容
 
 ```bash
 kubectl scale --replicas=5 deployment/my-dep
@@ -130,35 +122,25 @@ kubectl edit deployment my-dep
 #修改 replicas
 ```
 
+### 3、自愈&故障转移
 
+* 停机
+* 删除Pod
+* 容器崩溃
+* ....
 
-## 3、自愈&故障转移
-
-- 停机
-- 删除Pod
-- 容器崩溃
-- ....
-
-
-
-
-
-## 4、滚动更新
+### 4、滚动更新
 
 ```bash
 kubectl set image deployment/my-dep nginx=nginx:1.16.1 --record
 kubectl rollout status deployment/my-dep
 ```
 
-
-
 ```yaml
 # 修改 kubectl edit deployment/my-dep
 ```
 
-
-
-## 5、版本回退
+### 5、版本回退
 
 ```bash
 #历史记录
@@ -175,19 +157,15 @@ kubectl rollout undo deployment/my-dep
 kubectl rollout undo deployment/my-dep --to-revision=2
 ```
 
-
-
 更多：
 
-除了Deployment，k8s还有 `StatefulSet` 、`DaemonSet` 、`Job`  等 类型资源。我们都称为 `工作负载`。
+除了Deployment，k8s还有 `StatefulSet` 、`DaemonSet` 、`Job` 等 类型资源。我们都称为 `工作负载`。
 
-有状态应用使用  `StatefulSet`  部署，无状态应用使用 `Deployment` 部署
+有状态应用使用 `StatefulSet` 部署，无状态应用使用 `Deployment` 部署
 
 https://kubernetes.io/zh/docs/concepts/workloads/controllers/
 
-
-
-# 5.Service：服务发现与负载均衡
+## 5.Service：服务发现与负载均衡
 
 将一组 [Pods](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/) 公开为网络服务的抽象方法。
 
@@ -212,9 +190,7 @@ spec:
     targetPort: 80
 ```
 
-
-
-## 1、ClusterIP
+### 1、ClusterIP
 
 ```bash
 # 等同于没有--type的
@@ -235,7 +211,7 @@ spec:
   type: ClusterIP
 ```
 
-## 2、NodePort
+### 2、NodePort
 
 ```bash
 kubectl expose deployment my-dep --port=8000 --target-port=80 --type=NodePort
@@ -257,9 +233,9 @@ spec:
 
 NodePort范围在 30000-32767 之间
 
-# 6、Ingress
+## 6、Ingress
 
-## 1、安装
+### 1、安装
 
 ```bash
 wget https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.47.0/deploy/static/provider/baremetal/deploy.yaml
@@ -276,8 +252,6 @@ kubectl get pod,svc -n ingress-nginx
 ```
 
 ![img](https://cdn.nlark.com/yuque/0/2021/png/1613913/1631010459687-252bb01e-e532-4992-830b-c097cddf9935.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_49%2Ctext_YXRndWlndS5jb20gIOWwmuehheiwtw%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)
-
-
 
 如果下载不到，用以下文件
 
@@ -936,23 +910,17 @@ spec:
         runAsUser: 2000
 ```
 
-
-
-
-
-## 2、使用
+### 2、使用
 
 官网地址：https://kubernetes.github.io/ingress-nginx/
 
 就是nginx做的
 
-
-
 https://139.198.163.211:32401/
 
 [http://139.198.163.211:31405/](https://139.198.163.211:32401/)
 
-### 测试环境
+#### 测试环境
 
 应用如下yaml，准备好测试环境
 
@@ -1026,9 +994,7 @@ spec:
     targetPort: 9000
 ```
 
-
-
-### 1、域名访问
+#### 1、域名访问
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -1060,15 +1026,9 @@ spec:
               number: 8000
 ```
 
+问题： path: "/nginx" 与 path: "/" 为什么会有不同的效果？
 
-
-
-
-问题： path: "/nginx" 与  path: "/" 为什么会有不同的效果？
-
-
-
-### 2、路径重写
+#### 2、路径重写
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -1102,7 +1062,7 @@ spec:
               number: 8000
 ```
 
-### 3、流量限制
+#### 3、流量限制
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -1126,24 +1086,18 @@ spec:
               number: 8000
 ```
 
+## 7、存储抽象
 
+### 环境准备
 
-
-
-
-
-# 7、存储抽象
-
-## 环境准备
-
-### 1、所有节点
+#### 1、所有节点
 
 ```bash
 #所有机器安装
 yum install -y nfs-utils
 ```
 
-### 2、主节点
+#### 2、主节点
 
 ```bash
 #nfs主节点
@@ -1156,7 +1110,7 @@ systemctl enable nfs-server --now
 exportfs -r
 ```
 
-### 3、从节点
+#### 3、从节点
 
 ```bash
 showmount -e 172.31.0.4
@@ -1169,9 +1123,7 @@ mount -t nfs 172.31.0.4:/nfs/data /nfs/data
 echo "hello nfs server" > /nfs/data/test.txt
 ```
 
-
-
-### 4、原生方式数据挂载
+#### 4、原生方式数据挂载
 
 ```yaml
 apiVersion: apps/v1
@@ -1203,13 +1155,13 @@ spec:
             path: /nfs/data/nginx-pv
 ```
 
-## 1、PV&PVC
+### 1、PV\&PVC
 
-*PV：持久卷（Persistent Volume），将应用需要持久化的数据保存到指定位置*
+_PV：持久卷（Persistent Volume），将应用需要持久化的数据保存到指定位置_
 
-*PVC：持久卷申明（**Persistent Volume Claim**），申明需要使用的持久卷规格*
+_PVC：持久卷申明（**Persistent Volume Claim**），申明需要使用的持久卷规格_
 
-### 1、创建pv池
+#### 1、创建pv池
 
 静态供应
 
@@ -1266,11 +1218,7 @@ spec:
     server: 172.31.0.4
 ```
 
-
-
-
-
-### 2、PVC创建与绑定
+#### 2、PVC创建与绑定
 
 创建PVC
 
@@ -1287,8 +1235,6 @@ spec:
       storage: 200Mi
   storageClassName: nfs
 ```
-
-
 
 创建Pod绑定PVC
 
@@ -1321,22 +1267,18 @@ spec:
             claimName: nginx-pvc
 ```
 
-
-
-## 2、ConfigMap
+### 2、ConfigMap
 
 抽取应用配置，并且可以自动更新
 
-### 1、redis示例
+#### 1、redis示例
 
-#### 1、把之前的配置文件创建为配置集
+**1、把之前的配置文件创建为配置集**
 
 ```bash
 # 创建配置，redis保存到k8s的etcd；
 kubectl create cm redis-conf --from-file=redis.conf
 ```
-
-
 
 ```yaml
 apiVersion: v1
@@ -1349,9 +1291,7 @@ metadata:
   namespace: default
 ```
 
-
-
-#### 2、创建Pod
+**2、创建Pod**
 
 ```yaml
 apiVersion: v1
@@ -1385,9 +1325,7 @@ spec:
 
 
 
-#### 
-
-#### 3、检查默认配置
+**3、检查默认配置**
 
 ```bash
 kubectl exec -it redis -- redis-cli
@@ -1396,11 +1334,7 @@ kubectl exec -it redis -- redis-cli
 127.0.0.1:6379> CONFIG GET requirepass
 ```
 
-
-
-
-
-#### 4、修改ConfigMap
+**4、修改ConfigMap**
 
 ```yaml
 apiVersion: v1
@@ -1413,7 +1347,7 @@ data:
     maxmemory-policy allkeys-lru 
 ```
 
-#### 5、检查配置是否更新
+**5、检查配置是否更新**
 
 ```bash
 kubectl exec -it redis -- redis-cli
@@ -1426,17 +1360,11 @@ kubectl exec -it redis -- redis-cli
 
 修改了CM。Pod里面的配置文件会跟着变
 
+\***配置值未更改，因为需要重新启动 Pod 才能从关联的 ConfigMap 中获取更新的值。\***
 
+\***原因：我们的Pod部署的中间件自己本身没有热更新能力\***
 
-***配置值未更改，因为需要重新启动 Pod 才能从关联的 ConfigMap 中获取更新的值。\*** 
-
-***原因：我们的Pod部署的中间件自己本身没有热更新能力\***
-
-
-
-
-
-## 3、Secret
+### 3、Secret
 
 Secret 对象类型用来保存敏感信息，例如密码、OAuth 令牌和 SSH 密钥。 将这些信息放在 secret 中比放在 [Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/) 的定义或者 [容器镜像](https://kubernetes.io/zh/docs/reference/glossary/?all=true#term-image) 中来说更加安全和灵活。
 

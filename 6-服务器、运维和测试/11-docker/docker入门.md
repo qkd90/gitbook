@@ -1,4 +1,4 @@
-# docker与微服务
+# docker入门
 
 ## 基本操作
 
@@ -70,7 +70,7 @@ docker rm a2737a8fc891
 docker rm $(docker ps -qf status=exited)
 ```
 
-### 2.清理所有悬挂（<none>）镜像
+### 2.清理所有悬挂（）镜像
 
 ```sh
 docker image prune
@@ -86,7 +86,7 @@ docker volume prune
 
 由于prune操作是批量删除类的危险操作，所以会有一次确认。 如果不想输入y来确认，可以添加-f操作。慎用！
 
-### 4.清理停止的容器 
+### 4.清理停止的容器
 
 ```sh
 docker rm -lv CONTAINER
@@ -122,7 +122,7 @@ docker container prune
 
 container子命令，下面包含了所有和容器相关的子命令。 包括docker ps，等价于docker container ps或docker container ls。 其余还有start、stop、kill、cp等，一级子命令相当于二级子命令在外面的alias。 而prune则是特别提供的清理命令，这在其它的管理命令里还可以看到，比如image、volume。
 
-### 按需批量清理容器 
+### 按需批量清理容器
 
 清除所有已停止的容器，是比较常用的清理。 但有时会需要做一些特殊过滤。
 
@@ -138,20 +138,20 @@ docker ps -a --filter 'exited=0'
 
 目前支持的过滤器有：
 
-> - id (container’s id)
-> - label (label=<key> or label=<key>=<value>)
-> - name (container’s name)
-> - exited (int - the code of exited containers. Only useful with –all)
-> - status (created|restarting|running|removing|paused|exited|dead)
-> - ancestor (<image-name>[:<tag>], <image id> or <image@digest>) - filters containers that were created from the given image or a descendant.
-> - before (container’s id or name) - filters containers created before given id or name
-> - since (container’s id or name) - filters containers created since given id or name
-> - isolation (default|process|hyperv) (Windows daemon only)
-> - volume (volume name or mount point) - filters containers that mount volumes.
-> - network (network id or name) - filters containers connected to the provided network
-> - health (starting|healthy|unhealthy|none) - filters containers based on healthcheck status
+> * id (container’s id)
+> * label (label= or label==)
+> * name (container’s name)
+> * exited (int - the code of exited containers. Only useful with –all)
+> * status (created|restarting|running|removing|paused|exited|dead)
+> * ancestor (\[:],  or [image@digest](mailto:image@digest)) - filters containers that were created from the given image or a descendant.
+> * before (container’s id or name) - filters containers created before given id or name
+> * since (container’s id or name) - filters containers created since given id or name
+> * isolation (default|process|hyperv) (Windows daemon only)
+> * volume (volume name or mount point) - filters containers that mount volumes.
+> * network (network id or name) - filters containers connected to the provided network
+> * health (starting|healthy|unhealthy|none) - filters containers based on healthcheck status
 
-### 清理失败 [¶](https://note.qidong.name/2017/06/26/docker-clean/#清理失败)
+### 清理失败 [¶](https://note.qidong.name/2017/06/26/docker-clean/#%E6%B8%85%E7%90%86%E5%A4%B1%E8%B4%A5)
 
 如果在清理容器时发生失败，通过重启Docker的Daemon，应该都能解决问题。
 
@@ -163,7 +163,7 @@ sudo systemctl restart docker.service
 sudo service docker restart
 ```
 
-### 清理镜像 
+### 清理镜像
 
 与清理容器的ps、rm类似，清理镜像也有images、rmi两个子命令。 images用来查看，rmi用来删除。
 
@@ -177,17 +177,17 @@ docker rmi IMAGE
 
 另外，这两个命令也都属于alias。 docker images等价于docker image ls，而docker rmi等价于docker image rm。
 
-### 按需批量清理镜像 
+### 按需批量清理镜像
 
 与ps类似，images也支持--filter参数。
 
-与清理相关，最常用的，当属<none>了。
+与清理相关，最常用的，当属了。
 
 ```sh
 docker images --filter "dangling=true"
 ```
 
-这条命令，可以列出所有悬挂（dangling）的镜像，也就是显示为<none>的那些。
+这条命令，可以列出所有悬挂（dangling）的镜像，也就是显示为的那些。
 
 ```sh
 docker rmi $(docker images -qf "dangling=true")
@@ -201,11 +201,11 @@ docker image prune
 
 prune和images类似，也同样支持--filter参数。 其它的filter有：
 
-> - dangling (boolean - true or false)
-> - label (label=<key> or label=<key>=<value>)
-> - before (<image-name>[:<tag>], <image id> or <image@digest>) - filter images created before given id or references
-> - since (<image-name>[:<tag>], <image id> or <image@digest>) - filter images created since given id or references
-> - reference (pattern of an image reference) - filter images whose reference matches the specified pattern
+> * dangling (boolean - true or false)
+> * label (label= or label==)
+> * before (\[:],  or [image@digest](mailto:image@digest)) - filter images created before given id or references
+> * since (\[:],  or [image@digest](mailto:image@digest)) - filter images created since given id or references
+> * reference (pattern of an image reference) - filter images whose reference matches the specified pattern
 
 ### 清理所有无用镜像 ¶
 
