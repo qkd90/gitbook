@@ -2,23 +2,85 @@
 
 ## 题干：
 
-- 学生表（Student）：学生id、学生姓名、学生生日、学生性别
+### 学生表（Student）：
 
-  ![image-20220902100047509](https://raw.githubusercontent.com/qkd90/figureBed/main/202209021000543.png)
+学生id、学生姓名、学生生日、学生性别
 
-- 课程表（Course）：课程id、教课教师id、名称
+![image-20220902100047509](https://raw.githubusercontent.com/qkd90/figureBed/main/202209021000543.png)
 
-  ![image-20220902100028719](https://raw.githubusercontent.com/qkd90/figureBed/main/202209021000768.png)
+```sql
+create table Student(s_id varchar(10),s_name varchar(10),s_birth datetime,s_sex varchar(10));
+insert into Student values('01' , '赵雷' , '1990-01-01' , '男');
+insert into Student values('02' , '钱电' , '1990-12-21' , '男');
+insert into Student values('03' , '孙⻛' , '1990-12-20' , '男');
+insert into Student values('04' , '李云' , '1990-12-06' , '男');
+insert into Student values('05' , '周梅' , '1991-12-01' , '⼥');
+insert into Student values('06' , '吴兰' , '1992-01-01' , '⼥');
+insert into Student values('07' , '郑⽵' , '1989-01-01' , '⼥');
+insert into Student values('09' , '张三' , '2017-12-20' , '⼥');
+insert into Student values('10' , '李四' , '2017-12-25' , '⼥');
+insert into Student values('11' , '李四' , '2012-06-06' , '⼥');
+insert into Student values('12' , '赵六' , '2013-06-13' , '⼥');
+insert into Student values('13' , '孙七' , '2014-06-01' , '⼥');
+```
 
-- 教师表（Teacher）
 
-  ![image-20220902100108764](https://raw.githubusercontent.com/qkd90/figureBed/main/202209021001798.png)
 
-- 成绩表（Score）
+### 课程表（Course）：
 
-  ![image-20220902100124269](C:/Users/51705/AppData/Roaming/Typora/typora-user-images/image-20220902100124269.png)
+课程id、教课教师id、名称
 
-附表格创建代码：
+![image-20220902100028719](https://raw.githubusercontent.com/qkd90/figureBed/main/202209021000768.png)
+
+```sql
+create table Course(CId varchar(10),Cname nvarchar(10),TId varchar(10));
+insert into Course values('01' , '语⽂' , '02');
+insert into Course values('02' , '数学' , '01');
+insert into Course values('03' , '英语' , '03');
+```
+
+
+
+### 教师表（Teacher）:
+
+TId 教师编号,Tname 教师姓名
+
+![image-20220902100108764](https://raw.githubusercontent.com/qkd90/figureBed/main/202209021001798.png)
+
+```sql
+create table Teacher(TId varchar(10),Tname varchar(10));
+insert into Teacher values('01' , '张三');
+insert into Teacher values('02' , '李四');
+insert into Teacher values('03' , '王五');
+```
+
+
+
+### 成绩表（Score）
+
+SId 学生编号,CId 课程编号,score
+
+```sql
+create table SC(SId varchar(10),CId varchar(10),score decimal(18,1));
+insert into SC values('01' , '01' , 80);
+insert into SC values('01' , '02' , 90);
+insert into SC values('01' , '03' , 99);
+insert into SC values('02' , '01' , 70);
+insert into SC values('02' , '02' , 60);
+insert into SC values('02' , '03' , 80);
+insert into SC values('03' , '01' , 80);
+insert into SC values('03' , '02' , 80);
+insert into SC values('03' , '03' , 80);
+insert into SC values('04' , '01' , 50);
+insert into SC values('04' , '02' , 30);
+insert into SC values('04' , '03' , 20);
+insert into SC values('05' , '01' , 76);
+insert into SC values('05' , '02' , 87);
+insert into SC values('06' , '01' , 31);
+insert into SC values('06' , '03' , 34);
+insert into SC values('07' , '02' , 89);
+insert into SC values('07' , '03' , 98);
+```
 
 
 
@@ -358,7 +420,7 @@ DENSE_RANK 窗口函数基于 OVER 子句中的 ORDER BY 表达式确定一组�
 
 ![image-20221125115540827](https://raw.githubusercontent.com/qkd90/figureBed/main/202211251155956.png)
 
-## √20. 查询学生的总成绩并进行排名
+## 20. 查询学生的总成绩并进行排名
 
 ![image-20221129143844323](https://raw.githubusercontent.com/qkd90/figureBed/main/202211291438375.png)
 
@@ -373,7 +435,7 @@ order by 总成绩 desc;
 
 
 
-## √21. 查询不同老师所教不同课程平均分从高到低显示
+## 21. 查询不同老师所教不同课程平均分从高到低显示
 
 ![image-20221130114153983](https://raw.githubusercontent.com/qkd90/figureBed/main/202211301141048.png)
 
@@ -388,6 +450,16 @@ group by C.t_id, C.c_id
 order by 平均分 desc;
 ```
 
+## 22.查询名字中含有「风」字的学生信息
+
+```sql
+select *
+from student
+where s_name like '%风%'
+```
+
+
+
 ## 23.使用分段[100-85],[85-70],[70-60],[<60]来统计各科成绩，分别统计各分数段人数：课程ID和课程名称
 
 ![image-20221208135026776](https://raw.githubusercontent.com/qkd90/figureBed/main/202212081350846.png)
@@ -401,6 +473,14 @@ SELECT c.c_id,
        ((SELECT COUNT(1) FROM Score sc WHERE sc.c_id = c.c_id AND sc.s_Score <= 60 AND sc.s_Score >= 0))  "60-0"
 FROM Course c
 ORDER BY c.c_id
+```
+
+## 24.查询 1990 年年出生的学生名单
+
+```sql
+select *
+from student
+where s_birth like '1990%'
 ```
 
 ## 25.查询各科成绩前三名的记录（不考虑成绩并列情况）
@@ -421,7 +501,7 @@ where a.rk in (1, 2, 3)
 order by a.c_id, a.rk;
 ```
 
-## √26.查询每门课程被选修的学生数
+## 26.查询每门课程被选修的学生数
 
 根据课程分组，根据id升序排列
 
