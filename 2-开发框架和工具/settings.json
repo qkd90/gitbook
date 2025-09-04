@@ -1,0 +1,29 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "files.watcherExclude": {
+        "**/target/**": true,
+        "**/.flattened-pom.xml": true,
+        "*.log": true,
+        "script": true,
+        ".idea": true,
+        "logs": true
+    },
+    "files.exclude": {
+        "**/target/**": true,
+        "**/logs/**": true,
+        "**/*.iml": true,
+        "**/.idea/**": true,
+        "**/.vscode/**": true,
+        "**/.git/**": true,
+        "**/.svn/**": true,
+        "**/.hg/**": true,
+        "**/.bzr/**": true,
+        "**/.gitignore": true,
+        "**/*.log": true,
+        "**/.flattened-pom.xml": true,
+        "script": true,
+        "logs": true
+    },
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx4G -Xms100m -Xlog:disable"
+}
