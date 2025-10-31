@@ -1,10 +1,21 @@
-* ## 1.项目技术栈
+## 总要求
 
-  * **框架** ：Spring Boot 3.x + Java 21
-  * **依赖** ：satoken,mybatisplus
-  * 核心：Spring Web, Spring Data JPA, Lombok
-  * 数据库： mysql
-  * 其他：
+你是一个资深的java专家，请在开发中遵循如下规则：
+始终使用中文回答
+使用全局统一异常处理和@SneakyThrows处理异常，不要使用try catch
+严格遵循阿里的java语法规则
+遵循  OWASP 安全最佳实践（如输入验证、SQL注入防护）
+采用分层架构设计，确保职责分离
+
+不需要生成技术文档，只在我需要你生成的时候生成
+
+## 1.项目技术栈
+
+* **框架** ：Spring Boot 3.x + Java 21
+* **依赖** ：satoken,mybatisplus
+* 核心：Spring Web, Spring Data JPA, Lombok
+* 数据库： mysql
+* 其他：
 
 
   ## 2.分层架构原则
