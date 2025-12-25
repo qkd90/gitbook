@@ -84,8 +84,9 @@
   * [java开发规范](1-Java开发/java开发规范.md)
 - 开发框架和工具
   * [@Resource 和 @Autowired](2-开发框架和工具/@Resource%20和 @Autowired.md)
+  * [1.后端管理平台文档](2-开发框架和工具/1.后端管理平台文档.md)
+  * [2.后端开发文档](2-开发框架和工具/2.后端开发文档.md)
   * [代码优化技巧](2-开发框架和工具/代码优化技巧.md)
-  * [后端管理平台文档](2-开发框架和工具/后端管理平台文档.md)
   * [数据权限和租户系统](2-开发框架和工具/数据权限和租户系统.md)
   * [统一异常处理与统一结果返回](2-开发框架和工具/统一异常处理与统一结果返回.md)
   * [微信相关开发](2-开发框架和工具/微信相关开发.md)
@@ -102,6 +103,7 @@
   * [lombok注解](2-开发框架和工具/lombok注解.md)
   * [maven利用profile实现多环境开发](2-开发框架和工具/maven利用profile实现多环境开发.md)
   * [maven相关](2-开发框架和工具/maven相关.md)
+  * [MongoDB_Dev_Guide](2-开发框架和工具/MongoDB_Dev_Guide.md)
   * [Spring Boot常用注解- 声明Bean的注解](2-开发框架和工具/Spring%20Boot常用注解- 声明Bean的注解.md)
   * [SpringBoot的配置文件properties和yml格式](2-开发框架和工具/SpringBoot的配置文件properties和yml格式.md)
   * [springboot使用MongoTemplate进行增删改查](2-开发框架和工具/springboot使用MongoTemplate进行增删改查.md)
@@ -129,6 +131,7 @@
     * [nginx基本命令](3-数据库和中间件/2-nginx/nginx基本命令.md)
     * [nginx配置和实例](3-数据库和中间件/2-nginx/nginx配置和实例.md)
     * [nginx卸载和部署](3-数据库和中间件/2-nginx/nginx卸载和部署.md)
+  * [导出数据](3-数据库和中间件/导出数据.md)
   * [数据库监控指标](3-数据库和中间件/数据库监控指标.md)
   * [修改yum的源](3-数据库和中间件/修改yum的源.md)
   * [centos7的oracle19c安装指南](3-数据库和中间件/centos7的oracle19c安装指南.md)
@@ -145,9 +148,14 @@
   * [搭建nacos](4-微服务/搭建nacos.md)
   * [公司项目升级springcloud架构经验](4-微服务/公司项目升级springcloud架构经验.md)
   * [尚硅谷2025最新SpringCloud教程，springcloud从入门到大牛](4-微服务/尚硅谷2025最新SpringCloud教程，springcloud从入门到大牛.md)
-- python开发
-  * [anaconda3相关配置](5-python开发/anaconda3相关配置.md)
-  * [python环境+fastapi服务部署](5-python开发/python环境+fastapi服务部署.md)
+- Python和AI
+  * [部署deepseek-R1](5-Python和AI/部署deepseek-R1.md)
+  * [anaconda3相关配置](5-Python和AI/anaconda3相关配置.md)
+  * [huggingface](5-Python和AI/huggingface.md)
+  * [project_rules](5-Python和AI/project_rules.md)
+  * [pycharm+miniconda3配置项目启动](5-Python和AI/pycharm+miniconda3配置项目启动.md)
+  * [python环境+fastapi服务部署](5-Python和AI/python环境+fastapi服务部署.md)
+  * [user_rules](5-Python和AI/user_rules.md)
 - 服务器、运维和测试
   - linux服务器
     * [操作](6-服务器、运维和测试/1-linux服务器/操作.md)
@@ -175,17 +183,6 @@
     * [fiddler使用手册](6-服务器、运维和测试/2-测试/fiddler使用手册.md)
     * [fiddler使用说明](6-服务器、运维和测试/2-测试/fiddler使用说明.md)
     * [postman](6-服务器、运维和测试/2-测试/postman.md)
-  - docker
-    * [修改docker的容器地址](6-服务器、运维和测试/11-docker/修改docker的容器地址.md)
-    * [centos7安装Docker详细步骤](6-服务器、运维和测试/11-docker/centos7安装Docker详细步骤.md)
-    * [docker ps的结果很乱怎么办](6-服务器、运维和测试/11-docker/docker%20ps的结果很乱怎么办.md)
-    * [compose](6-服务器、运维和测试/11-docker/docker-compose.md)
-    * [maven-plugin插件使用](6-服务器、运维和测试/11-docker/docker-maven-plugin插件使用.md)
-    * [docker高级篇](6-服务器、运维和测试/11-docker/docker高级篇.md)
-    * [docker如何远程连接和管理](6-服务器、运维和测试/11-docker/docker如何远程连接和管理.md)
-    * [docker入门](6-服务器、运维和测试/11-docker/docker入门.md)
-    * [idea远程连接docker，一键部署](6-服务器、运维和测试/11-docker/idea远程连接docker，一键部署.md)
-    * [linux上用docker部署nginx](6-服务器、运维和测试/11-docker/linux上用docker部署nginx.md)
   * [安装node_exporter](6-服务器、运维和测试/安装node_exporter.md)
   * [搭建EFK+logstash日志分析系统](6-服务器、运维和测试/搭建EFK+logstash日志分析系统.md)
   * [独立部署Prometheus Alertmanager Granfan监控平台](6-服务器、运维和测试/独立部署Prometheus%20Alertmanager Granfan监控平台.md)
@@ -197,9 +194,27 @@
   * [oracledb exporter各个参数说明](6-服务器、运维和测试/oracledb%20exporter各个参数说明.md)
   * [prometheus配套的各个数据库监控部署](6-服务器、运维和测试/prometheus配套的各个数据库监控部署.md)
   * [windows服务监控](6-服务器、运维和测试/windows服务监控.md)
-- 人工智能
-  * [部署deepseek-R1](7-人工智能/部署deepseek-R1.md)
-  * [huggingface](7-人工智能/huggingface.md)
+- 容器化技术
+  - docker
+    * [修改docker的容器地址](7-容器化技术/1-docker/修改docker的容器地址.md)
+    * [centos7安装Docker详细步骤](7-容器化技术/1-docker/centos7安装Docker详细步骤.md)
+    * [docker ps的结果很乱怎么办](7-容器化技术/1-docker/docker%20ps的结果很乱怎么办.md)
+    * [compose](7-容器化技术/1-docker/docker-compose.md)
+    * [maven-plugin插件使用](7-容器化技术/1-docker/docker-maven-plugin插件使用.md)
+    * [docker高级篇](7-容器化技术/1-docker/docker高级篇.md)
+    * [docker启动容器命令](7-容器化技术/1-docker/docker启动容器命令.md)
+    * [docker如何远程连接和管理](7-容器化技术/1-docker/docker如何远程连接和管理.md)
+    * [docker入门](7-容器化技术/1-docker/docker入门.md)
+    * [idea远程连接docker，一键部署](7-容器化技术/1-docker/idea远程连接docker，一键部署.md)
+    * [linux上用docker部署nginx](7-容器化技术/1-docker/linux上用docker部署nginx.md)
+  - k8s云原生实战
+    * [排查k8s问题](7-容器化技术/2-k8s云原生实战/排查k8s问题.md)
+    * [k8s创建容器报错CrashLoopBackOff](7-容器化技术/2-k8s云原生实战/k8s创建容器报错CrashLoopBackOff.md)
+    * [k8s基础操作](7-容器化技术/2-k8s云原生实战/k8s基础操作.md)
+    * [Kubernetes 测试网络](7-容器化技术/2-k8s云原生实战/Kubernetes%20测试网络.md)
+    * [Kubernetes核心实战](7-容器化技术/2-k8s云原生实战/Kubernetes核心实战.md)
+    * [Kubernetes基础概念](7-容器化技术/2-k8s云原生实战/Kubernetes基础概念.md)
+    * [Kubernetes上安装KubeSphere](7-容器化技术/2-k8s云原生实战/Kubernetes上安装KubeSphere.md)
 - 区块链相关技术
   - hyperledgerfabric区块链
     * [部署fabric网络教程](16-区块链相关技术/1-hyperledgerfabric区块链/部署fabric网络教程.md)
@@ -208,18 +223,8 @@
     * [linux搭建fabirc的区块链测试环境](16-区块链相关技术/1-hyperledgerfabric区块链/linux搭建fabirc的区块链测试环境.md)
   - fiscobcos区块链
     * [FISCOBCOS 区块链Java SDK](16-区块链相关技术/2-fiscobcos区块链/FISCOBCOS%20区块链Java SDK.md)
-- k8s云原生实战
-  * [排查k8s问题](17-k8s云原生实战/排查k8s问题.md)
-  * [k8s创建容器报错CrashLoopBackOff](17-k8s云原生实战/k8s创建容器报错CrashLoopBackOff.md)
-  * [k8s基础操作](17-k8s云原生实战/k8s基础操作.md)
-  * [Kubernetes 测试网络](17-k8s云原生实战/Kubernetes%20测试网络.md)
-  * [Kubernetes核心实战](17-k8s云原生实战/Kubernetes核心实战.md)
-  * [Kubernetes基础概念](17-k8s云原生实战/Kubernetes基础概念.md)
-  * [Kubernetes上安装KubeSphere](17-k8s云原生实战/Kubernetes上安装KubeSphere.md)
 - 手机安卓端
   * [adb命令控制安卓机器人设备指南](18-手机安卓端/adb命令控制安卓机器人设备指南.md)
-- 公司实战
-  * [精卫平台部署文档](19-公司实战/精卫平台部署文档.md)
 - 信创相关
   * [达梦数据库](20-信创相关/达梦数据库.md)
   * [OceanBase数据库](20-信创相关/OceanBase数据库.md)

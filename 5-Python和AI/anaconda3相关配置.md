@@ -2,8 +2,6 @@
 
 Anaconda是一个用于科学计算的Python发行版，支持Linux, Mac, Windows,包含了众多流行的科学计算、数据分析的Python包。
 
-下载地址：https://mirrors.aliyun.com/anaconda/
-
 ## 配置方法
 
 ### Anaconda 配置
@@ -57,7 +55,7 @@ conda info
 
 
 
-### 卸载Anaconda
+## 卸载Anaconda
 
 ### windows:
 
@@ -79,7 +77,7 @@ rm -rf anaconda //ubuntu
 
 conda update -n base conda #update最新版本的conda
 conda create -n xxxx python=3.5 #创建python3.5的xxxx虚拟环境
-conda activate xxxx #开启xxxx环境
+
 conda deactivate #关闭环境
 conda env list #显示所有的虚拟环境
 conda info --envs #显示所有的虚拟环境
@@ -141,7 +139,7 @@ conda deactivate #关闭当前环境
 conda config --set auto_activate_base false #关闭自动激活状态
 conda config --set auto_activate_base true #关闭自动激活状态
 
-# 11. Conda 安装本地包
+## 11. Conda 安装本地包
 
 有时conda或pip源下载速度太慢，install a过程中会中断连接导致压缩包下载不全，
 此时，我们可以用浏览器等工具先下载指定包再用conda或pip进行本地安装
@@ -154,34 +152,147 @@ conda config --set auto_activate_base true #关闭自动激活状态
 
 #### conda install --use-local ~/Downloads/a.tar.bz2
 
-# 11. 解决conda/pip install 下载速度慢
+## 11. 解决conda/pip install 下载速度慢
 
 ### conda数据源管理
 
-\#显示目前conda的数据源有哪些
+```python
+#显示目前conda的数据源有哪些
 conda config --show channels
-\#添加数据源：例如, 添加清华anaconda镜像：
+
+# ⚠️ 会清空现有 channels（确认后再用）
+conda config --remove-key channels   
+
+#添加数据源
+conda config --add channels defaults
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/win-64
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/win-64
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/win-64
+conda config --set show_channel_urls yes
+
+#删除数据源
+conda config --remove channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+```
+
+### 各大镜像
+
+### 清华conda镜像
+
+注：由于更新过快难以同步，我们不同步pytorch-nightly,pytorch-nightly-cpu,ignite-nightly这三个包。
+
+```python
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
 conda config --set show_channel_urls yes
-\#删除数据源
-conda config --remove channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+```
 
- 
 
-### 记录一下
+完整配置：
 
-\#本人的 ~/.condarc
-auto_activate_base: false
+```
 channels:
-\- https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
-\- https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/
-\- https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/
-\- https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
-\- https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
-\- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
-\- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  - defaults
 show_channel_urls: true
+default_channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+custom_channels:
+  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+```
+
+
+
+```python
+北外conda镜像
+
+conda config --add channels https://mirrors.bfsu.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.bfsu.edu.cn/anaconda/pkgs/main/
+#Conda Forge
+conda config --add channels https://mirrors.bfsu.edu.cn/anaconda/cloud/conda-forge/
+#msys2（可略）
+conda config --add channels https://mirrors.bfsu.edu.cn/anaconda/cloud/msys2/
+#bioconda（可略）
+conda config --add channels https://mirrors.bfsu.edu.cn/anaconda/cloud/bioconda/
+#menpo（可略）
+conda config --add channels https://mirrors.bfsu.edu.cn/anaconda/cloud/menpo/
+#pytorch
+conda config --add channels https://mirrors.bfsu.edu.cn/anaconda/cloud/pytorch/
+
+for legacy win-64（可略）
+conda config --add channels https://mirrors.bfsu.edu.cn/anaconda/cloud/peterjc123/
+conda config --set show_channel_urls yes
+```
+
+```
+中科大conda镜像
+由于合规性，Anaconda 源目前已经无限期停止服务。
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/
+conda config --set show_channel_urls yes
+```
+
+#获取版本号
+conda --version 或 conda -V
+
+#检查更新当前conda
+conda update conda
+
+#查看当前存在哪些虚拟环境
+conda env list 或 conda info -e
+
+#Create env
+#Create env with python 3.7 and pip
+conda create --name whatwhale python=3.7 pip
+#Activate env
+#Activate by name
+
+conda activate whatwhale
+#Deactivate env
+conda deactivate
+#Removing an environment
+#Remove environment by name
+
+# remove env
+#conda env remove --name whatwhale
+# verify
+conda env list
+
+#查看--安装--更新--删除包
+
+conda list：
+conda search package_name# 查询包
+conda install package_name
+conda install package_name=1.5.0
+conda update package_name
+conda remove package_name
+阿里conda镜像
+channels:
+  - defaults
+show_channel_urls: true
+default_channels:
+  - http://mirrors.aliyun.com/anaconda/pkgs/main
+  - http://mirrors.aliyun.com/anaconda/pkgs/r
+  - http://mirrors.aliyun.com/anaconda/pkgs/msys2
+    custom_channels:
+    conda-forge: http://mirrors.aliyun.com/anaconda/cloud
+    msys2: http://mirrors.aliyun.com/anaconda/cloud
+    bioconda: http://mirrors.aliyun.com/anaconda/cloud
+    menpo: http://mirrors.aliyun.com/anaconda/cloud
+    pytorch: http://mirrors.aliyun.com/anaconda/cloud
+    simpleitk: http://mirrors.aliyun.com/anaconda/cloud
 
  
 
