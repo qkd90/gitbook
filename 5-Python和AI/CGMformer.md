@@ -81,3 +81,12 @@ python run_labels_classify.py \
 - 如果你执行的是聚类（embedding 提取）任务，输出结果通常会包含每个样本的 embedding 向量或聚类标签。
 - 如果你执行的是分类/回归任务，输出将会是模型的预测结果，例如血糖水平预测、糖尿病风险分类等。
 
+## Data目录
+
+不同来源的 CGM 数据 → 经过 CGMformer 编码 → 得到的特征向量
+
+| 文件名              | 数据来源             |
+| ------------------- | -------------------- |
+| multicenter_vec.csv | 全国多中心真实数据   |
+| zhao_vec.csv        | Zhao 等人的研究数据  |
+| Colas_vec.csv       | Colas 等人的研究数据 |
