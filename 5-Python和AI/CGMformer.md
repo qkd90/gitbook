@@ -90,3 +90,93 @@ python run_labels_classify.py \
 | multicenter_vec.csv | 全国多中心真实数据   |
 | zhao_vec.csv        | Zhao 等人的研究数据  |
 | Colas_vec.csv       | Colas 等人的研究数据 |
+
+## rq目录脚本
+
+### processing_data：数据集处理
+
+token2id 是 {token_str: token_id} 映射
+
+token 很可能是：
+
+- "90", "91", "92"（mg/dL）
+- 加特殊 token
+
+| token   | 用途                    |
+| ------- | ----------------------- |
+| `<cls>` | 序列级建模（BERT 风格） |
+| `<unk>` | 异常血糖值              |
+| `<pad>` | padding                 |
+
+### run_pretrain：预训练
+
+### 深度
+
+| 模型              | 层数 |
+| ----------------- | ---- |
+| BERT-base         | 12   |
+| BERT-small        | 4    |
+| CGMFormer（常见） | 2–6  |
+
+Embedding 维度
+
+| 维度 | 评价             |
+| ---- | ---------------- |
+| 64   | 偏小，可能欠表达 |
+| 128  | **黄金区间**     |
+| 256  | 有点浪费         |
+| 768  | NLP 级，过大     |
+
+#### 改进方向：
+
+① 加入时间信息（强烈推荐）
+
+你原始数据有 `time`（毫秒）。CGM 的采样可能不完全等间隔，时间间隔信息很关键。
+
+做法：
+
+- 额外生成 `time_ids`（相邻点时间差离散化成 token）
+- 模型输入增加一个 embedding（类似 position/time embedding）
+
+② 个体归一化或个体 token
+
+不同人基线差异大。做法：
+
+- 每个序列做 z-score（按人）后再离散化
+- 或加入 `userid_embedding`
+
+③ 更合理的离散化（不只 int(mg/dL)）
+
+你现在是 `int(mg/dL)`，可以改成：
+
+- **binning**（比如每 2 mg/dL 或每 5 mg/dL 一个 token）
+- **piecewise**（低糖区更细，高糖区更粗）
+- 或加入 `trend token`（上升/下降/平稳）
+
+④ 增加辅助预训练任务（多任务更稳）
+
+除了 MLM，再加一个很轻量的任务：
+
+- **trend prediction**：预测下一步是 up/down/flat
+- **segment order**：打乱片段顺序让模型判断（类似 SOP）
+
+⑤ 更好的采样策略
+
+预训练时：
+
+- 以“人”为单位抽样，保证 batch 内多用户
+- 长序列切多段：覆盖不同时间段（昼夜、餐后等）
+
+
+
+把你当前数据处理流程输出改成至少包含下面字段（非常实用）：
+
+- `input_ids`
+- `attention_mask`
+- `userid`（如果有）
+- （可选）`time_ids` 或 `delta_t_ids`
+
+然后：
+
+- split：按 userid
+- pretrain：MLM

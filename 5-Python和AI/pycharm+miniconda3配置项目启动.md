@@ -19,7 +19,7 @@ CGMformer                 C:\Users\...\anaconda3\envs\CGMformer
  如果 **没有**，先创建：
 
 ```
-conda create -n CGMformer python=3.10 -y
+conda create -n script python=3.10 -y
 ```
 
 ## 切换到项目环境（关键一步）
