@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/1-Java开发/1-Java开发.iml" filepath="$PROJECT_DIR$/1-Java开发/1-Java开发.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/gitbook.iml" filepath="$PROJECT_DIR$/.idea/gitbook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1-Java开发/算法题目/算法题目.iml" filepath="$PROJECT_DIR$/1-Java开发/算法题目/算法题目.iml" />
+    </modules>
+  </component>
+</project>

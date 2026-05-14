@@ -1,10 +1,9 @@
 {
-    "title": "json-config-name",
+    "title": "一条大数据之路",
     "outputfile": "SUMMARY.md",
-    "catalog": "all",  
-    "ignores": [],  
-    "unchanged": [], 
+    "catalog": "all",
+    "ignores": [],
+    "unchanged": [],
     "sortedBy": "-",
     "disableTitleFormatting": true
-    
 }
