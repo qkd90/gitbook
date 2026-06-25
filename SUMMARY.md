@@ -1,6 +1,6 @@
 # 一条大数据之路
 
-- Java开发
+- [Java开发](1-Java开发/README.md)
   - 剑指offer专项突击版
     * [15.三数之和](1-Java开发/2-剑指offer专项突击版/15.三数之和.md)
     * [剑指 Offer II 013. 二维子矩阵的和](1-Java开发/2-剑指offer专项突击版/剑指%20Offer II 013. 二维子矩阵的和.md)
@@ -82,7 +82,7 @@
   * [HTTP 协议的 8 种请求类型介绍](1-Java开发/HTTP%20协议的 8 种请求类型介绍.md)
   * [java基础](1-Java开发/java基础.md)
   * [java开发规范](1-Java开发/java开发规范.md)
-- 开发框架和工具
+- [开发框架和工具](2-开发框架和工具/README.md)
   * [@Resource 和 @Autowired](2-开发框架和工具/@Resource%20和 @Autowired.md)
   * [1.后端管理平台文档](2-开发框架和工具/1.后端管理平台文档.md)
   * [2.后端开发文档](2-开发框架和工具/2.后端开发文档.md)
@@ -108,8 +108,8 @@
   * [SpringBoot的配置文件properties和yml格式](2-开发框架和工具/SpringBoot的配置文件properties和yml格式.md)
   * [springboot使用MongoTemplate进行增删改查](2-开发框架和工具/springboot使用MongoTemplate进行增删改查.md)
   * [typora设置修改](2-开发框架和工具/typora设置修改.md)
-- 数据库和中间件
-  - sql语句
+- [数据库和中间件](3-数据库和中间件/README.md)
+  - [sql语句](3-数据库和中间件/1-sql语句/README.md)
     * [161 视频](3-数据库和中间件/1-sql语句/156-161%20视频.md)
     * [167 信息流](3-数据库和中间件/1-sql语句/162-167%20信息流.md)
     * [173 电商场景](3-数据库和中间件/1-sql语句/168-173%20电商场景.md)
@@ -127,7 +127,7 @@
     * [牛客网数据库SQL实战解析-第二期](3-数据库和中间件/1-sql语句/牛客网数据库SQL实战解析-第二期.md)
     * [牛客网sql实战93题](3-数据库和中间件/1-sql语句/牛客网sql实战93题.md)
     * [sql经典50题](3-数据库和中间件/1-sql语句/sql经典50题.md)
-  - nginx
+  - [nginx](3-数据库和中间件/2-nginx/README.md)
     * [nginx基本命令](3-数据库和中间件/2-nginx/nginx基本命令.md)
     * [nginx配置和实例](3-数据库和中间件/2-nginx/nginx配置和实例.md)
     * [nginx卸载和部署](3-数据库和中间件/2-nginx/nginx卸载和部署.md)
@@ -145,22 +145,23 @@
   * [mysql设计规范](3-数据库和中间件/mysql设计规范.md)
   * [mysqL主从架构配置](3-数据库和中间件/mysqL主从架构配置.md)
   * [mysql字符集和排序规则](3-数据库和中间件/mysql字符集和排序规则.md)
-- 微服务
+- [微服务](4-微服务/README.md)
   * [搭建nacos](4-微服务/搭建nacos.md)
   * [公司项目升级springcloud架构经验](4-微服务/公司项目升级springcloud架构经验.md)
   * [尚硅谷2025最新SpringCloud教程，springcloud从入门到大牛](4-微服务/尚硅谷2025最新SpringCloud教程，springcloud从入门到大牛.md)
-- Python和AI
+- [Python和AI](5-Python和AI/README.md)
   * [部署deepseek-R1](5-Python和AI/部署deepseek-R1.md)
   * [模型代码总结](5-Python和AI/模型代码总结.md)
   * [anaconda3相关配置](5-Python和AI/anaconda3相关配置.md)
   * [CGMformer](5-Python和AI/CGMformer.md)
+  * [go项目](5-Python和AI/go项目.md)
   * [Face](5-Python和AI/Hugging-Face.md)
-  * [project_rules](5-Python和AI/project_rules.md)
+  * [java_project_rules](5-Python和AI/java_project_rules.md)
   * [pycharm+miniconda3配置项目启动](5-Python和AI/pycharm+miniconda3配置项目启动.md)
   * [python环境+fastapi服务部署](5-Python和AI/python环境+fastapi服务部署.md)
   * [user_rules](5-Python和AI/user_rules.md)
-- 服务器、运维和测试
-  - linux服务器
+- [服务器、运维和测试](6-服务器、运维和测试/README.md)
+  - [linux服务器](6-服务器、运维和测试/1-linux服务器/README.md)
     * [操作](6-服务器、运维和测试/1-linux服务器/操作.md)
     * [磁盘空间不够问题解决](6-服务器、运维和测试/1-linux服务器/磁盘空间不够问题解决.md)
     * [打入数据失败排查](6-服务器、运维和测试/1-linux服务器/打入数据失败排查.md)
@@ -182,7 +183,7 @@
     * [pyc和bak文件](6-服务器、运维和测试/1-linux服务器/pyc和bak文件.md)
     * [snmp trap相关](6-服务器、运维和测试/1-linux服务器/snmp%20trap相关.md)
     * [Systemd 入门教程：命令篇](6-服务器、运维和测试/1-linux服务器/Systemd%20入门教程：命令篇.md)
-  - 测试
+  - [测试](6-服务器、运维和测试/2-测试/README.md)
     * [fiddler使用手册](6-服务器、运维和测试/2-测试/fiddler使用手册.md)
     * [fiddler使用说明](6-服务器、运维和测试/2-测试/fiddler使用说明.md)
     * [postman](6-服务器、运维和测试/2-测试/postman.md)
@@ -197,8 +198,8 @@
   * [oracledb exporter各个参数说明](6-服务器、运维和测试/oracledb%20exporter各个参数说明.md)
   * [prometheus配套的各个数据库监控部署](6-服务器、运维和测试/prometheus配套的各个数据库监控部署.md)
   * [windows服务监控](6-服务器、运维和测试/windows服务监控.md)
-- 容器化技术
-  - docker
+- [容器化技术](7-容器化技术/README.md)
+  - [docker](7-容器化技术/1-docker/README.md)
     * [修改docker的容器地址](7-容器化技术/1-docker/修改docker的容器地址.md)
     * [centos7安装Docker详细步骤](7-容器化技术/1-docker/centos7安装Docker详细步骤.md)
     * [docker ps的结果很乱怎么办](7-容器化技术/1-docker/docker%20ps的结果很乱怎么办.md)
@@ -211,7 +212,7 @@
     * [idea远程连接docker，一键部署](7-容器化技术/1-docker/idea远程连接docker，一键部署.md)
     * [linux上用docker部署nginx](7-容器化技术/1-docker/linux上用docker部署nginx.md)
     * [python项目docker部署](7-容器化技术/1-docker/python项目docker部署.md)
-  - k8s云原生实战
+  - [k8s云原生实战](7-容器化技术/2-k8s云原生实战/README.md)
     * [排查k8s问题](7-容器化技术/2-k8s云原生实战/排查k8s问题.md)
     * [k8s创建容器报错CrashLoopBackOff](7-容器化技术/2-k8s云原生实战/k8s创建容器报错CrashLoopBackOff.md)
     * [k8s基础操作](7-容器化技术/2-k8s云原生实战/k8s基础操作.md)
@@ -260,19 +261,21 @@
   * [Zookeeper常用命令](13-ZooKeeper协调服务/Zookeeper常用命令.md)
   * [Zookeeper集群搭建](13-ZooKeeper协调服务/Zookeeper集群搭建.md)
   * [Zookeeper简介及核心概念](13-ZooKeeper协调服务/Zookeeper简介及核心概念.md)
-- 区块链相关技术
-  - hyperledgerfabric区块链
+- [数仓项目](14-数仓项目/README.md)
+- [go开发](15-go开发/README.md)
+- [区块链相关技术](16-区块链相关技术/README.md)
+  - [hyperledgerfabric区块链](16-区块链相关技术/1-hyperledgerfabric区块链/README.md)
     * [部署fabric网络教程](16-区块链相关技术/1-hyperledgerfabric区块链/部署fabric网络教程.md)
     * [使用 Fabric测试网络](16-区块链相关技术/1-hyperledgerfabric区块链/使用%20Fabric测试网络.md)
     * [Hyperledger Cello的rq使用手册](16-区块链相关技术/1-hyperledgerfabric区块链/Hyperledger%20Cello的rq使用手册.md)
     * [linux搭建fabirc的区块链测试环境](16-区块链相关技术/1-hyperledgerfabric区块链/linux搭建fabirc的区块链测试环境.md)
-  - fiscobcos区块链
+  - [fiscobcos区块链](16-区块链相关技术/2-fiscobcos区块链/README.md)
     * [FISCOBCOS 区块链Java SDK](16-区块链相关技术/2-fiscobcos区块链/FISCOBCOS%20区块链Java SDK.md)
-- 手机安卓端
+- [手机安卓端](18-手机安卓端/README.md)
   * [adb命令控制安卓机器人设备指南](18-手机安卓端/adb命令控制安卓机器人设备指南.md)
-- 信创相关
+- [信创相关](20-信创相关/README.md)
   * [达梦数据库](20-信创相关/达梦数据库.md)
   * [OceanBase数据库](20-信创相关/OceanBase数据库.md)
   * [openGauss数据库](20-信创相关/openGauss数据库.md)
-- 安卓玩机
+- [安卓玩机](60-安卓玩机/README.md)
   * [小米手机root步骤](60-安卓玩机/小米手机root步骤.md)
