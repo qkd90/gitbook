@@ -1809,3 +1809,11 @@ git remote set-url origin git@gogs.sinocare.com:SinoHealth/glucose-wave.git
 
 jetbrains保存的凭据使用的是Windows 凭据，修改这里就可以修改凭据
 
+
+
+# 不更新某个文件
+
+```
+git update-index --skip-worktree apps/sino-health/internal/init.go
+```
+
