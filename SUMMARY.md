@@ -150,6 +150,7 @@
   * [公司项目升级springcloud架构经验](4-微服务/公司项目升级springcloud架构经验.md)
   * [尚硅谷2025最新SpringCloud教程，springcloud从入门到大牛](4-微服务/尚硅谷2025最新SpringCloud教程，springcloud从入门到大牛.md)
 - [Python和AI](5-Python和AI/README.md)
+  * [AI工具在研发中的实践总结](5-Python和AI/AI工具在研发中的实践总结.md)
   * [部署deepseek-R1](5-Python和AI/部署deepseek-R1.md)
   * [模型代码总结](5-Python和AI/模型代码总结.md)
   * [anaconda3相关配置](5-Python和AI/anaconda3相关配置.md)
