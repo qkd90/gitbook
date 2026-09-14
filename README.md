@@ -6,6 +6,8 @@
 
 整体内容以 Java 后端和大数据方向为主线，覆盖从编程基础、开发框架、数据库中间件、微服务、服务器运维、容器化、分布式理论，到 Hadoop、Hive、Spark、Flink、ZooKeeper 等大数据核心组件。同时保留 Python 和 AI、区块链、信创数据库、安卓设备等个人实践专题。
 
+如果目标是 AI、模型工程、大数据、实时计算或数据平台岗位，请先阅读 [AI 与大数据招聘总览](AI与大数据招聘总览.md)，再进入各一级目录的招聘能力地图完成项目与面试准备。
+
 ## 技术体系总览
 
 ```text
@@ -76,6 +78,38 @@
 4. Kubernetes Pod、Deployment、Service、Ingress、ConfigMap、Secret。
 5. Prometheus、Alertmanager、Grafana、EFK 日志平台。
 6. 常见故障定位：启动失败、端口占用、资源不足、网络不通、证书异常。
+
+## 按目标快速定位
+
+| 你的目标 | 优先阅读目录 | 你将获得什么 |
+| --- | --- | --- |
+| 夯实编程与算法基础 | [Java开发](1-Java开发/README.md) | Java 语言、并发、JVM、算法题解与代码规范 |
+| 提升日常研发效率 | [开发框架和工具](2-开发框架和工具/README.md) | Git、Maven、IDEA、Spring Boot、项目结构与常用开发约定 |
+| 解决存储与消息问题 | [数据库和中间件](3-数据库和中间件/README.md) | SQL、数据库设计、缓存、消息队列、搜索与 Nginx |
+| 理解服务化系统 | [微服务](4-微服务/README.md) | 服务治理、配置中心、接口调用和故障排查 |
+| 补齐 Python 与 AI 能力 | [Python和AI](5-Python和AI/README.md) | Python 环境、模型部署、FastAPI、AI 工具与工程实践 |
+| 处理部署、监控和故障 | [服务器、运维和测试](6-服务器、运维和测试/README.md) | Linux、发布、监控、日志、网络和测试工具 |
+| 学习云原生交付 | [容器化技术](7-容器化技术/README.md) | Docker、Compose、Kubernetes、KubeSphere 与镜像管理 |
+| 建立分布式底层认知 | [分布式理论](8-分布式理论/README.md) | CAP、一致性、分布式锁、事务、ID 与限流熔断 |
+| 搭建离线大数据基础 | [Hadoop生态](9-Hadoop生态/README.md) | Hadoop、HDFS、MapReduce、YARN 与生态组件 |
+| 学习离线数仓开发 | [Hive数据仓库](10-Hive数据仓库/README.md) | Hive SQL、分区分桶、表设计和查询优化 |
+| 掌握批处理与流式计算 | [Spark大数据引擎](11-Spark大数据引擎/README.md) | RDD、SparkSQL、Streaming 与性能优化 |
+| 学习实时计算 | [Flink实时计算](12-Flink实时计算/README.md) | DataStream、窗口、状态、Checkpoint 与实时作业 |
+| 理解协调服务 | [ZooKeeper协调服务](13-ZooKeeper协调服务/README.md) | 节点、选举、分布式协调和常见运维操作 |
+| 查看数仓项目实践 | [数仓项目](14-数仓项目/README.md) | 业务建模、分层、调度、数据质量与项目交付 |
+| 开始 Go 后端开发 | [go开发](15-go开发/README.md) | Go 基础、并发、Web 服务与工程组织 |
+| 了解区块链应用 | [区块链相关技术](16-区块链相关技术/README.md) | Fabric、FISCO BCOS、链码与联盟链实践 |
+| 学习安卓应用开发 | [手机安卓端](18-手机安卓端/README.md) | Android 基础、项目配置和移动端开发知识 |
+| 探索国产化技术栈 | [信创相关](20-信创相关/README.md) | 达梦、OceanBase、openGauss 等数据库实践 |
+| 管理和调试安卓设备 | [安卓玩机](60-安卓玩机/README.md) | ADB、刷机、Root、设备管理与常见操作 |
+
+## 推荐的阅读方式
+
+1. 先从一个明确问题出发，例如“如何发布一个服务”“如何设计分区表”“如何定位接口超时”。
+2. 先阅读对应一级目录的入口页，了解知识边界、前置知识和目录内的学习顺序。
+3. 再进入具体主题文档，记录适用于自己环境的命令、配置和验证结果。
+4. 遇到跨领域问题时按调用链串联阅读，例如“Java 服务 → 数据库/缓存 → Nginx → Docker → Linux 日志”。
+5. 将新问题沉淀为可复用的案例，补齐背景、操作、验证、风险和回滚信息。
 
 ## 文档组织规范
 
